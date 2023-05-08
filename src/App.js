@@ -2,46 +2,60 @@ import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 
+ 
+
+import './asserts/css/font-awesome.min.css';
+import './asserts/css/materialize.css';
+import './asserts/css/bootstrap.css';
+import './asserts/css/bootstrap.css.map';
+import './asserts/css/style.css';
+import './asserts/css/style-mob.css';
+
+
+
+
+
+
 export default class App extends Component {
   static displayName = App.name;
-  componentDidUpdate() {
-    var scriptJquery = document.createElement("script");
-    scriptJquery.src = "./js/main.min.js";
+  componentDidUpdate(){
+    var scriptJquery = document.createElement('script');
+    scriptJquery.src = './js/main.min.js';
     scriptJquery.class = "external-script";
-    var scriptBootstrap = document.createElement("script");
-    scriptBootstrap.src = "./js/bootstrap.min.js";
+    var scriptBootstrap = document.createElement('script');
+    scriptBootstrap.src = './js/bootstrap.min.js';
     scriptBootstrap.class = "external-script";
     document.head.appendChild(scriptJquery);
     document.head.appendChild(scriptBootstrap);
-    
-    var scriptMaterialize = document.createElement("script");
-    scriptMaterialize.src = "./js/materialize.min.js";
+ 
+    var scriptMaterialize = document.createElement('script');
+    scriptMaterialize.src = './js/materialize.min.js';
     scriptMaterialize.class = "external-script";
     document.head.appendChild(scriptMaterialize);
-    var scriptCustom = document.createElement("script");
-    scriptCustom.src = "./js/custom.js";
+    var scriptCustom = document.createElement('script');
+    scriptCustom.src = './js/custom.js';
     scriptCustom.class = "external-script";
     document.body.appendChild(scriptCustom);
   }
   componentDidMount() {
-    var scriptJquery = document.createElement("script");
-    scriptJquery.src = "./js/main.min.js";
+    var scriptJquery = document.createElement('script');
+    scriptJquery.src = './js/main.min.js';
     scriptJquery.class = "external-script";
-    var scriptBootstrap = document.createElement("script");
-    scriptBootstrap.src = "./js/bootstrap.min.js";
+    var scriptBootstrap = document.createElement('script');
+    scriptBootstrap.src = './js/bootstrap.min.js';
     scriptBootstrap.class = "external-script";
     document.head.appendChild(scriptJquery);
     document.head.appendChild(scriptBootstrap);
-
-    var scriptMaterialize = document.createElement("script");
-    scriptMaterialize.src = "./js/materialize.min.js";
+    
+    var scriptMaterialize = document.createElement('script');
+    scriptMaterialize.src = './js/materialize.min.js';
     scriptMaterialize.class = "external-script";
     document.head.appendChild(scriptMaterialize);
-    var scriptCustom = document.createElement("script");
-    scriptCustom.src = "./js/custom.js";
+    var scriptCustom = document.createElement('script');
+    scriptCustom.src = './js/custom.js';
     scriptCustom.class = "external-script";
     document.body.appendChild(scriptCustom);
-  }
+ }
   render() {
     return (
       <Routes>

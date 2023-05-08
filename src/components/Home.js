@@ -11,7 +11,7 @@ export class Home extends Component {
               <div className="ed-mm-left">
                 <div className="wed-logo">
                   <Link to="./index">
-                    <img src={require("./images/logo.png")} alt="" />
+                    <img src={require("../asserts/images/logo.png")} alt="" />
                   </Link>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export class Home extends Component {
                 <div className="col-md-12">
                   <div className="wed-logo">
                     <Link to="./index">
-                      <img src={require("./images/logo.png")} alt="" />
+                      <img src={require("../asserts/images/logo.png")} alt="" />
                     </Link>
                   </div>
                   <div className="main-menu">
@@ -234,8 +234,8 @@ export class Home extends Component {
                                     to="./admission"
                                   >
                                     <img
-                                      src={require("./images/h-about.jpg")}
-                                      srcset="./images/h_about.jpg"
+                                      src={require("../asserts/images/h-about.jpg")}
+                                      srcset="../asserts/images/h_about.jpg"
                                       alt=""
                                     />
                                     <span>Academics</span>
@@ -319,7 +319,7 @@ export class Home extends Component {
                                     to="./about"
                                   >
                                     <img
-                                      src={require("./images/h-about1.jpg")}
+                                      src={require("../asserts/images/h-about1.jpg")}
                                       alt=""
                                     />
                                     <span>Academics</span>
@@ -343,7 +343,7 @@ export class Home extends Component {
                                     to="./admission"
                                   >
                                     <img
-                                      src={require("./images/h-adm1.jpg")}
+                                      src={require("../asserts/images/h-adm1.jpg")}
                                       alt=""
                                     />
                                     <span>Admission</span>
@@ -367,7 +367,7 @@ export class Home extends Component {
                                     to="./awards"
                                   >
                                     <img
-                                      src={require("./images/h-cam1.jpg")}
+                                      src={require("../asserts/images/h-cam1.jpg")}
                                       alt=""
                                     />
                                     <span>History &amp; awards</span>
@@ -391,7 +391,7 @@ export class Home extends Component {
                                     to="./seminar"
                                   >
                                     <img
-                                      src={require("./images/h-res1.jpg")}
+                                      src={require("../asserts/images/h-res1.jpg")}
                                       alt=""
                                     />
                                     <span>Seminar 2018</span>
@@ -848,7 +848,7 @@ export class Home extends Component {
             {/* Wrapper for slides */}
             <div className="carousel-inner">
               <div className="item slider1 active">
-                <img src={require("./images/slider/1.jpg")} alt="" />
+                <img src={require("../asserts/images/slider/1.jpg")} alt="" />
                 <div className="carousel-caption slider-con">
                   <h2>
                     Welcome to <span>University</span>
@@ -867,7 +867,7 @@ export class Home extends Component {
                 </div>
               </div>
               <div className="item">
-                <img src={require("./images/slider/2.jpg")} alt="" />
+                <img src={require("../asserts/images/slider/2.jpg")} alt="" />
                 <div className="carousel-caption slider-con">
                   <h2>
                     Admission open <span>2018</span>
@@ -886,7 +886,7 @@ export class Home extends Component {
                 </div>
               </div>
               <div className="item">
-                <img src={require("./images/slider/3.jpg")} alt="" />
+                <img src={require("../asserts/images/slider/3.jpg")} alt="" />
                 <div className="carousel-caption slider-con">
                   <h2>
                     Education <span>Master</span>
@@ -933,7 +933,7 @@ export class Home extends Component {
                       to="./awards"
                       className="waves-effect waves-light btn-large wed-pop-ser-btn"
                     >
-                      <img src={require("./images/icon/h-ic1.png")} alt="" />{" "}
+                      <img src={require("../asserts/images/icon/h-ic1.png")} alt="" />{" "}
                       Academy
                     </Link>
                   </li>
@@ -942,7 +942,7 @@ export class Home extends Component {
                       to="./admission"
                       className="waves-effect waves-light btn-large wed-pop-ser-btn"
                     >
-                      <img src={require("./images/icon/h-ic2.png")} alt="" />{" "}
+                      <img src={require("../asserts/images/icon/h-ic2.png")} alt="" />{" "}
                       Admission
                     </Link>
                   </li>
@@ -951,7 +951,7 @@ export class Home extends Component {
                       to="./all-courses"
                       className="waves-effect waves-light btn-large wed-pop-ser-btn"
                     >
-                      <img src={require("./images/icon/h-ic4.png")} alt="" />{" "}
+                      <img src={require("../asserts/images/icon/h-ic4.png")} alt="" />{" "}
                       Courses
                     </Link>
                   </li>
@@ -960,7 +960,7 @@ export class Home extends Component {
                       to="./seminar"
                       className="waves-effect waves-light btn-large wed-pop-ser-btn"
                     >
-                      <img src={require("./images/icon/h-ic3.png")} alt="" />{" "}
+                      <img src={require("../asserts/images/icon/h-ic3.png")} alt="" />{" "}
                       Seminar
                     </Link>
                   </li>
@@ -988,7 +988,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./about">
-                      <img src={require("./images/h-about.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-about.jpg")} alt="" />
                       <span>Academics</span>
                     </Link>
                   </div>
@@ -996,7 +996,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./admission">
-                      <img src={require("./images/h-adm1.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-adm1.jpg")} alt="" />
                       <span>Admission</span>
                     </Link>
                   </div>
@@ -1004,7 +1004,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./dashboard">
-                      <img src={require("./images/h-cam.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-cam.jpg")} alt="" />
                       <span>Students profile</span>
                     </Link>
                   </div>
@@ -1012,7 +1012,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./research">
-                      <img src={require("./images/h-res.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-res.jpg")} alt="" />
                       <span>Research &amp; Education</span>
                     </Link>
                   </div>
@@ -1020,7 +1020,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./all-courses">
-                      <img src={require("./images/h-about1.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-about1.jpg")} alt="" />
                       <span>Couse</span>
                     </Link>
                   </div>
@@ -1028,7 +1028,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./db-time-line">
-                      <img src={require("./images/h-adm.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-adm.jpg")} alt="" />
                       <span>Exam Time Line</span>
                     </Link>
                   </div>
@@ -1036,7 +1036,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./seminar">
-                      <img src={require("./images/h-cam1.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-cam1.jpg")} alt="" />
                       <span>Seminar 2018</span>
                     </Link>
                   </div>
@@ -1044,7 +1044,7 @@ export class Home extends Component {
                 <div className="col-md-3 col-sm-4 col-xs-12">
                   <div className="ed-course-in">
                     <Link className="course-overlay" to="./events">
-                      <img src={require("./images/h-res1.jpg")} alt="" />
+                      <img src={require("../asserts/images/h-res1.jpg")} alt="" />
                       <span>Research &amp; Education</span>
                     </Link>
                   </div>
@@ -1076,7 +1076,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-1.jpg")}
+                        src={require("../asserts/images/course/sm-1.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1127,7 +1127,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-2.jpg")}
+                        src={require("../asserts/images/course/sm-2.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1178,7 +1178,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-3.jpg")}
+                        src={require("../asserts/images/course/sm-3.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1229,7 +1229,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-4.jpg")}
+                        src={require("../asserts/images/course/sm-4.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1284,7 +1284,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-5.jpg")}
+                        src={require("../asserts/images/course/sm-5.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1335,7 +1335,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-6.jpg")}
+                        src={require("../asserts/images/course/sm-6.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1386,7 +1386,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-7.jpg")}
+                        src={require("../asserts/images/course/sm-7.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1437,7 +1437,7 @@ export class Home extends Component {
                     <div className="col-md-3">
                       {" "}
                       <img
-                        src={require("./images/course/sm-8.jpg")}
+                        src={require("../asserts/images/course/sm-8.jpg")}
                         alt=""
                       />{" "}
                     </div>
@@ -1587,7 +1587,7 @@ export class Home extends Component {
                   <ul>
                     <li>
                       <div className="ho-ev-img">
-                        <img src={require("./images/event/1.jpg")} alt="" />
+                        <img src={require("../asserts/images/event/1.jpg")} alt="" />
                       </div>
                       <div className="ho-ev-link">
                         <Link to="./#">
@@ -1601,7 +1601,7 @@ export class Home extends Component {
                     </li>
                     <li>
                       <div className="ho-ev-img">
-                        <img src={require("./images/event/2.jpg")} alt="" />
+                        <img src={require("../asserts/images/event/2.jpg")} alt="" />
                       </div>
                       <div className="ho-ev-link">
                         <Link to="./#">
@@ -1615,7 +1615,7 @@ export class Home extends Component {
                     </li>
                     <li>
                       <div className="ho-ev-img">
-                        <img src={require("./images/event/3.jpg")} alt="" />
+                        <img src={require("../asserts/images/event/3.jpg")} alt="" />
                       </div>
                       <div className="ho-ev-link">
                         <Link to="./#">
@@ -1630,7 +1630,7 @@ export class Home extends Component {
                     </li>
                     <li>
                       <div className="ho-ev-img">
-                        <img src={require("./images/event/4.jpg")} alt="" />
+                        <img src={require("../asserts/images/event/4.jpg")} alt="" />
                       </div>
                       <div className="ho-ev-link">
                         <Link to="./#">
@@ -1757,7 +1757,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/8.jpg")}
+                        src={require("../asserts/images/ami/8.jpg")}
                         alt=""
                       />
                     </li>
@@ -1765,7 +1765,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/9.jpg")}
+                        src={require("../asserts/images/ami/9.jpg")}
                         alt=""
                       />
                     </li>
@@ -1773,7 +1773,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/10.jpg")}
+                        src={require("../asserts/images/ami/10.jpg")}
                         alt=""
                       />
                     </li>
@@ -1781,7 +1781,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/11.jpg")}
+                        src={require("../asserts/images/ami/11.jpg")}
                         alt=""
                       />
                     </li>
@@ -1789,7 +1789,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/1.jpg")}
+                        src={require("../asserts/images/ami/1.jpg")}
                         alt=""
                       />
                     </li>
@@ -1797,7 +1797,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/2.jpg")}
+                        src={require("../asserts/images/ami/2.jpg")}
                         alt=""
                       />
                     </li>
@@ -1805,7 +1805,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/3.jpg")}
+                        src={require("../asserts/images/ami/3.jpg")}
                         alt=""
                       />
                     </li>
@@ -1813,7 +1813,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/4.jpg")}
+                        src={require("../asserts/images/ami/4.jpg")}
                         alt=""
                       />
                     </li>
@@ -1821,7 +1821,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/5.jpg")}
+                        src={require("../asserts/images/ami/5.jpg")}
                         alt=""
                       />
                     </li>
@@ -1829,7 +1829,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/6.jpg")}
+                        src={require("../asserts/images/ami/6.jpg")}
                         alt=""
                       />
                     </li>
@@ -1837,7 +1837,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/7.jpg")}
+                        src={require("../asserts/images/ami/7.jpg")}
                         alt=""
                       />
                     </li>
@@ -1845,7 +1845,7 @@ export class Home extends Component {
                       <img
                         className="materialboxed"
                         data-caption="Education master image captions"
-                        src={require("./images/ami/8.jpg")}
+                        src={require("../asserts/images/ami/8.jpg")}
                         alt=""
                       />
                     </li>
@@ -1952,7 +1952,7 @@ export class Home extends Component {
               <div className="row">
                 <div className="bot-book">
                   <div className="col-md-2 bb-img">
-                    <img src={require("./images/3.png")} alt="" />
+                    <img src={require("../asserts/images/3.png")} alt="" />
                   </div>
                   <div className="col-md-7 bb-text">
                     <h4>therefore always free from repetition</h4>
@@ -2166,7 +2166,7 @@ export class Home extends Component {
               </div>
               <div className="log-in-pop-right">
                 <Link to="./#" className="pop-close" data-dismiss="modal">
-                  <img src={require("./images/cancel.png")} alt="" />
+                  <img src={require("../asserts/images/cancel.png")} alt="" />
                 </Link>
                 <h4>Login</h4>
                 <p>
@@ -2263,7 +2263,7 @@ export class Home extends Component {
               </div>
               <div className="log-in-pop-right">
                 <Link to="./#" className="pop-close" data-dismiss="modal">
-                  <img src={require("./images/cancel.png")} alt="" />
+                  <img src={require("../asserts/images/cancel.png")} alt="" />
                 </Link>
                 <h4>Create an Account</h4>
                 <p>
@@ -2355,7 +2355,7 @@ export class Home extends Component {
               </div>
               <div className="log-in-pop-right">
                 <Link to="./#" className="pop-close" data-dismiss="modal">
-                  <img src={require("./images/cancel.png")} alt="" />
+                  <img src={require("../asserts/images/cancel.png")} alt="" />
                 </Link>
                 <h4>Forgot password</h4>
                 <p>

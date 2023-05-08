@@ -6,11 +6,6 @@ import App from './App';
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 
-import './components/css/materialize.css';
-import './components/css/style.css';
-import './components/css/bootstrap.css';
-import './components/css/font-awesome.min.css';
-
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');

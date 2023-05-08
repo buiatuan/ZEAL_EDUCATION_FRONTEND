@@ -5700,3 +5700,25 @@ padding: 6px 25px;
 .ad-log-in-con p{}
 .ad-log-in-con form{}
 .ad-log-in-con form input{}
+/* orther*/
+
+.about-menu:hover + .about-mm,
+.admi-menu:hover + .admi-mm,
+.cour-menu:hover + .cour-mm,
+#sf-box:focus + .sf-list,
+.top-drop-menu:checked + .man-drop {
+  display: block;
+}
+
+.wed-top:hover .man-drop,
+.search-top:hover .sf-list {
+  display: none;
+}
+
+.sdb-btn-edit:hover::before {
+  content: "Click to edit my profile";
+}
+
+.sdb-btn-edit::before {
+  content: "edit my profile";
+}
