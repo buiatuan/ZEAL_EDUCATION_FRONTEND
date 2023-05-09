@@ -45,6 +45,11 @@
 /*-------------------------------------------------*/
 /* =  1.All Pages Common CSS Styles
 /*-------------------------------------------------*/
+
+/* custom convert js to css*/
+.about-menu:hover .about-mm{
+    display: block;
+}
  body{
      font-family: 'Open Sans', sans-serif;
      padding-right: 0px !important;
