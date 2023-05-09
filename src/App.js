@@ -1,20 +1,35 @@
-import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
+import React, { Component } from "react";
+import { Route, Routes } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
+
+ 
+
+import './asserts/css/font-awesome.min.css';
+import './asserts/css/materialize.css';
+import './asserts/css/bootstrap.css';
+import './asserts/css/bootstrap.css.map';
+import './asserts/css/style.css';
+import './asserts/css/style-mob.css';
+
+
+
+
+
 
 export default class App extends Component {
   static displayName = App.name;
   componentDidUpdate(){
     var scriptJquery = document.createElement('script');
-    scriptJquery.src = 'js/main.min.js';
+    scriptJquery.src = './js/main.min.js';
     scriptJquery.class = "external-script";
     var scriptBootstrap = document.createElement('script');
-    scriptBootstrap.src = 'js/bootstrap.min.js';
+    scriptBootstrap.src = './js/bootstrap.min.js';
     scriptBootstrap.class = "external-script";
-    document.head.appendChild(scriptBootstrap);
     document.head.appendChild(scriptJquery);
+    document.head.appendChild(scriptBootstrap);
+ 
     var scriptMaterialize = document.createElement('script');
-    scriptMaterialize.src = 'js/materialize.min.js';
+    scriptMaterialize.src = './js/materialize.min.js';
     scriptMaterialize.class = "external-script";
     document.head.appendChild(scriptMaterialize);
     var scriptCustom = document.createElement('script');
@@ -24,15 +39,16 @@ export default class App extends Component {
   }
   componentDidMount() {
     var scriptJquery = document.createElement('script');
-    scriptJquery.src = 'js/main.min.js';
+    scriptJquery.src = './js/main.min.js';
     scriptJquery.class = "external-script";
     var scriptBootstrap = document.createElement('script');
-    scriptBootstrap.src = 'js/bootstrap.min.js';
+    scriptBootstrap.src = './js/bootstrap.min.js';
     scriptBootstrap.class = "external-script";
-    document.head.appendChild(scriptBootstrap);
     document.head.appendChild(scriptJquery);
+    document.head.appendChild(scriptBootstrap);
+    
     var scriptMaterialize = document.createElement('script');
-    scriptMaterialize.src = 'js/materialize.min.js';
+    scriptMaterialize.src = './js/materialize.min.js';
     scriptMaterialize.class = "external-script";
     document.head.appendChild(scriptMaterialize);
     var scriptCustom = document.createElement('script');
@@ -42,14 +58,13 @@ export default class App extends Component {
  }
   render() {
     return (
-
-        <Routes>
-          {AppRoutes.map((route, index) => {
-            const { element, ...rest } = route;
-            return <Route key={index} {...rest} element={element} />;
-          })}
-        </Routes>
-
+      <Routes>
+        {" "}
+        {AppRoutes.map((route, index) => {
+          const { element, ...rest } = route;
+          return <Route key={index} {...rest} element={element} />;
+        })}{" "}
+      </Routes>
     );
   }
 }
