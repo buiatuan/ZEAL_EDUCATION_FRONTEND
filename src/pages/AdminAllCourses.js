@@ -12,7 +12,7 @@ export class AdminAllCourses extends Component{
               <div className="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <Link to="../#" className="btn-close-menu"><i className="fa fa-times" aria-hidden="true" /></Link>
                 <Link to="../#" className="atab-menu"><i className="fa fa-bars tab-menu" aria-hidden="true" /></Link>
-                <Link to="../index" className="logo"><img src={require('./images/logo1.png')} alt="" />
+                <Link to="../index" className="logo"><img src={require('../assets/images/logo1.png')} alt="" />
                 </Link>
               </div>
               {/*== SEARCH ==*/}
@@ -33,7 +33,7 @@ export class AdminAllCourses extends Component{
               {/*== MY ACCCOUNT ==*/}
               <div className="col-md-2 col-sm-3 col-xs-6">
                 {/* Dropdown Trigger */}
-                <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={require('./images/user/6.png')} alt="" />My Account <i className="fa fa-angle-down" aria-hidden="true" />
+                <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={require('../assets/images/user/6.png')} alt="" />My Account <i className="fa fa-angle-down" aria-hidden="true" />
                 </Link>
                 {/* Dropdown Structure */}
                 <ul id="top-menu" className="dropdown-content top-menu-sty">
@@ -53,7 +53,7 @@ export class AdminAllCourses extends Component{
                 {/*== USER INFO ==*/}
                 <div className="sb2-12">
                   <ul>
-                    <li><img src={require('./images/placeholder.jpg')} alt="" />
+                    <li><img src={require('../assets/images/placeholder.jpg')} alt="" />
                     </li>
                     <li>
                       <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
@@ -229,7 +229,7 @@ export class AdminAllCourses extends Component{
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-1.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Aerospace Engineering</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -244,7 +244,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-5.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-5.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Fashion Technology</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -259,7 +259,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-2.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-2.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Agriculture Courses</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -274,7 +274,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-3.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-3.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Marine Engineering</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -289,7 +289,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-4.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-4.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Building, Construction Management</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -304,7 +304,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-1.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Aerospace Engineering</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -319,7 +319,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-5.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-5.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Fashion Technology</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -334,7 +334,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-2.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-2.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Agriculture Courses</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -349,7 +349,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-3.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-3.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Marine Engineering</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>
@@ -364,7 +364,7 @@ export class AdminAllCourses extends Component{
                                   <td><Link to="../admin-course-details" className="ad-st-view">Edit</Link></td>
                                 </tr>
                                 <tr>
-                                  <td><span className="list-img"><img src={require('./images/course/sm-4.jpg')} alt="" /></span>
+                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-4.jpg')} alt="" /></span>
                                   </td>
                                   <td><Link to="../admin-course-details"><span className="list-enq-name">Building, Construction Management</span><span className="list-enq-city">Illunois, United States</span></Link>
                                   </td>

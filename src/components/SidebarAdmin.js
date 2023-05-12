@@ -18,7 +18,7 @@ export class SidebarAdmin extends Component {
             <ul>
               <li>
                 <img
-                  src={require("../asserts/images/placeholder.jpg")}
+                  src={require("../assets/images/placeholder.jpg")}
                   alt=""
                 />
               </li>

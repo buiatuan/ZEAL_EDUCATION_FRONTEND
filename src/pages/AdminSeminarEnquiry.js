@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { Link } from 'react-router-dom';
-export class AdminEventEnquiry extends Component{
+export class AdminSeminarEnquiry extends Component{
     render() {
 
       return (
@@ -196,7 +196,7 @@ export class AdminEventEnquiry extends Component{
                   <ul>
                     <li><Link to="/index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><Link to="/#"> Event Enquiry</Link>
+                    <li className="active-bre"><Link to="/#"> Seminar Enquiry</Link>
                     </li>
                     <li className="page-back"><Link to="/index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
@@ -208,7 +208,7 @@ export class AdminEventEnquiry extends Component{
                     <div className="col-md-12">
                       <div className="box-inn-sp">
                         <div className="inn-title">
-                          <h4>Event Enquiry</h4>
+                          <h4>Seminar Enquiry</h4>
                           <p>All about students like name, student id, phone, email, country, city and more</p>
                         </div>
                         <div className="tab-inn">

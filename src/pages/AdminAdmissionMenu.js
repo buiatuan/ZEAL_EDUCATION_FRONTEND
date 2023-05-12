@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { Link } from 'react-router-dom';
-export class AdminEventEnquiry extends Component{
+export class AdminAdmissionMenu extends Component{
     render() {
 
       return (
@@ -196,79 +196,125 @@ export class AdminEventEnquiry extends Component{
                   <ul>
                     <li><Link to="/index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><Link to="/#"> Event Enquiry</Link>
+                    <li className="active-bre"><Link to="/#"> About Menu</Link>
                     </li>
                     <li className="page-back"><Link to="/index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
                   </ul>
                 </div>
-                {/*== User Details ==*/}
                 <div className="sb2-2-3">
                   <div className="row">
+                    {/*== Listing Enquiry ==*/}
                     <div className="col-md-12">
-                      <div className="box-inn-sp">
+                      <div className="box-inn-sp admin-form">
                         <div className="inn-title">
-                          <h4>Event Enquiry</h4>
-                          <p>All about students like name, student id, phone, email, country, city and more</p>
+                          <h4>Mega Menu(max select 16 pages)</h4>
+                          <p>Education is about teaching, learning skills and knowledge.</p>
                         </div>
-                        <div className="tab-inn">
-                          <div className="table-responsive table-desi">
-                            <table className="table table-hover">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>Name</th>
-                                  <th>Email id</th>
-                                  <th>Phone</th>
-                                  <th>View</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                        <div className="bor ad-cou-deta-h4">
+                          <form>
+                            <h4>Mega Menu 1:</h4>
+                            <div className="row">
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Title:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <textarea className="materialize-textarea" defaultValue={""} />
+                                <label>Descriptions:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Page target link:</label>
+                              </div>
+                              <div className="file-field input-field col s12">
+                                <div className="btn admin-upload-btn">
+                                  <span>File</span>
+                                  <input type="file" />
+                                </div>
+                                <div className="file-path-wrapper">
+                                  <input className="file-path validate" type="text" placeholder="mega menu background image" />
+                                </div>
+                              </div>
+                            </div> 
+                            <h4>Mega Menu 2:</h4>
+                            <div className="row">
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Title:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <textarea className="materialize-textarea" defaultValue={""} />
+                                <label>Descriptions:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Page target link:</label>
+                              </div>
+                              <div className="file-field input-field col s12">
+                                <div className="btn admin-upload-btn">
+                                  <span>File</span>
+                                  <input type="file" />
+                                </div>
+                                <div className="file-path-wrapper">
+                                  <input className="file-path validate" type="text" placeholder="mega menu background image" />
+                                </div>
+                              </div>
+                            </div> 
+                            <h4>Mega Menu 3:</h4>
+                            <div className="row">
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Title:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <textarea className="materialize-textarea" defaultValue={""} />
+                                <label>Descriptions:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Page target link:</label>
+                              </div>
+                              <div className="file-field input-field col s12">
+                                <div className="btn admin-upload-btn">
+                                  <span>File</span>
+                                  <input type="file" />
+                                </div>
+                                <div className="file-path-wrapper">
+                                  <input className="file-path validate" type="text" placeholder="mega menu background image" />
+                                </div>
+                              </div>
+                            </div> 
+                            <h4>Mega Menu 4:</h4>
+                            <div className="row">
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Title:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <textarea className="materialize-textarea" defaultValue={""} />
+                                <label>Descriptions:</label>
+                              </div>
+                              <div className="input-field col s12">
+                                <input type="text" className="validate" required />
+                                <label>Page target link:</label>
+                              </div>
+                              <div className="file-field input-field col s12">
+                                <div className="btn admin-upload-btn">
+                                  <span>File</span>
+                                  <input type="file" />
+                                </div>
+                                <div className="file-path-wrapper">
+                                  <input className="file-path validate" type="text" placeholder="mega menu background image" />
+                                </div>
+                              </div>
+                            </div> 
+                            <div className="row">
+                              <div className="input-field col s12">
+                                <i className="waves-effect waves-light btn-large waves-input-wrapper" style={{}}><input type="submit" className="waves-button-input" defaultValue="Submit" /></i>
+                              </div>
+                            </div>
+                          </form>
                         </div>
                       </div>
                     </div>

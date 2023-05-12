@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { Link } from 'react-router-dom';
-export class AdminEventEnquiry extends Component{
+export class AdminViewEnquiry extends Component{
     render() {
 
       return (
@@ -196,7 +196,7 @@ export class AdminEventEnquiry extends Component{
                   <ul>
                     <li><Link to="/index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><Link to="/#"> Event Enquiry</Link>
+                    <li className="active-bre"><Link to="/#"> View Enquiry</Link>
                     </li>
                     <li className="page-back"><Link to="/index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
@@ -208,7 +208,7 @@ export class AdminEventEnquiry extends Component{
                     <div className="col-md-12">
                       <div className="box-inn-sp">
                         <div className="inn-title">
-                          <h4>Event Enquiry</h4>
+                          <h4>View Enquiry</h4>
                           <p>All about students like name, student id, phone, email, country, city and more</p>
                         </div>
                         <div className="tab-inn">
@@ -220,7 +220,7 @@ export class AdminEventEnquiry extends Component{
                                   <th>Name</th>
                                   <th>Email id</th>
                                   <th>Phone</th>
-                                  <th>View</th>
+                                  <th>Message</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -228,43 +228,43 @@ export class AdminEventEnquiry extends Component{
                                   <td>1</td>
                                   <td>John smith</td>
                                   <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>+1084156352</td>
+                                  <td>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</td>
                                 </tr>
                                 <tr>
                                   <td>2</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>Edwin</td>
+                                  <td>edwin@gmail.com</td>
+                                  <td>+1096525841</td>
+                                  <td> It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</td>
                                 </tr>
                                 <tr>
                                   <td>3</td>
                                   <td>John smith</td>
                                   <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>+1084156352</td>
+                                  <td>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</td>
                                 </tr>
                                 <tr>
                                   <td>4</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>Edwin</td>
+                                  <td>edwin@gmail.com</td>
+                                  <td>+1096525841</td>
+                                  <td> It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</td>
                                 </tr>
                                 <tr>
                                   <td>5</td>
                                   <td>John smith</td>
                                   <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>+1084156352</td>
+                                  <td>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</td>
                                 </tr>
                                 <tr>
                                   <td>6</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="/admin-view-enquiry" className="ad-st-view">View</Link></td>
+                                  <td>Edwin</td>
+                                  <td>edwin@gmail.com</td>
+                                  <td>+1096525841</td>
+                                  <td> It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</td>
                                 </tr>
                               </tbody>
                             </table>

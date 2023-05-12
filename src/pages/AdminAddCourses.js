@@ -12,7 +12,7 @@ export class AdminAddCourse extends Component{
               <div className="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <Link to="../#" className="btn-close-menu"><i className="fa fa-times" aria-hidden="true" /></Link>
                 <Link to="../#" className="atab-menu"><i className="fa fa-bars tab-menu" aria-hidden="true" /></Link>
-                <Link to="../index" className="logo"><img src={require('./images/logo1.png')} alt="" />
+                <Link to="../index" className="logo"><img src={require('../assets/images/logo1.png')} alt="" />
                 </Link>
               </div>
               {/*== SEARCH ==*/}
@@ -33,7 +33,7 @@ export class AdminAddCourse extends Component{
               {/*== MY ACCCOUNT ==*/}
               <div className="col-md-2 col-sm-3 col-xs-6">
                 {/* Dropdown Trigger */}
-                <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={require('./images/user/6.png')} alt="" />My Account <i className="fa fa-angle-down" aria-hidden="true" />
+                <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={require('../assets/images/user/6.png')} alt="" />My Account <i className="fa fa-angle-down" aria-hidden="true" />
                 </Link>
                 {/* Dropdown Structure */}
                 <ul id="top-menu" className="dropdown-content top-menu-sty">
@@ -53,7 +53,7 @@ export class AdminAddCourse extends Component{
                 {/*== USER INFO ==*/}
                 <div className="sb2-12">
                   <ul>
-                    <li><img src={require('./images/placeholder.jpg')} alt="" />
+                    <li><img src={require('../assets/images/placeholder.jpg')} alt="" />
                     </li>
                     <li>
                       <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
