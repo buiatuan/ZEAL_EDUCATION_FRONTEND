@@ -11,7 +11,7 @@ export class Blog extends Component{
               <div className="ed-mob-menu-con">
                 <div className="ed-mm-left">
                   <div className="wed-logo">
-                    <Link to="/Home"><img src={require('../asserts/images/logo.png')} alt="" />
+                    <Link to="/Home"><img src={require('./images/logo.png')} alt="" />
                     </Link>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export class Blog extends Component{
                 <div className="row">
                   <div className="col-md-12">
                     <div className="wed-logo">
-                      <Link to="/"><img src={require('../asserts/images/logo.png')} alt="" />
+                      <Link to="/"><img src={require('./images/logo.png')} alt="" />
                       </Link>
                     </div>
                     <div className="main-menu">
@@ -131,7 +131,7 @@ export class Blog extends Component{
                                 <div className="mm1-com mm1-s1">
                                   <div className="ed-course-in">
                                     <Link className="course-overlay menu-about" href="admission">
-                                      <img src={require('../asserts/images/h-about.jpg')} alt="" />
+                                      <img src={require('./images/h-about.jpg')} alt="" />
                                       <span>Academics</span>
                                     </Link>
                                   </div>
@@ -171,7 +171,7 @@ export class Blog extends Component{
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
                                     <Link className="course-overlay" href="about">
-                                      <img src={require('../asserts/images/h-about1.jpg')} alt="" />
+                                      <img src={require('./images/h-about1.jpg')} alt="" />
                                       <span>Academics</span>
                                     </Link>
                                   </div>
@@ -181,7 +181,7 @@ export class Blog extends Component{
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
                                     <Link className="course-overlay" href="admission">
-                                      <img src={require('../asserts/images/h-adm1.jpg')} alt="" />
+                                      <img src={require('./images/h-adm1.jpg')} alt="" />
                                       <span>Admission</span>
                                     </Link>
                                   </div>
@@ -191,7 +191,7 @@ export class Blog extends Component{
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
                                     <Link className="course-overlay" href="awards">
-                                      <img src={require('../asserts/images/h-cam1.jpg')} alt="" />
+                                      <img src={require('./images/h-cam1.jpg')} alt="" />
                                       <span>History &amp; awards</span>
                                     </Link>
                                   </div>
@@ -201,7 +201,7 @@ export class Blog extends Component{
                                 <div className="mm2-com mm1-com mm1-s4">
                                   <div className="ed-course-in">
                                     <Link className="course-overlay" href="seminar">
-                                      <img src={require('../asserts/images/h-res1.jpg')} alt="" />
+                                      <img src={require('./images/h-res1.jpg')} alt="" />
                                       <span>Seminar 2018</span>
                                     </Link>
                                   </div>
@@ -394,7 +394,7 @@ export class Blog extends Component{
                               <Link to="/event-register">
                                 <h4>Best Study Spots on Campus</h4>
                               </Link>
-                              <img src={require('../asserts/images/blog/6.jpg')} alt="" />
+                              <img src={require('./images/blog/6.jpg')} alt="" />
                               <div className="share-btn blog-share-btn">
                                 <ul>
                                   <li><Link to="/#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -419,7 +419,7 @@ export class Blog extends Component{
                               <Link to="/event-register">
                                 <h4>Recaps of Student Events on Campus</h4>
                               </Link>
-                              <img src={require('../asserts/images/blog/2.jpg')} alt="" />
+                              <img src={require('./images/blog/2.jpg')} alt="" />
                               <div className="share-btn blog-share-btn">
                                 <ul>
                                   <li><Link to="/#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -444,7 +444,7 @@ export class Blog extends Component{
                               <Link to="/event-register">
                                 <h4>School Project Highlights</h4>
                               </Link>
-                              <img src={require('../asserts/images/blog/3.jpg')} alt="" />
+                              <img src={require('./images/blog/3.jpg')} alt="" />
                               <div className="share-btn blog-share-btn">
                                 <ul>
                                   <li><Link to="/#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -469,7 +469,7 @@ export class Blog extends Component{
                               <Link to="/event-register">
                                 <h4>Sample Semester Schedule</h4>
                               </Link>
-                              <img src={require('../asserts/images/blog/4.jpg')} alt="" />
+                              <img src={require('./images/blog/4.jpg')} alt="" />
                               <div className="share-btn blog-share-btn">
                                 <ul>
                                   <li><Link to="/#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -494,7 +494,7 @@ export class Blog extends Component{
                               <Link to="/event-register">
                                 <h4>Experience of Studying Abroad</h4>
                               </Link>
-                              <img src={require('../asserts/images/blog/5.jpg')} alt="" />
+                              <img src={require('./images/blog/5.jpg')} alt="" />
                               <div className="share-btn blog-share-btn">
                                 <ul>
                                   <li><Link to="/#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -539,7 +539,7 @@ export class Blog extends Component{
                 <div className="row">
                   <div className="bot-book">
                     <div className="col-md-2 bb-img">
-                      <img src={require('../asserts/images/3.png')} alt="" />
+                      <img src={require('./images/3.png')} alt="" />
                     </div>
                     <div className="col-md-7 bb-text">
                       <h4>therefore always free from repetition</h4>
@@ -674,7 +674,7 @@ export class Blog extends Component{
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('../asserts/images/cancel.png')} alt="" />
+                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
                   </Link>
                   <h4>Login</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
@@ -727,7 +727,7 @@ export class Blog extends Component{
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('../asserts/images/cancel.png')} alt="" />
+                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
                   </Link>
                   <h4>Create an Account</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
@@ -784,7 +784,7 @@ export class Blog extends Component{
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('../asserts/images/cancel.png')} alt="" />
+                  <Link to="/#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
                   </Link>
                   <h4>Forgot password</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
