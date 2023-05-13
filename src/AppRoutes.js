@@ -17,6 +17,7 @@ import { AdminAllMenu } from "./pages/AdminAllMenu";
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
 import { Admin } from "./pages/Admin";
+import { AdminExamAdd } from "./pages/AdminExamAdd";
 const AppRoutes = [
   {
     index: true,
@@ -89,7 +90,11 @@ const AppRoutes = [
      {
       path:'/AdminAdmissionMenu',
       element:<AdminAdmissionMenu/>
-     }
+     },
+     {
+      path:'/AdminExamAdd',
+      element:<AdminExamAdd/>
+     },
 ];
 
 export default AppRoutes;
