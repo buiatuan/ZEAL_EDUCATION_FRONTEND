@@ -134,7 +134,7 @@ export class HeaderClient extends Component{
                                         <li className="about-menu">
                                             <Link to="../about" className="mm-arr">About us</Link>
                                             {/* MEGA MENU 1 */}
-                                            <div className="mm-pos">
+                                            {/* <div className="mm-pos">
                                                 <div className="about-mm m-menu">
                                                     <div className="m-menu-inn">
                                                         <div className="mm1-com mm1-s1">
@@ -169,8 +169,9 @@ export class HeaderClient extends Component{
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </li>
+                                        <li><Link to="../allcourses">All Courses</Link></li>
                                         <li className="admi-menu">
                                             <Link to="../#" className="mm-arr">Admission</Link>
                                             {/* MEGA MENU 1 */}
@@ -221,7 +222,7 @@ export class HeaderClient extends Component{
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><Link to="../all-courses">All Courses</Link></li>
+                               
                                         {/*
                                         <li><Link class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</Link></li>*/}
                                         <li className="cour-menu">

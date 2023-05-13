@@ -22,7 +22,7 @@ export class About extends Component{
                             <ul>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/1.png" alt="" />
+                                        <img src={require('../assets/images/adv/1.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Awards</h4>
@@ -32,7 +32,7 @@ export class About extends Component{
                                 </li>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/2.png" alt="" />
+                                        <img src={require('../assets/images/adv/2.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Research</h4>
@@ -42,7 +42,7 @@ export class About extends Component{
                                 </li>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/3.png" alt="" />
+                                        <img src={require('../assets/images/adv/3.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Educations</h4>
@@ -52,7 +52,7 @@ export class About extends Component{
                                 </li>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/4.png" alt="" />
+                                        <img src={require('../assets/images/adv/4.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Alumni</h4>
@@ -62,7 +62,7 @@ export class About extends Component{
                                 </li>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/5.png" alt="" />
+                                        <img src={require('../assets/images/adv/5.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Facilities</h4>
@@ -72,7 +72,7 @@ export class About extends Component{
                                 </li>
                                 <li>
                                     <div className="ed-ad-img">
-                                        <img src="images/adv/6.png" alt="" />
+                                        <img src={require('../assets/images/adv/6.png')} alt="" />
                                     </div>
                                     <div className="ed-ad-dec">
                                         <h4>Departments</h4>
@@ -92,28 +92,7 @@ export class About extends Component{
         </div>
     </section>
     {/*SECTION END*/}
-    {/*SECTION START*/}
-    <section>
-        <div className="full-bot-book">
-            <div className="container">
-                <div className="row">
-                    <div className="bot-book">
-                        <div className="col-md-2 bb-img">
-                            <img src="images/3.png" alt="" />
-                        </div>
-                        <div className="col-md-7 bb-text">
-                            <h4>therefore always free from repetition</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        </div>
-                        <div className="col-md-3 bb-link">
-                            <Link to="../course-details">Book This Course</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {/*SECTION END*/}
+
     {/*HEADER SECTION*/}
      <FooterClient/>
     {/*Import jQuery before materialize.js*/}

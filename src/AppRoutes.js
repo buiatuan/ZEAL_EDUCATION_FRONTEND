@@ -2,6 +2,8 @@
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Blog } from "./pages/blog";
+import {AllCourse} from "./pages/AllCourse";
+
 
 import { AdminAllEnquiry } from "./pages/AdminAllEnquiry";
 import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
@@ -36,6 +38,12 @@ const AppRoutes = [
       path:'/Blog',
       element:<Blog/>
      },
+     {
+      path:'/allcourses',
+      element:<AllCourse/>
+     },
+     
+     // page admin
      {
       path:'/Admin',
       element:<Admin/>
