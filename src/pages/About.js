@@ -1,7 +1,7 @@
 import React ,{Component} from "react";
 import { Link } from "react-router-dom";
-import { HeaderClient } from "../layout/HeaderClient";
-import { FooterClient } from "../layout/FooterClient";
+import { HeaderClient } from "../components/HeaderClient";
+import { FooterClient } from "../components/FooterClient";
 export class About extends Component{
     render() {
       return (

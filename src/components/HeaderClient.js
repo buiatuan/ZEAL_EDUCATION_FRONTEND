@@ -11,7 +11,7 @@ export class HeaderClient extends Component{
                         <div className="ed-mm-left">
                             <div className="wed-logo">
                                 <Link to="../">
-                                    <img src={require("../asserts/images/logo.png")} alt="" />
+                                    <img src={require("../assets/images/logo.png")} alt="" />
                                 </Link>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ export class HeaderClient extends Component{
                             <div className="col-md-12">
                                 <div className="wed-logo">
                                     <Link to="../">
-                                        <img src={require("../asserts/images/logo.png")} alt="" />
+                                        <img src={require("../assets/images/logo.png")} alt="" />
                                     </Link>
                                 </div>
                                 <div className="main-menu">
@@ -140,7 +140,7 @@ export class HeaderClient extends Component{
                                                         <div className="mm1-com mm1-s1">
                                                             <div className="ed-course-in">
                                                                 <Link className="course-overlay menu-about" to="../admission">
-                                                                    <img src={require("../asserts/images/h-about.jpg")} alt="" />
+                                                                    <img src={require("../assets/images/h-about.jpg")} alt="" />
                                                                     <span>Academics</span>
                                                                 </Link>
                                                             </div>
@@ -180,7 +180,7 @@ export class HeaderClient extends Component{
                                                         <div className="mm2-com mm1-com mm1-s1">
                                                             <div className="ed-course-in">
                                                                 <Link className="course-overlay" to="../about">
-                                                                    <img src={require("../asserts/images/h-about1.jpg")} alt="" />
+                                                                    <img src={require("../assets/images/h-about1.jpg")} alt="" />
                                                                     <span>Academics</span>
                                                                 </Link>
                                                             </div>
@@ -190,7 +190,7 @@ export class HeaderClient extends Component{
                                                         <div className="mm2-com mm1-com mm1-s1">
                                                             <div className="ed-course-in">
                                                                 <Link className="course-overlay" to="../admission">
-                                                                    <img src={require("../asserts/images/h-adm1.jpg")} alt="" />
+                                                                    <img src={require("../assets/images/h-adm1.jpg")} alt="" />
                                                                     <span>Admission</span>
                                                                 </Link>
                                                             </div>
@@ -200,7 +200,7 @@ export class HeaderClient extends Component{
                                                         <div className="mm2-com mm1-com mm1-s1">
                                                             <div className="ed-course-in">
                                                                 <Link className="course-overlay" to="../awards">
-                                                                    <img src={require("../asserts/images/h-cam1.jpg")} alt="" />
+                                                                    <img src={require("../assets/images/h-cam1.jpg")} alt="" />
                                                                     <span>History &amp; awards</span>
                                                                 </Link>
                                                             </div>
@@ -210,7 +210,7 @@ export class HeaderClient extends Component{
                                                         <div className="mm2-com mm1-com mm1-s4">
                                                             <div className="ed-course-in">
                                                                 <Link className="course-overlay" to="../seminar">
-                                                                    <img src={require("../asserts/images/h-res1.jpg")} alt="" />
+                                                                    <img src={require("../assets/images/h-res1.jpg")} alt="" />
                                                                     <span>Seminar 2018</span>
                                                                 </Link>
                                                             </div>

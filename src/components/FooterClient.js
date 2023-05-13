@@ -139,7 +139,7 @@ export class FooterClient extends Component{
                 </div>
                 <div className="log-in-pop-right">
                     <Link to="../#" className="pop-close" data-dismiss="modal">
-                        <img src={require("../asserts/images/cancel.png")} alt="" />
+                        <img src={require("../assets/images/cancel.png")} alt="" />
                     </Link>
                     <h4>Login</h4>
                     <p>Don't have an account? Create your account. It's take less then a minutes</p>
@@ -197,7 +197,7 @@ export class FooterClient extends Component{
                 </div>
                 <div className="log-in-pop-right">
                     <Link to="../#" className="pop-close" data-dismiss="modal">
-                        <img src={require("../asserts/images/cancel.png")} alt="" />
+                        <img src={require("../assets/images/cancel.png")} alt="" />
                     </Link>
                     <h4>Create an Account</h4>
                     <p>Don't have an account? Create your account. It's take less then a minutes</p>
@@ -259,7 +259,7 @@ export class FooterClient extends Component{
                 </div>
                 <div className="log-in-pop-right">
                     <Link to="../#" className="pop-close" data-dismiss="modal">
-                        <img src={require("../asserts/images/cancel.png")} alt="" />
+                        <img src={require("../assets/images/cancel.png")} alt="" />
                     </Link>
                     <h4>Forgot password</h4>
                     <p>Don't have an account? Create your account. It's take less then a minutes</p>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
-import './components/css/materialize.css'
-import './components/css/style.css'
-import './components/css/bootstrap.css'
-import './components/css/font-awesome.min.css'
+import './assets/css/materialize.css'
+import './assets/css/style.css'
+import './assets/css/bootstrap.css'
+import './assets/css/font-awesome.min.css'
 
 
 export default class App extends Component {

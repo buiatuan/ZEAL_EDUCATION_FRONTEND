@@ -1,21 +1,21 @@
 
-import { Home } from "./components/Home";
-import { About } from "./components/About";
-import { Blog } from "./components/blog";
-import { AdminQuickLink } from "./components/AdminQuickLink";
-import { AdminSeminarAdd } from "./components/AdminSeminarAdd";
-import { AdminSeminarAll } from "./components/AdminSeminarAll";
-import { AdminSeminarEdit } from "./components/AdminSeminarEdit";
-import { AdminSeminarEnquiry } from "./components/AdminSeminarEnquiry";
-import { AdminAllEnquiry } from "./components/AdminAllEnquiry";
-import { AdminViewEnquiry } from "./components/AdminViewEnquiry";
-import { AdminEventEnquiry } from "./components/AdminEventEnquiry";
-import { AdminAdmissionEnquiry } from "./components/AdminAdmissionEnquiry";
-import { AdminCommonEnquiry } from "./components/AdminCommonEnquir";
-import { AdminCoursenEnquiry } from "./components/AdminCourseEnquiry";
-import { AdminAllMenu } from "./components/AdminAllMenu";
-import { AdminAboutMenu } from "./components/AdminAboutMenu";
-import { AdminAdmissionMenu } from "./components/AdminAdmissionMenu";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Blog } from "./pages/blog";
+import { AdminQuickLink } from "./pages/AdminQuickLink";
+import { AdminSeminarAdd } from "./pages/AdminSeminarAdd";
+import { AdminSeminarAll } from "./pages/AdminSeminarAll";
+import { AdminSeminarEdit } from "./pages/AdminSeminarEdit";
+import { AdminSeminarEnquiry } from "./pages/AdminSeminarEnquiry";
+import { AdminAllEnquiry } from "./pages/AdminAllEnquiry";
+import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
+import { AdminEventEnquiry } from "./pages/AdminEventEnquiry";
+import { AdminAdmissionEnquiry } from "./pages/AdminAdmissionEnquiry";
+import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
+import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
+import { AdminAllMenu } from "./pages/AdminAllMenu";
+import { AdminAboutMenu } from "./pages/AdminAboutMenu";
+import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
 const AppRoutes = [
   {
     index: true,
