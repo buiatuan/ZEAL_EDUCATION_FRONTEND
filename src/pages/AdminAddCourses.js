@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import { Link } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
-export class AdminAddCourse extends Component{
+export class AdminAddCourses extends Component{
     render() {
 
       return (

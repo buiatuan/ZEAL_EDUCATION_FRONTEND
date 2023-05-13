@@ -2,22 +2,27 @@
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Blog } from "./pages/blog";
-import { AdminQuickLink } from "./pages/AdminQuickLink";
-import { AdminSeminarAdd } from "./pages/AdminSeminarAdd";
-import { AdminSeminarAll } from "./pages/AdminSeminarAll";
-import { AdminSeminarEdit } from "./pages/AdminSeminarEdit";
-import { AdminSeminarEnquiry } from "./pages/AdminSeminarEnquiry";
+
 import { AdminAllEnquiry } from "./pages/AdminAllEnquiry";
 import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
 import { AdminEventEnquiry } from "./pages/AdminEventEnquiry";
 import { AdminAdmissionEnquiry } from "./pages/AdminAdmissionEnquiry";
 import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
 import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
-import { AdminAllMenu } from "./pages/AdminAllMenu";
+// import event
+import {AdminEventAll} from "./pages/AdminEventAll";
+import {AdminEventAdd} from "./pages/AdminEventAdd";
+// import Exam admin
+// import {AdminExamAll} from "./pages/AdminExamAll";
+
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
 import { Admin } from "./pages/Admin";
 import { AdminExamAdd } from "./pages/AdminExamAdd";
+import { AdminAllCourses } from "./pages/AdminAllCourses";
+import {AdminAddCourses} from "./pages/AdminAddCourses";
+import { AdminUserAll } from "./pages/AdminUserAll";
+import { AdminUserAdd } from "./pages/AdminUserAdd";
 const AppRoutes = [
   {
     index: true,
@@ -35,26 +40,40 @@ const AppRoutes = [
       path:'/Admin',
       element:<Admin/>
      },
+     //user admin
      {
-      path:'/AdminQuickLink',
-      element:<AdminQuickLink/>
+      path:'/AdminAddCourses',
+      element:<AdminAddCourses/>
      },
      {
-      path:'/AdminSeminarAdd',
-      element:<AdminSeminarAdd/>
+      path:'/AdminUserAll',
+      element:<AdminUserAll/>
      },
      {
-      path:'/AdminSeminarAll',
-      element:<AdminSeminarAll/>
+      path:'/AdminUserAdd',
+      element:<AdminUserAdd/>
+      
      },
+     // event admin
      {
-      path:'/AdminSeminarEdit',
-      element:<AdminSeminarEdit/>
+      path: '/AdminEventAll',
+      element:<AdminEventAll/>
      },
-     {
-      path:'/AdminSeminarEnquiry',
-      element:<AdminSeminarEnquiry/>
+    {
+      path:'/AdminEventAdd',
+      element:<AdminEventAdd/>
+    },
+    // Exam Admin
+    // {
+    //   path:'/AdminExamAll',
+    //   element:<AdminExamAll/>
+    // },
+    {
+      path:'/AdminExamAdd',
+      element:<AdminExamAdd/>
      },
+     
+     // old script
      {
       path:'/AdminAllEnquiry',
       element:<AdminAllEnquiry/>
@@ -79,9 +98,10 @@ const AppRoutes = [
       path:'/AdminCourseEnquiry',
       element:<AdminCoursenEnquiry/>
      },
+   
      {
-      path:'/AdminAllMenu',
-      element:<AdminAllMenu/>
+      path:'/AdminAllCourses',
+      element:<AdminAllCourses/>
      },
      {
       path:'/AdminAboutMenu',
@@ -91,10 +111,7 @@ const AppRoutes = [
       path:'/AdminAdmissionMenu',
       element:<AdminAdmissionMenu/>
      },
-     {
-      path:'/AdminExamAdd',
-      element:<AdminExamAdd/>
-     },
+    
 ];
 
 export default AppRoutes;

@@ -34,15 +34,11 @@ export class SidebarAdmin extends Component {
           <div className="sb2-13">
             <ul className="collapsible" data-collapsible="accordion">
               <li>
-                <Link to="../admin" className="menu-active">
+                <Link to="../Admin" className="menu-active">
                   <i className="fa fa-bar-chart" aria-hidden="true" /> Dashboard
                 </Link>
               </li>
-              <li>
-                <Link to="../admin-setting">
-                  <i className="fa fa-cogs" aria-hidden="true" /> Site Setting
-                </Link>
-              </li>
+              
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header" >
                   <i className="fa fa-book" aria-hidden="true" /> All Courses
@@ -50,14 +46,12 @@ export class SidebarAdmin extends Component {
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-all-courses">All Course</Link>
+                      <Link to="../AdminAllCourses">All Course</Link>
                     </li>
                     <li>
-                      <Link to="../admin-add-courses">Add New Course</Link>
+                      <Link to="../AdminAddCourses">Add New Course</Link>
                     </li>
-                    <li>
-                      <Link to="../admin-trash-courses">Trash Course</Link>
-                    </li>
+              
                   </ul>
                 </div>
               </li>
@@ -68,65 +62,18 @@ export class SidebarAdmin extends Component {
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-user-all">All Users</Link>
+                      <Link to="../AdminUserAll">All Users</Link>
                     </li>
                     <li>
-                      <Link to="../admin-user-add">Add New user</Link>
+                      <Link to="../AdminUserAdd">Add New user</Link>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-bookmark-o" aria-hidden="true" />
-                  All Pages
-                </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../admin-page-all">Pages</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-page-add">Create New Page</Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-bars" aria-hidden="true" /> Menu
-                </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../admin-main-menu">Main menu</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-about-menu">About menu</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-admission-menu">Admission menu</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-all-menu">All page menu</Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link to="../admin-slider">
-                  <i className="fa fa-image" aria-hidden="true" /> Slider
-                </Link>
-              </li>
-              <li>
-                <Link to="../admin-quick-link">
-                  <i
-                    className="fa fa-external-link-square"
-                    aria-hidden="true"
-                  />{" "}
-                  Slider quick link
-                </Link>
-              </li>
+            
+          
+             
+            
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
                   <i className="fa fa-calendar" aria-hidden="true" /> Events
@@ -134,80 +81,44 @@ export class SidebarAdmin extends Component {
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-event-all">All Events</Link>
+                      <Link to="../AdminEventAll">All Events</Link>
                     </li>
                     <li>
-                      <Link to="../admin-event-add">Create New Events</Link>
+                      <Link to="../AdminEventAdd">Create New Events</Link>
                     </li>
                   </ul>
                 </div>
               </li>
+        
+           
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-bullhorn" aria-hidden="true" /> Seminar
-                </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../admin-seminar-all">All Seminar</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-seminar-add">Create New Seminar</Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-graduation-cap" aria-hidden="true" /> Job
-                  Vacants
-                </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../admin-job-all">All Jobs</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-job-add">Create New Job</Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-pencil" aria-hidden="true" /> Exam time
+                  <i className="fa fa-pencil" aria-hidden="true" /> Exam 
                   table
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-exam-all">All Exams</Link>
+                      <Link to="../AdminExamAll">All Exams</Link>
                     </li>
                     <li>
-                      <Link to="../admin-exam-add">Add New Exam</Link>
+                      <Link to="../AdminExamAdd">Add New Exam</Link>
                     </li>
-                    <li>
-                      <Link to="../admin-exam-group-all">All Groups</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-exam-group-add">
-                        Create New Groups
-                      </Link>
-                    </li>
+                   
                   </ul>
                 </div>
               </li>
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-users" aria-hidden="true" /> Students
+                  <i className="fa fa-users" aria-hidden="true" /> Scholar
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-user-all">All Students</Link>
+                      <Link to="../AdminUserAll">All Scholar</Link>
                     </li>
                     <li>
-                      <Link to="../admin-user-add">Add New Students</Link>
+                      <Link to="../AdminUserAdd">Add New Scholar</Link>
                     </li>
                   </ul>
                 </div>
@@ -220,44 +131,20 @@ export class SidebarAdmin extends Component {
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../admin-all-enquiry">All Enquiry</Link>
+                      <Link to="../AdminAllEnquiry">All Enquiry</Link>
                     </li>
                     <li>
-                      <Link to="../admin-course-enquiry">Course Enquiry</Link>
+                      <Link to="../AdminCourseEnquiry">Course Enquiry</Link>
                     </li>
+                 
                     <li>
-                      <Link to="../admin-admission-enquiry">
-                        Admission Enquiry
-                      </Link>
+                      <Link to="../AdminEventEnquiry">Event Enquiry</Link>
                     </li>
-                    <li>
-                      <Link to="../admin-seminar-enquiry">Seminar Enquiry</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-event-enquiry">Event Enquiry</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-common-enquiry">Common Enquiry</Link>
-                    </li>
+                   
                   </ul>
                 </div>
               </li>
-              <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-cloud-download" aria-hidden="true" />{" "}
-                  Import &amp; Export
-                </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../admin-export-data">Export all datas</Link>
-                    </li>
-                    <li>
-                      <Link to="../admin-import-data">Import all datas</Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+           
             </ul>
           </div>
         </div>
