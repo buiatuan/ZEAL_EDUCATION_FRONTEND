@@ -16,6 +16,7 @@ import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
 import { AdminAllMenu } from "./pages/AdminAllMenu";
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
+import { Admin } from "./pages/Admin";
 const AppRoutes = [
   {
     index: true,
@@ -28,6 +29,10 @@ const AppRoutes = [
      {
       path:'/Blog',
       element:<Blog/>
+     },
+     {
+      path:'/Admin',
+      element:<Admin/>
      },
      {
       path:'/AdminQuickLink',
