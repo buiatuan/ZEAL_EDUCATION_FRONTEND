@@ -1,16 +1,30 @@
 
-import { Home } from "./components/Home";
-import { About } from "./components/About";
-import { Blog } from "./components/blog";
-import { All_courses } from "./components/all-courses";
-import { Courese_details } from "./components/course-details";
-import { Admission  } from "./components/admission";
-import { Awards } from "./components/awards";
-import { Dashboard } from "./components/dashboard";
-import { Db_profile } from "./components/db-profile";
-import { Db_courses } from "./components/db-courses";
-import { Db_exams } from "./components/db-exams";
-import { Db_time_line } from "./components/db-time-line";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Blog } from "./pages/blog";
+//import { AdminQuickLink } from "./pages/AdminQuickLink";
+//import { AdminSeminarAdd } from "./pages/AdminSeminarAdd";
+//import { AdminSeminarAll } from "./pages/AdminSeminarAll";
+//import { AdminSeminarEdit } from "./pages/AdminSeminarEdit";
+//import { AdminSeminarEnquiry } from "./pages/AdminSeminarEnquiry";
+//import { AdminAllEnquiry } from "./pages/AdminAllEnquiry";
+//import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
+//import { AdminEventEnquiry } from "./pages/AdminEventEnquiry";
+//import { AdminAdmissionEnquiry } from "./pages/AdminAdmissionEnquiry";
+//import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
+//import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
+//import { AdminAllMenu } from "./pages/AdminAllMenu";
+//import { AdminAboutMenu } from "./pages/AdminAboutMenu";
+//import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
+import { AllCourses } from "./pages/all-courses";
+import { CourseDetail } from "./pages/course-details";
+import { Admission } from "./pages/admission";
+import { Awards } from "./pages/awards";
+import { Dashboard } from "./pages/dashboard";
+import { DbCourses } from "./pages/db-courses";
+import { DbExams } from "./pages/db-exams";
+import { DbProfile } from "./pages/db-profile";
+import { DbTimeTine } from "./pages/db-time-line";
 const AppRoutes = [
   {
     index: true,
@@ -24,45 +38,98 @@ const AppRoutes = [
       path:'/Blog',
       element:<Blog/>
      },
-   {
-path:'/All-courses',
-element:<All_courses/>
-
-   },
-   {
-    path:'/Courese-details',
-    element:<Courese_details/>
-   },
-   {
-    path:'/Admission',
-    element:<Admission/>
-   },
-   {
-    path:'/Awards',
-    element:<Awards/>
-   },
-   {
-    path:'/Db-profile',
-    element:<Db_profile/>
-   },
-   {
-    path:'/Dashboard',
-    element:<Dashboard/>
-   },
-   {
-    path:'/Db-courses',
-    element:< Db_courses/>
-
-   },
-   {
-    path:'/Db-exams',
-    element:<Db_exams/>
-   },
-   {
-    path:'/Db-time-line',
-    element:<Db_time_line/>
-   }
- 
+     //<{
+      //path:'/AdminQuickLink',
+      //element:<AdminQuickLink/>
+     //},
+     //{
+      //path:'/AdminSeminarAdd',
+      //element:<AdminSeminarAdd/>
+    // },
+    // {
+    //  path:'/AdminSeminarAll',
+      //element:<AdminSeminarAll/>
+     //},
+     //{
+      //path:'/AdminSeminarEdit',
+     // element:<AdminSeminarEdit/>
+     //},
+     //{
+      //path:'/AdminSeminarEnquiry',
+      //element:<AdminSeminarEnquiry/>
+     //},
+     //{
+      //path:'/AdminAllEnquiry',
+      //element:<AdminAllEnquiry/>
+     //},
+     //{
+      //path:'/AdminViewEnquiry',
+      //element:<AdminViewEnquiry/>
+     //},
+     //{
+      //path:'/AdminEventEnquiry',
+      //element:<AdminEventEnquiry/>
+     //},
+     //{
+      //path:'/AdminAdmissionEnquiry',
+      //element:<AdminAdmissionEnquiry/>
+     //},
+     //{
+      //path:'/AdminCommonEnquiry',
+      //element:<AdminCommonEnquiry/>
+     //},
+     //{
+      //path:'/AdminCourseEnquiry',
+      //element:<AdminCoursenEnquiry/>
+     //},
+     //{
+      //path:'/AdminAllMenu',
+      //element:<AdminAllMenu/>
+     //},
+     //{
+      //path:'/AdminAboutMenu',
+      //element:<AdminAboutMenu/>
+     //},
+     //{
+      //path:'/AdminAdmissionMenu',
+      //element:<AdminAdmissionMenu/>
+     //},
+     {
+      path:'/All-courses',
+      element:<AllCourses/>
+     },
+     {
+      path:'/Course-detail',
+      element:<CourseDetail/>
+     },
+     {
+path:'/Admission',
+element:<Admission/>
+     },
+     {
+path:'/Dashboard',
+element:<Dashboard/>
+     },
+     {
+path:'/Db-courses',
+element:<DbCourses/>
+     },
+     {
+      path:'/DbTime-line',
+      element:<DbTimeLine/>
+     },
+     {
+      path:'/Db-exams',
+      element:<DbExams/>
+     },
+     {
+      path:'/Db-profile',
+      element:<DbProfile/>
+     },
+     {
+      path:'/Awards',
+      element:<Awards/>
+     }
 ];
 
 export default AppRoutes;

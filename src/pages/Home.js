@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import { Link } from "react-router-dom";
 export class Home extends Component{
     render() {
 
@@ -10,60 +11,60 @@ export class Home extends Component{
               <div className="ed-mob-menu-con">
                 <div className="ed-mm-left">
                   <div className="wed-logo">
-                    <a href="index.html"><img src={require('./images/logo.png')} alt="" />
-                    </a>
+                    <Link to="../"><img src={require('../assets/images/logo.png')} alt="" />
+                    </Link>
                   </div>
                 </div>
                 <div className="ed-mm-right">
                   <div className="ed-mm-menu">
-                    <a href="#!" className="ed-micon"><i className="fa fa-bars" /></a>
+                    <Link to="../#!" className="ed-micon"><i className="fa fa-bars" /></Link>
                     <div className="ed-mm-inn">
-                      <a href="#!" className="ed-mi-close"><i className="fa fa-times" /></a>
+                      <Link to="../#!" className="ed-mi-close"><i className="fa fa-times" /></Link>
                       <h4>All Courses</h4>
                       <ul>
-                        <li><a href="course-details.html">Accounting/Finance</a></li>
-                        <li><a href="course-details.html">civil engineering</a></li>
-                        <li><a href="course-details.html">Art/Design</a></li>
-                        <li><a href="course-details.html">Marine Engineering</a></li>
-                        <li><a href="course-details.html">Business Management</a></li>
-                        <li><a href="course-details.html">Journalism/Writing</a></li>
-                        <li><a href="course-details.html">Physical Education</a></li>
-                        <li><a href="course-details.html">Political Science</a></li>
-                        <li><a href="course-details.html">Sciences</a></li>
-                        <li><a href="course-details.html">Statistics</a></li>
-                        <li><a href="course-details.html">Web Design/Development</a></li>
-                        <li><a href="course-details.html">SEO</a></li>
-                        <li><a href="course-details.html">Google Business</a></li>
-                        <li><a href="course-details.html">Graphics Design</a></li>
-                        <li><a href="course-details.html">Networking Courses</a></li>
-                        <li><a href="course-details.html">Information technology</a></li>
+                        <li><Link to="../course-details">Accounting/Finance</Link></li>
+                        <li><Link to="../course-details">civil engineering</Link></li>
+                        <li><Link to="../course-details">Art/Design</Link></li>
+                        <li><Link to="../course-details">Marine Engineering</Link></li>
+                        <li><Link to="../course-details">Business Management</Link></li>
+                        <li><Link to="../course-details">Journalism/Writing</Link></li>
+                        <li><Link to="../course-details">Physical Education</Link></li>
+                        <li><Link to="../course-details">Political Science</Link></li>
+                        <li><Link to="../course-details">Sciences</Link></li>
+                        <li><Link to="../course-details">Statistics</Link></li>
+                        <li><Link to="../course-details">Web Design/Development</Link></li>
+                        <li><Link to="../course-details">SEO</Link></li>
+                        <li><Link to="../course-details">Google Business</Link></li>
+                        <li><Link to="../course-details">Graphics Design</Link></li>
+                        <li><Link to="../course-details">Networking Courses</Link></li>
+                        <li><Link to="../course-details">Information technology</Link></li>
                       </ul>
                       <h4>User Account</h4>
                       <ul>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
+                        <li><Link to="../#!" data-toggle="modal" data-target="#modal1">Sign In</Link></li>
+                        <li><Link to="../#!" data-toggle="modal" data-target="#modal2">Register</Link></li>
                       </ul>
                       <h4>All Pages</h4>
                       <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="admission.html">Admission</a></li>
-                        <li><a href="all-courses.html">All courses</a></li>
-                        <li><a href="course-details.html">Course details</a></li>
-                        <li><a href="awards.html">Awards</a></li>
-                        <li><a href="seminar.html">Seminar</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="event-details.html">Event details</a></li>
-                        <li><a href="event-register.html">Event register</a></li>
-                        <li><a href="contact-us.html">Contact us</a></li>
+                        <li><Link to="../">Home</Link></li>
+                        <li><Link to="../about">About us</Link></li>
+                        <li><Link to="../admission">Admission</Link></li>
+                        <li><Link to="../all-courses">All courses</Link></li>
+                        <li><Link to="../course-details">Course details</Link></li>
+                        <li><Link to="../awards">Awards</Link></li>
+                        <li><Link to="../seminar">Seminar</Link></li>
+                        <li><Link to="../events">Events</Link></li>
+                        <li><Link to="../event-details">Event details</Link></li>
+                        <li><Link to="../event-register">Event register</Link></li>
+                        <li><Link to="../contact-us">Contact us</Link></li>
                       </ul>
                       <h4>User Profile</h4>
                       <ul>
-                        <li><a href="dashboard.html">User profile</a></li>
-                        <li><a href="db-courses.html">Courses</a></li>
-                        <li><a href="db-exams.html">Exams</a></li>
-                        <li><a href="db-profile.html">Prfile</a></li>
-                        <li><a href="db-time-line.html">Time line</a></li>
+                        <li><Link to="../dashboard">User profile</Link></li>
+                        <li><Link to="../db-courses">Courses</Link></li>
+                        <li><Link to="../db-exams">Exams</Link></li>
+                        <li><Link to="../db-profile">Prfile</Link></li>
+                        <li><Link to="../db-time-line">Time line</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -80,27 +81,27 @@ export class Home extends Component{
                   <div className="col-md-12">
                     <div className="ed-com-t1-left">
                       <ul>
-                        <li><a href="#">Contact: Lake Road, Suite 180 Farmington Hills, U.S.A.</a>
+                        <li><Link to="../#">Contact: Lake Road, Suite 180 Farmington Hills, U.S.A.</Link>
                         </li>
-                        <li><a href="#">Phone: +101-1231-1231</a>
+                        <li><Link to="../#">Phone: +101-1231-1231</Link>
                         </li>
                       </ul>
                     </div>
                     <div className="ed-com-t1-right">
                       <ul>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a>
+                        <li><Link to="../#!" data-toggle="modal" data-target="#modal1">Sign In</Link>
                         </li>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
+                        <li><Link to="../#!" data-toggle="modal" data-target="#modal2">Sign Up</Link>
                         </li>
                       </ul>
                     </div>
                     <div className="ed-com-t1-social">
                       <ul>
-                        <li><a href="#"><i className="fa fa-facebook" aria-hidden="true" /></a>
+                        <li><Link to="../#"><i className="fa fa-facebook" aria-hidden="true" /></Link>
                         </li>
-                        <li><a href="#"><i className="fa fa-google-plus" aria-hidden="true" /></a>
+                        <li><Link to="../#"><i className="fa fa-google-plus" aria-hidden="true" /></Link>
                         </li>
-                        <li><a href="#"><i className="fa fa-twitter" aria-hidden="true" /></a>
+                        <li><Link to="../#"><i className="fa fa-twitter" aria-hidden="true" /></Link>
                         </li>
                       </ul>
                     </div>
@@ -114,47 +115,47 @@ export class Home extends Component{
                 <div className="row">
                   <div className="col-md-12">
                     <div className="wed-logo">
-                      <a href="index.html"><img src={require('./images/logo.png')} alt="" />
-                      </a>
+                      <Link to="../"><img src={require('../assets/images/logo.png')} alt="" />
+                      </Link>
                     </div>
                     <div className="main-menu">
                       <ul>
-                        <li><a href="index.html">Home</a>
+                        <li><Link to="../">Home</Link>
                         </li>
                         <li className="about-menu">
-                          <a href="about.html" className="mm-arr">About us</a>
+                          <Link to="../about" className="mm-arr">About us</Link>
                           {/* MEGA MENU 1 */}
                           <div className="mm-pos">
                             <div className="about-mm m-menu">
                               <div className="m-menu-inn">
                                 <div className="mm1-com mm1-s1">
                                   <div className="ed-course-in">
-                                    <a className="course-overlay menu-about" href="admission.html">
-                                      <img src={require('./images/h-about.jpg')} srcset="./images/h_about.jpg" alt="" />
+                                    <Link className="course-overlay menu-about" href="admission">
+                                      <img src={require('../assets/images/h-about.jpg')} srcset="./images/h_about.jpg" alt="" />
                                       <span>Academics</span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                                 <div className="mm1-com mm1-s2">
                                   <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
-                                  <a href="about.html" className="mm-r-m-btn">Read more</a>
+                                  <Link to="../about" className="mm-r-m-btn">Read more</Link>
                                 </div>
                                 <div className="mm1-com mm1-s3">
                                   <ul>
-                                    <li><a href="all-courses.html">All Courses</a></li>
-                                    <li><a href="course-details.html">Course details</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="admission.html">Admission</a></li>
-                                    <li><a href="awards.html">Awards</a></li>
+                                    <li><Link to="../all-courses">All Courses</Link></li>
+                                    <li><Link to="../course-details">Course details</Link></li>
+                                    <li><Link to="../about">About</Link></li>
+                                    <li><Link to="../admission">Admission</Link></li>
+                                    <li><Link to="../awards">Awards</Link></li>
                                   </ul>
                                 </div>
                                 <div className="mm1-com mm1-s4">
                                   <ul>
-                                    <li><a href="dashboard.html">Student profile</a></li>
-                                    <li><a href="db-courses.html">Dashboard courses</a></li>
-                                    <li><a href="db-exams.html">Dashboard exams</a></li>
-                                    <li><a href="db-profile.html">Dashboard profile</a></li>
-                                    <li><a href="db-time-line.html">Dashboard timeline</a></li>
+                                    <li><Link to="../dashboard">Student profile</Link></li>
+                                    <li><Link to="../db-courses">Dashboard courses</Link></li>
+                                    <li><Link to="../db-exams">Dashboard exams</Link></li>
+                                    <li><Link to="../db-profile">Dashboard profile</Link></li>
+                                    <li><Link to="../db-time-line">Dashboard timeline</Link></li>
                                   </ul>
                                 </div>
                               </div>
@@ -162,59 +163,59 @@ export class Home extends Component{
                           </div>
                         </li>
                         <li className="admi-menu">
-                          <a href="#" className="mm-arr">Admission</a>
+                          <Link to="../#" className="mm-arr">Admission</Link>
                           {/* MEGA MENU 1 */}
                           <div className="mm-pos">
                             <div className="admi-mm m-menu">
                               <div className="m-menu-inn">
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
-                                    <a className="course-overlay" href="about.html">
-                                      <img src={require('./images/h-about1.jpg')} alt="" />
+                                    <Link className="course-overlay" href="about">
+                                      <img src={require('../assets/images/h-about1.jpg')} alt="" />
                                       <span>Academics</span>
-                                    </a>
+                                    </Link>
                                   </div>
                                   <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                  <a href="about.html" className="mm-r-m-btn">Read more</a>
+                                  <Link to="../about" className="mm-r-m-btn">Read more</Link>
                                 </div>
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
-                                    <a className="course-overlay" href="admission.html">
-                                      <img src={require('./images/h-adm1.jpg')} alt="" />
+                                    <Link className="course-overlay" href="admission">
+                                      <img src={require('../assets/images/h-adm1.jpg')} alt="" />
                                       <span>Admission</span>
-                                    </a>
+                                    </Link>
                                   </div>
                                   <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                  <a href="admission.html" className="mm-r-m-btn">Read more</a>
+                                  <Link to="../admission" className="mm-r-m-btn">Read more</Link>
                                 </div>
                                 <div className="mm2-com mm1-com mm1-s1">
                                   <div className="ed-course-in">
-                                    <a className="course-overlay" href="awards.html">
-                                      <img src={require('./images/h-cam1.jpg')} alt="" />
+                                    <Link className="course-overlay" href="awards">
+                                      <img src={require('../assets/images/h-cam1.jpg')} alt="" />
                                       <span>History &amp; awards</span>
-                                    </a>
+                                    </Link>
                                   </div>
                                   <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                  <a href="awards.html" className="mm-r-m-btn">Read more</a>
+                                  <Link to="../awards" className="mm-r-m-btn">Read more</Link>
                                 </div>
                                 <div className="mm2-com mm1-com mm1-s4">
                                   <div className="ed-course-in">
-                                    <a className="course-overlay" href="seminar.html">
-                                      <img src={require('./images/h-res1.jpg')} alt="" />
+                                    <Link className="course-overlay" href="seminar">
+                                      <img src={require('../assets/images/h-res1.jpg')} alt="" />
                                       <span>Seminar 2018</span>
-                                    </a>
+                                    </Link>
                                   </div>
                                   <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                  <a href="seminar.html" className="mm-r-m-btn">Read more</a>
+                                  <Link to="../seminar" className="mm-r-m-btn">Read more</Link>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </li>
-                        <li><a href="all-courses.html">All Courses</a></li>
-                        {/*<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>*/}
+                        <li><Link to="../all-courses">All Courses</Link></li>
+                        {/*<li><Link class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</Link></li>*/}
                         <li className="cour-menu">
-                          <a href="#!" className="mm-arr">All Pages</a>
+                          <Link to="../#!" className="mm-arr">All Pages</Link>
                           {/* MEGA MENU 1 */}
                           <div className="mm-pos">
                             <div className="cour-mm m-menu">
@@ -222,106 +223,106 @@ export class Home extends Component{
                                 <div className="mm1-com mm1-cour-com mm1-s3">
                                   <h4>Frontend pages:1</h4>
                                   <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="index-1.html">Home - 1</a></li>
-                                    <li><a href="all-courses.html">All Courses</a></li>
-                                    <li><a href="course-details.html">Course Details</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="admission.html">admission</a></li>
-                                    <li><a href="awards.html">awards</a></li>
-                                    <li><a href="blog.html">blog</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="contact-us.html">contact us</a></li>
-                                    <li><a href="departments.html">Departments</a></li>
-                                    <li><a href="events.html">events</a></li>
-                                    <li><a href="event-details.html">event details</a></li>
-                                    <li><a href="event-register.html">event register</a></li>
+                                    <li><Link to="../">Home</Link></li>
+                                    <li><Link to="../-1">Home - 1</Link></li>
+                                    <li><Link to="../all-courses">All Courses</Link></li>
+                                    <li><Link to="../course-details">Course Details</Link></li>
+                                    <li><Link to="../about">About us</Link></li>
+                                    <li><Link to="../admission">admission</Link></li>
+                                    <li><Link to="../awards">awards</Link></li>
+                                    <li><Link to="../blog">blog</Link></li>
+                                    <li><Link to="../blog-details">blog details</Link></li>
+                                    <li><Link to="../contact-us">contact us</Link></li>
+                                    <li><Link to="../departments">Departments</Link></li>
+                                    <li><Link to="../events">events</Link></li>
+                                    <li><Link to="../event-details">event details</Link></li>
+                                    <li><Link to="../event-register">event register</Link></li>
                                   </ul>
                                 </div>
                                 <div className="mm1-com mm1-cour-com mm1-s3">
                                   <h4>Frontend pages:2</h4>
                                   <ul>
-                                    <li><a href="facilities.html">facilities</a></li>
-                                    <li><a href="facilities-detail.html">facilities detail</a></li>
-                                    <li><a href="research.html">research</a></li>
-                                    <li><a href="seminar.html">seminar</a></li>
-                                    <li><a href="gallery-photo.html">gallery photo</a></li>
+                                    <li><Link to="../facilities">facilities</Link></li>
+                                    <li><Link to="../facilities-detail">facilities detail</Link></li>
+                                    <li><Link to="../research">research</Link></li>
+                                    <li><Link to="../seminar">seminar</Link></li>
+                                    <li><Link to="../gallery-photo">gallery photo</Link></li>
                                   </ul>
                                   <h4 className="ed-dr-men-mar-top">User Dashboard</h4>
                                   <ul>
-                                    <li><a href="dashboard.html">Student profile</a></li>
-                                    <li><a href="db-courses.html">Dashboard courses</a></li>
-                                    <li><a href="db-exams.html">Dashboard exams</a></li>
-                                    <li><a href="db-profile.html">Dashboard profile</a></li>
-                                    <li><a href="db-time-line.html">Dashboard timeline</a></li>
+                                    <li><Link to="../dashboard">Student profile</Link></li>
+                                    <li><Link to="../db-courses">Dashboard courses</Link></li>
+                                    <li><Link to="../db-exams">Dashboard exams</Link></li>
+                                    <li><Link to="../db-profile">Dashboard profile</Link></li>
+                                    <li><Link to="../db-time-line">Dashboard timeline</Link></li>
                                   </ul>
                                 </div>
                                 <div className="mm1-com mm1-cour-com mm1-s3">
                                   <h4>Admin panel:1</h4>
                                   <ul>
-                                    <li><a href="admin.html">admin</a></li>
-                                    <li><a href="admin-add-courses.html">Add new course</a></li>
-                                    <li><a href="admin-all-courses.html">All courses</a></li>
-                                    <li><a href="admin-student-details.html">Student details</a></li>
-                                    <li><a href="admin-user-add.html">Add new user</a></li>
-                                    <li><a href="admin-user-all.html">All users</a></li>
-                                    <li><a href="admin-panel-setting.html">Admin setting</a></li>
-                                    <li><a href="admin-event-add.html">event add</a></li>
-                                    <li><a href="admin-event-all.html">event all</a></li>
-                                    <li><a href="admin-setting.html">Admin Setting</a></li>
-                                    <li><a href="admin-slider.html">Slider setting</a></li>
-                                    <li><a href="admin-slider-edit.html">Slider edit</a></li>
-                                    <li><a href="admin-course-details.html">course details</a></li>
-                                    <li><a href="admin-login.html">admin login</a></li>
+                                    <li><Link to="../admin">admin</Link></li>
+                                    <li><Link to="../admin-add-courses">Add new course</Link></li>
+                                    <li><Link to="../admin-all-courses">All courses</Link></li>
+                                    <li><Link to="../admin-student-details">Student details</Link></li>
+                                    <li><Link to="../admin-user-add">Add new user</Link></li>
+                                    <li><Link to="../admin-user-all">All users</Link></li>
+                                    <li><Link to="../admin-panel-setting">Admin setting</Link></li>
+                                    <li><Link to="../admin-event-add">event add</Link></li>
+                                    <li><Link to="../admin-event-all">event all</Link></li>
+                                    <li><Link to="../admin-setting">Admin Setting</Link></li>
+                                    <li><Link to="../admin-slider">Slider setting</Link></li>
+                                    <li><Link to="../admin-slider-edit">Slider edit</Link></li>
+                                    <li><Link to="../admin-course-details">course details</Link></li>
+                                    <li><Link to="../admin-login">admin login</Link></li>
                                   </ul>
                                 </div>
                                 <div className="mm1-com mm1-cour-com mm1-s3">
                                   <h4>Admin panel:2</h4>
                                   <ul>
-                                    <li><a href="admin-event-edit.html">event edit</a></li>
-                                    <li><a href="admin-exam-add.html">exam add</a></li>
-                                    <li><a href="admin-exam-all.html">exam all</a></li>
-                                    <li><a href="admin-exam-edit.html">exam edit</a></li>
-                                    <li><a href="admin-export-data.html">export data</a></li>
-                                    <li><a href="admin-import-data.html">import data</a></li>
-                                    <li><a href="admin-job-add.html">Add new jobs</a></li>
-                                    <li><a href="admin-job-all.html">All jobs</a></li>
-                                    <li><a href="admin-job-edit.html">Edit job</a></li>
-                                    <li><a href="admin-main-menu.html">main menu</a></li>
-                                    <li><a href="admin-page-add.html">Add new page</a></li>
-                                    <li><a href="admin-page-all.html">All pages</a></li>
-                                    <li><a href="admin-page-edit.html">Edit page</a></li>
-                                    <li><a href="admin-forgot.html">forgot password</a></li>
+                                    <li><Link to="../admin-event-edit">event edit</Link></li>
+                                    <li><Link to="../admin-exam-add">exam add</Link></li>
+                                    <li><Link to="../admin-exam-all">exam all</Link></li>
+                                    <li><Link to="../admin-exam-edit">exam edit</Link></li>
+                                    <li><Link to="../admin-export-data">export data</Link></li>
+                                    <li><Link to="../admin-import-data">import data</Link></li>
+                                    <li><Link to="../admin-job-add">Add new jobs</Link></li>
+                                    <li><Link to="../admin-job-all">All jobs</Link></li>
+                                    <li><Link to="../admin-job-edit">Edit job</Link></li>
+                                    <li><Link to="../admin-main-menu">main menu</Link></li>
+                                    <li><Link to="../admin-page-add">Add new page</Link></li>
+                                    <li><Link to="../admin-page-all">All pages</Link></li>
+                                    <li><Link to="../admin-page-edit">Edit page</Link></li>
+                                    <li><Link to="../admin-forgot">forgot password</Link></li>
                                   </ul>
                                 </div>
                                 <div className="mm1-com mm1-cour-com mm1-s4">
                                   <h4>Admin panel:3</h4>
                                   <ul>
-                                    <li><a href="admin-quick-link.html">quick link</a></li>
-                                    <li><a href="admin-seminar-add.html">Add new seminar</a></li>
-                                    <li><a href="admin-seminar-all.html">All seminar</a></li>
-                                    <li><a href="admin-seminar-edit.html">Edit seminar</a></li>
-                                    <li><a href="admin-seminar-enquiry.html">Semester enquiry</a></li>
-                                    <li><a href="admin-all-enquiry.html">All enquiry</a></li>
-                                    <li><a href="admin-view-enquiry.html">All enquiry view</a></li>
-                                    <li><a href="admin-event-enquiry.html">event enquiry</a></li>
-                                    <li><a href="admin-admission-enquiry.html">Admission enquiry</a></li>
-                                    <li><a href="admin-common-enquiry.html">common enquiry</a></li>
-                                    <li><a href="admin-course-enquiry.html">course enquiry</a></li>
-                                    <li><a href="admin-all-menu.html">menu all</a></li>
-                                    <li><a href="admin-about-menu.html">Menu - About</a></li>
-                                    <li><a href="admin-admission-menu.html">Menu - admission</a></li>
+                                    <li><Link to="../admin-quick-link">quick link</Link></li>
+                                    <li><Link to="../admin-seminar-add">Add new seminar</Link></li>
+                                    <li><Link to="../admin-seminar-all">All seminar</Link></li>
+                                    <li><Link to="../admin-seminar-edit">Edit seminar</Link></li>
+                                    <li><Link to="../admin-seminar-enquiry">Semester enquiry</Link></li>
+                                    <li><Link to="../admin-all-enquiry">All enquiry</Link></li>
+                                    <li><Link to="../admin-view-enquiry">All enquiry view</Link></li>
+                                    <li><Link to="../admin-event-enquiry">event enquiry</Link></li>
+                                    <li><Link to="../admin-admission-enquiry">Admission enquiry</Link></li>
+                                    <li><Link to="../admin-common-enquiry">common enquiry</Link></li>
+                                    <li><Link to="../admin-course-enquiry">course enquiry</Link></li>
+                                    <li><Link to="../admin-all-menu">menu all</Link></li>
+                                    <li><Link to="../admin-about-menu">Menu - About</Link></li>
+                                    <li><Link to="../admin-admission-menu">Menu - admission</Link></li>
                                   </ul>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </li>
-                        <li><a href="events.html">Events</a>
+                        <li><Link to="../events">Events</Link>
                         </li>
-                        <li><a href="dashboard.html">Student</a>
+                        <li><Link to="../dashboard">Student</Link>
                         </li>
-                        <li><a href="contact-us.html">Contact us</a>
+                        <li><Link to="../contact-us">Contact us</Link>
                         </li>
                       </ul>
                     </div>
@@ -343,22 +344,22 @@ export class Home extends Component{
                           </div>
                           <div className="sf-list">
                             <ul>
-                              <li><a href="course-details.html">Accounting/Finance</a></li>
-                              <li><a href="course-details.html">civil engineering</a></li>
-                              <li><a href="course-details.html">Art/Design</a></li>
-                              <li><a href="course-details.html">Marine Engineering</a></li>
-                              <li><a href="course-details.html">Business Management</a></li>
-                              <li><a href="course-details.html">Journalism/Writing</a></li>
-                              <li><a href="course-details.html">Physical Education</a></li>
-                              <li><a href="course-details.html">Political Science</a></li>
-                              <li><a href="course-details.html">Sciences</a></li>
-                              <li><a href="course-details.html">Statistics</a></li>
-                              <li><a href="course-details.html">Web Design/Development</a></li>
-                              <li><a href="course-details.html">SEO</a></li>
-                              <li><a href="course-details.html">Google Business</a></li>
-                              <li><a href="course-details.html">Graphics Design</a></li>
-                              <li><a href="course-details.html">Networking Courses</a></li>
-                              <li><a href="course-details.html">Information technology</a></li>
+                              <li><Link to="../course-details">Accounting/Finance</Link></li>
+                              <li><Link to="../course-details">civil engineering</Link></li>
+                              <li><Link to="../course-details">Art/Design</Link></li>
+                              <li><Link to="../course-details">Marine Engineering</Link></li>
+                              <li><Link to="../course-details">Business Management</Link></li>
+                              <li><Link to="../course-details">Journalism/Writing</Link></li>
+                              <li><Link to="../course-details">Physical Education</Link></li>
+                              <li><Link to="../course-details">Political Science</Link></li>
+                              <li><Link to="../course-details">Sciences</Link></li>
+                              <li><Link to="../course-details">Statistics</Link></li>
+                              <li><Link to="../course-details">Web Design/Development</Link></li>
+                              <li><Link to="../course-details">SEO</Link></li>
+                              <li><Link to="../course-details">Google Business</Link></li>
+                              <li><Link to="../course-details">Graphics Design</Link></li>
+                              <li><Link to="../course-details">Networking Courses</Link></li>
+                              <li><Link to="../course-details">Information technology</Link></li>
                             </ul>
                           </div>
                         </div>
@@ -379,37 +380,37 @@ export class Home extends Component{
               {/* Wrapper for slides */}
               <div className="carousel-inner">
                 <div className="item slider1 active">
-                  <img src={require('./images/slider/1.jpg')} alt="" />
+                  <img src={require('../assets/images/slider/1.jpg')} alt="" />
                   <div className="carousel-caption slider-con">
                     <h2>Welcome to <span>University</span></h2>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                    <a href="#" className="bann-btn-1">All Courses</a><a href="#" className="bann-btn-2">Read More</a>
+                    <Link to="../#" className="bann-btn-1">All Courses</Link><Link to="../#" className="bann-btn-2">Read More</Link>
                   </div>
                 </div>
                 <div className="item">
-                  <img src={require('./images/slider/2.jpg')} alt="" />
+                  <img src={require('../assets/images/slider/2.jpg')} alt="" />
                   <div className="carousel-caption slider-con">
                     <h2>Admission open <span>2018</span></h2>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                    <a href="#" className="bann-btn-1">Admission</a><a href="#" className="bann-btn-2">Read More</a>
+                    <Link to="../#" className="bann-btn-1">Admission</Link><Link to="../#" className="bann-btn-2">Read More</Link>
                   </div>
                 </div>
                 <div className="item">
-                  <img src={require('./images/slider/3.jpg')} alt="" />
+                  <img src={require('../assets/images/slider/3.jpg')} alt="" />
                   <div className="carousel-caption slider-con">
                     <h2>Education <span>Master</span></h2>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                    <a href="#" className="bann-btn-1">All Courses</a><a href="#" className="bann-btn-2">Read More</a>
+                    <Link to="../#" className="bann-btn-1">All Courses</Link><Link to="../#" className="bann-btn-2">Read More</Link>
                   </div>
                 </div>
               </div>
               {/* Left and right controls */}
-              <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+              <Link className="left carousel-control" href="#myCarousel" data-slide="prev">
                 <i className="fa fa-chevron-left slider-arr" />
-              </a>
-              <a className="right carousel-control" href="#myCarousel" data-slide="next">
+              </Link>
+              <Link className="right carousel-control" href="#myCarousel" data-slide="next">
                 <i className="fa fa-chevron-right slider-arr" />
-              </a>
+              </Link>
             </div>
           </section>
           {/* QUICK LINKS */}
@@ -419,16 +420,16 @@ export class Home extends Component{
                 <div className="wed-hom-ser">
                   <ul>
                     <li>
-                      <a href="awards.html" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('./images/icon/h-ic1.png')} alt="" /> Academy</a>
+                      <Link to="../awards" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('../assets/images/icon/h-ic1.png')} alt="" /> Academy</Link>
                     </li>
                     <li>
-                      <a href="admission.html" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('./images/icon/h-ic2.png')} alt="" /> Admission</a>
+                      <Link to="../admission" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('../assets/images/icon/h-ic2.png')} alt="" /> Admission</Link>
                     </li>
                     <li>
-                      <a href="all-courses.html" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('./images/icon/h-ic4.png')} alt="" /> Courses</a>
+                      <Link to="../all-courses" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('../assets/images/icon/h-ic4.png')} alt="" /> Courses</Link>
                     </li>
                     <li>
-                      <a href="seminar.html" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('./images/icon/h-ic3.png')} alt="" /> Seminar</a>
+                      <Link to="../seminar" className="waves-effect waves-light btn-large wed-pop-ser-btn"><img src={require('../assets/images/icon/h-ic3.png')} alt="" /> Seminar</Link>
                     </li>
                   </ul>
                 </div>
@@ -448,66 +449,66 @@ export class Home extends Component{
                 <div className="ed-course">
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="about.html">
-                        <img src={require('./images/h-about.jpg')} alt="" />
+                      <Link className="course-overlay" href="about">
+                        <img src={require('../assets/images/h-about.jpg')} alt="" />
                         <span>Academics</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="admission.html">
-                        <img src={require('./images/h-adm1.jpg')} alt="" />
+                      <Link className="course-overlay" href="admission">
+                        <img src={require('../assets/images/h-adm1.jpg')} alt="" />
                         <span>Admission</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="dashboard.html">
-                        <img src={require('./images/h-cam.jpg')} alt="" />
+                      <Link className="course-overlay" href="dashboard">
+                        <img src={require('../assets/images/h-cam.jpg')} alt="" />
                         <span>Students profile</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="research.html">
-                        <img src={require('./images/h-res.jpg')} alt="" />
+                      <Link className="course-overlay" href="research">
+                        <img src={require('../assets/images/h-res.jpg')} alt="" />
                         <span>Research &amp; Education</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="all-courses.html">
-                        <img src={require('./images/h-about1.jpg')} alt="" />
+                      <Link className="course-overlay" href="all-courses">
+                        <img src={require('../assets/images/h-about1.jpg')} alt="" />
                         <span>Couse</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="db-time-line.html">
-                        <img src={require('./images/h-adm.jpg')} alt="" />
+                      <Link className="course-overlay" href="db-time-line">
+                        <img src={require('../assets/images/h-adm.jpg')} alt="" />
                         <span>Exam Time Line</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="seminar.html">
-                        <img src={require('./images/h-cam1.jpg')} alt="" />
+                      <Link className="course-overlay" href="seminar">
+                        <img src={require('../assets/images/h-cam1.jpg')} alt="" />
                         <span>Seminar 2018</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-3 col-sm-4 col-xs-12">
                     <div className="ed-course-in">
-                      <a className="course-overlay" href="events.html">
-                        <img src={require('./images/h-res1.jpg')} alt="" />
+                      <Link className="course-overlay" href="events">
+                        <img src={require('../assets/images/h-res1.jpg')} alt="" />
                         <span>Research &amp; Education</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -529,19 +530,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-1.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-1.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Aerospace Engineering</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Space / Aerospace</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 570</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -549,19 +550,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-2.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-2.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Agriculture Courses</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Space / Aerospace</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 320</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 320</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -569,19 +570,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-3.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-3.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Marine Engineering</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Ocean / Marine</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -589,19 +590,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-4.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-4.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Building, Construction Management</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Construction / Building</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 124</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 124</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -613,19 +614,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-5.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-5.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Fashion Technology</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Trends / Fashion</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 570</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -633,19 +634,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-6.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-6.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Agriculture Courses</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Space / Aerospace</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 320</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 320</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -653,19 +654,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-7.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-7.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Marine Engineering</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Ocean / Marine</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -673,19 +674,19 @@ export class Home extends Component{
                     {/*POPULAR COURSES*/}
                     <div className="home-top-cour">
                       {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('./images/course/sm-8.jpg')} alt="" /> </div>
+                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-8.jpg')} alt="" /> </div>
                       {/*POPULAR COURSES: CONTENT*/}
                       <div className="col-md-9 home-top-cour-desc">
-                        <a href="course-details.html">
+                        <Link to="../course-details">
                           <h3>Building, Construction Management</h3>
-                        </a>
+                        </Link>
                         <h4>Technology / Construction / Building</h4>
                         <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
                         <div className="hom-list-share">
                           <ul>
-                            <li><a href="course-details.html"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</a> </li>
-                            <li><a href="course-details.html"><i className="fa fa-share-alt" aria-hidden="true" /> 124</a> </li>
+                            <li><Link to="../course-details"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</Link> </li>
+                            <li><Link to="../course-details"><i className="fa fa-share-alt" aria-hidden="true" /> 124</Link> </li>
                           </ul>
                         </div>
                       </div>
@@ -715,9 +716,9 @@ export class Home extends Component{
                         <div className="ho-ev-date"><span>07</span><span>jan,2018</span>
                         </div>
                         <div className="ho-ev-link">
-                          <a href="events.html">
+                          <Link to="../events">
                             <h4>Latinoo College Expo 2018</h4>
-                          </a>
+                          </Link>
                           <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                           <span>9:15 am – 5:00 pm</span>
                         </div>
@@ -726,9 +727,9 @@ export class Home extends Component{
                         <div className="ho-ev-date"><span>12</span><span>jan,2018</span>
                         </div>
                         <div className="ho-ev-link">
-                          <a href="events.html">
+                          <Link to="../events">
                             <h4>Training at Team Fabio Clemente</h4>
-                          </a>
+                          </Link>
                           <p>Nulla at velit convallis venenatis.</p>
                           <span>9:15 am – 5:00 pm</span>
                         </div>
@@ -737,9 +738,9 @@ export class Home extends Component{
                         <div className="ho-ev-date"><span>26</span><span>jan,2018</span>
                         </div>
                         <div className="ho-ev-link">
-                          <a href="events.html">
+                          <Link to="../events">
                             <h4>Nulla at velit convallis</h4>
-                          </a>
+                          </Link>
                           <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                           <span>9:15 am – 5:00 pm</span>
                         </div>
@@ -748,9 +749,9 @@ export class Home extends Component{
                         <div className="ho-ev-date"><span>18</span><span>jan,2018</span>
                         </div>
                         <div className="ho-ev-link">
-                          <a href="events.html">
+                          <Link to="../events">
                             <h4>Admissions Information Session and Tour</h4>
-                          </a>
+                          </Link>
                           <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                           <span>9:15 am – 5:00 pm</span>
                         </div>
@@ -771,44 +772,44 @@ export class Home extends Component{
                   <div className="ho-event ho-event-mob-bot-sp">
                     <ul>
                       <li>
-                        <div className="ho-ev-img"><img src={require('./images/event/1.jpg')} alt="" />
+                        <div className="ho-ev-img"><img src={require('../assets/images/event/1.jpg')} alt="" />
                         </div>
                         <div className="ho-ev-link">
-                          <a href="#">
+                          <Link to="../#">
                             <h4>Almost before we knew it, we had left the ground</h4>
-                          </a>
+                          </Link>
                           <p>Etiam ornare lacus nec lectus vestibulum aliquam.</p>
                           <span>Location: New York</span>
                         </div>
                       </li>
                       <li>
-                        <div className="ho-ev-img"><img src={require('./images/event/2.jpg')} alt="" />
+                        <div className="ho-ev-img"><img src={require('../assets/images/event/2.jpg')} alt="" />
                         </div>
                         <div className="ho-ev-link">
-                          <a href="#">
+                          <Link to="../#">
                             <h4>Then came the night of the first falling star.</h4>
-                          </a>
+                          </Link>
                           <p>Vestibulum sollicitudin sem arcu</p>
                           <span>Location: Los Angeles</span>
                         </div>
                       </li>
                       <li>
-                        <div className="ho-ev-img"><img src={require('./images/event/3.jpg')} alt="" />
+                        <div className="ho-ev-img"><img src={require('../assets/images/event/3.jpg')} alt="" />
                         </div>
                         <div className="ho-ev-link">
-                          <a href="#">
+                          <Link to="../#">
                             <h4>Educate to Empower NYE Party</h4>
-                          </a>
+                          </Link>
                           <p>Vestibulum sollicitudin sem arcu, eget ullamcorper purus hendrerit</p>
                           <span>Location: Chennai</span>
                         </div>
                       </li>
                       <li>
-                        <div className="ho-ev-img"><img src={require('./images/event/4.jpg')} alt="" /></div>
+                        <div className="ho-ev-img"><img src={require('../assets/images/event/4.jpg')} alt="" /></div>
                         <div className="ho-ev-link">
-                          <a href="#">
+                          <Link to="../#">
                             <h4>Then came the night of the first falling star.</h4>
-                          </a>
+                          </Link>
                           <p>Venenatis lacus lectus.</p>
                           <span>Location: Chicago</span>
                         </div>
@@ -828,9 +829,9 @@ export class Home extends Component{
                   </div>
                   <div className="ho-st-login">
                     <ul className="tabs tabs-hom-reg">
-                      <li className="tab col s6"><a href="#hom-vijay">Register</a>
+                      <li className="tab col s6"><Link to="../#hom-vijay">Register</Link>
                       </li>
-                      <li className="tab col s6"><a href="#hom_log">Login</a>
+                      <li className="tab col s6"><Link to="../#hom_log">Login</Link>
                       </li>
                     </ul>
                     <div id="hom-vijay" className="col s12">
@@ -906,29 +907,29 @@ export class Home extends Component{
                   <div className="bot-gal h-gal ho-event-mob-bot-sp">
                     <h4>Photo Gallery</h4>
                     <ul>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/8.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/8.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/9.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/9.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/10.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/10.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/11.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/11.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/1.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/1.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/2.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/2.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/3.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/3.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/4.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/4.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/5.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/5.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/6.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/6.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/7.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/7.jpg')} alt="" />
                       </li>
-                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('./images/ami/8.jpg')} alt="" />
+                      <li><img className="materialboxed" data-caption="Education master image captions" src={require('../assets/images/ami/8.jpg')} alt="" />
                       </li>
                     </ul>
                   </div>
@@ -951,9 +952,9 @@ export class Home extends Component{
                           <div className="ho-ev-date"><span>07</span><span>jan,2018</span>
                           </div>
                           <div className="ho-ev-link">
-                            <a href="events.html">
+                            <Link to="../events">
                               <h4>Latinoo College Expo 2018</h4>
-                            </a>
+                            </Link>
                             <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                             <span>9:15 am – 5:00 pm</span>
                           </div>
@@ -962,9 +963,9 @@ export class Home extends Component{
                           <div className="ho-ev-date"><span>12</span><span>jan,2018</span>
                           </div>
                           <div className="ho-ev-link">
-                            <a href="events.html">
+                            <Link to="../events">
                               <h4>Training at Team Fabio Clemente</h4>
-                            </a>
+                            </Link>
                             <p>Nulla at velit convallis venenatis.</p>
                             <span>9:15 am – 5:00 pm</span>
                           </div>
@@ -973,9 +974,9 @@ export class Home extends Component{
                           <div className="ho-ev-date"><span>26</span><span>jan,2018</span>
                           </div>
                           <div className="ho-ev-link">
-                            <a href="events.html">
+                            <Link to="../events">
                               <h4>Nulla at velit convallis</h4>
-                            </a>
+                            </Link>
                             <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                             <span>9:15 am – 5:00 pm</span>
                           </div>
@@ -984,9 +985,9 @@ export class Home extends Component{
                           <div className="ho-ev-date"><span>18</span><span>jan,2018</span>
                           </div>
                           <div className="ho-ev-link">
-                            <a href="events.html">
+                            <Link to="../events">
                               <h4>Admissions Information Session and Tour</h4>
-                            </a>
+                            </Link>
                             <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
                             <span>9:15 am – 5:00 pm</span>
                           </div>
@@ -1005,14 +1006,14 @@ export class Home extends Component{
                 <div className="row">
                   <div className="bot-book">
                     <div className="col-md-2 bb-img">
-                      <img src={require('./images/3.png')} alt="" />
+                      <img src={require('../assets/images/3.png')} alt="" />
                     </div>
                     <div className="col-md-7 bb-text">
                       <h4>therefore always free from repetition</h4>
                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
                     </div>
                     <div className="col-md-3 bb-link">
-                      <a href="course-details.html">Book This Course</a>
+                      <Link to="../course-details">Book This Course</Link>
                     </div>
                   </div>
                 </div>
@@ -1035,41 +1036,41 @@ export class Home extends Component{
                 <div className="col-md-4 foot-tc-mar-t-o">
                   <h4>Top Courses</h4>
                   <ul>
-                    <li><a href="course-details.html">Accounting/Finance</a></li>
-                    <li><a href="course-details.html">civil engineering</a></li>
-                    <li><a href="course-details.html">Art/Design</a></li>
-                    <li><a href="course-details.html">Marine Engineering</a></li>
-                    <li><a href="course-details.html">Business Management</a></li>
-                    <li><a href="course-details.html">Journalism/Writing</a></li>
-                    <li><a href="course-details.html">Physical Education</a></li>
-                    <li><a href="course-details.html">Political Science</a></li>
+                    <li><Link to="../course-details">Accounting/Finance</Link></li>
+                    <li><Link to="../course-details">civil engineering</Link></li>
+                    <li><Link to="../course-details">Art/Design</Link></li>
+                    <li><Link to="../course-details">Marine Engineering</Link></li>
+                    <li><Link to="../course-details">Business Management</Link></li>
+                    <li><Link to="../course-details">Journalism/Writing</Link></li>
+                    <li><Link to="../course-details">Physical Education</Link></li>
+                    <li><Link to="../course-details">Political Science</Link></li>
                   </ul>
                 </div>
                 <div className="col-md-4">
                   <h4>New Courses</h4>
                   <ul>
-                    <li><a href="course-details.html">Sciences</a></li>
-                    <li><a href="course-details.html">Statistics</a></li>
-                    <li><a href="course-details.html">Web Design/Development</a></li>
-                    <li><a href="course-details.html">SEO</a></li>
-                    <li><a href="course-details.html">Google Business</a></li>
-                    <li><a href="course-details.html">Graphics Design</a></li>
-                    <li><a href="course-details.html">Networking Courses</a></li>
-                    <li><a href="course-details.html">Information technology</a></li>
+                    <li><Link to="../course-details">Sciences</Link></li>
+                    <li><Link to="../course-details">Statistics</Link></li>
+                    <li><Link to="../course-details">Web Design/Development</Link></li>
+                    <li><Link to="../course-details">SEO</Link></li>
+                    <li><Link to="../course-details">Google Business</Link></li>
+                    <li><Link to="../course-details">Graphics Design</Link></li>
+                    <li><Link to="../course-details">Networking Courses</Link></li>
+                    <li><Link to="../course-details">Information technology</Link></li>
                   </ul>
                 </div>
                 <div className="col-md-4">
                   <h4>HELP &amp; SUPPORT</h4>
                   <ul>
-                    <li><a href="#">24x7 Live help</a>
+                    <li><Link to="../#">24x7 Live help</Link>
                     </li>
-                    <li><a href="#">Contact us</a>
+                    <li><Link to="../#">Contact us</Link>
                     </li>
-                    <li><a href="#">Feedback</a>
+                    <li><Link to="../#">Feedback</Link>
                     </li>
-                    <li><a href="#">FAQs</a>
+                    <li><Link to="../#">FAQs</Link>
                     </li>
-                    <li><a href="#">Safety Tips</a>
+                    <li><Link to="../#">Safety Tips</Link>
                     </li>
                   </ul>
                 </div>
@@ -1078,30 +1079,30 @@ export class Home extends Component{
                 <div className="col-md-4 foot-tc-mar-t-o">
                   <h4>Get In Touch</h4>
                   <p>Address: 28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</p>
-                  <p>Phone: <a href="#!">+101-1231-4321</a></p>
-                  <p>Email: <a href="#!">info@educationmaster.com</a></p>
+                  <p>Phone: <Link to="../#!">+101-1231-4321</Link></p>
+                  <p>Email: <Link to="../#!">info@educationmaster.com</Link></p>
                 </div>
                 <div className="col-md-4">
                   <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
                   <ul>
-                    <li><a href="#"><span className="sprite sprite-android" /></a>
+                    <li><Link to="../#"><span className="sprite sprite-android" /></Link>
                     </li>
-                    <li><a href="#"><span className="sprite sprite-ios" /></a>
+                    <li><Link to="../#"><span className="sprite sprite-ios" /></Link>
                     </li>
                   </ul>
                 </div>
                 <div className="col-md-4">
                   <h4>SOCIAL MEDIA</h4>
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true" /></a>
+                    <li><Link to="../#"><i className="fa fa-facebook" aria-hidden="true" /></Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true" /></a>
+                    <li><Link to="../#"><i className="fa fa-twitter" aria-hidden="true" /></Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-google-plus" aria-hidden="true" /></a>
+                    <li><Link to="../#"><i className="fa fa-google-plus" aria-hidden="true" /></Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-youtube" aria-hidden="true" /></a>
+                    <li><Link to="../#"><i className="fa fa-youtube" aria-hidden="true" /></Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-whatsapp" aria-hidden="true" /></a>
+                    <li><Link to="../#"><i className="fa fa-whatsapp" aria-hidden="true" /></Link>
                     </li>
                   </ul>
                 </div>
@@ -1128,17 +1129,17 @@ export class Home extends Component{
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <h4>Login with social media</h4>
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook" /> Facebook</a>
+                    <li><Link to="../#"><i className="fa fa-facebook" /> Facebook</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-google" /> Google+</a>
+                    <li><Link to="../#"><i className="fa fa-google" /> Google+</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-twitter" /> Twitter</a>
+                    <li><Link to="../#"><i className="fa fa-twitter" /> Twitter</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <a href="#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
-                  </a>
+                  <Link to="../#" className="pop-close" data-dismiss="modal"><img src={require('../assets/images/cancel.png')} alt="" />
+                  </Link>
                   <h4>Login</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <form className="s12">
@@ -1167,7 +1168,7 @@ export class Home extends Component{
                         <input type="submit" defaultValue="Login" className="waves-effect waves-light log-in-btn" /> </div>
                     </div>
                     <div>
-                      <div className="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                      <div className="input-field s12"> <Link to="../#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</Link> | <Link to="../#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</Link> </div>
                     </div>
                   </form>
                 </div>
@@ -1181,17 +1182,17 @@ export class Home extends Component{
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <h4>Login with social media</h4>
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook" /> Facebook</a>
+                    <li><Link to="../#"><i className="fa fa-facebook" /> Facebook</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-google" /> Google+</a>
+                    <li><Link to="../#"><i className="fa fa-google" /> Google+</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-twitter" /> Twitter</a>
+                    <li><Link to="../#"><i className="fa fa-twitter" /> Twitter</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <a href="#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
-                  </a>
+                  <Link to="../#" className="pop-close" data-dismiss="modal"><img src={require('../assets/images/cancel.png')} alt="" />
+                  </Link>
                   <h4>Create an Account</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <form className="s12">
@@ -1224,7 +1225,7 @@ export class Home extends Component{
                         <input type="submit" defaultValue="Register" className="waves-effect waves-light log-in-btn" /> </div>
                     </div>
                     <div>
-                      <div className="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div>
+                      <div className="input-field s12"> <Link to="../#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</Link> </div>
                     </div>
                   </form>
                 </div>
@@ -1238,17 +1239,17 @@ export class Home extends Component{
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <h4>Login with social media</h4>
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook" /> Facebook</a>
+                    <li><Link to="../#"><i className="fa fa-facebook" /> Facebook</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-google" /> Google+</a>
+                    <li><Link to="../#"><i className="fa fa-google" /> Google+</Link>
                     </li>
-                    <li><a href="#"><i className="fa fa-twitter" /> Twitter</a>
+                    <li><Link to="../#"><i className="fa fa-twitter" /> Twitter</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="log-in-pop-right">
-                  <a href="#" className="pop-close" data-dismiss="modal"><img src={require('./images/cancel.png')} alt="" />
-                  </a>
+                  <Link to="../#" className="pop-close" data-dismiss="modal"><img src={require('../assets/images/cancel.png')} alt="" />
+                  </Link>
                   <h4>Forgot password</h4>
                   <p>Don't have an account? Create your account. It's take less then a minutes</p>
                   <form className="s12">
@@ -1263,7 +1264,7 @@ export class Home extends Component{
                         <input type="submit" defaultValue="Submit" className="waves-effect waves-light log-in-btn" /> </div>
                     </div>
                     <div>
-                      <div className="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                      <div className="input-field s12"> <Link to="../#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</Link> | <Link to="../#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</Link> </div>
                     </div>
                   </form>
                 </div>
@@ -1274,13 +1275,13 @@ export class Home extends Component{
           <section>
             <div className="icon-float">
               <ul>
-                <li><a href="#" className="sh">1k <br /> Share</a> </li>
-                <li><a href="#" className="fb1"><i className="fa fa-facebook" aria-hidden="true" /></a> </li>
-                <li><a href="#" className="gp1"><i className="fa fa-google-plus" aria-hidden="true" /></a> </li>
-                <li><a href="#" className="tw1"><i className="fa fa-twitter" aria-hidden="true" /></a> </li>
-                <li><a href="#" className="li1"><i className="fa fa-linkedin" aria-hidden="true" /></a> </li>
-                <li><a href="#" className="wa1"><i className="fa fa-whatsapp" aria-hidden="true" /></a> </li>
-                <li><a href="#" className="sh1"><i className="fa fa-envelope-o" aria-hidden="true" /></a> </li>
+                <li><Link to="../#" className="sh">1k <br /> Share</Link> </li>
+                <li><Link to="../#" className="fb1"><i className="fa fa-facebook" aria-hidden="true" /></Link> </li>
+                <li><Link to="../#" className="gp1"><i className="fa fa-google-plus" aria-hidden="true" /></Link> </li>
+                <li><Link to="../#" className="tw1"><i className="fa fa-twitter" aria-hidden="true" /></Link> </li>
+                <li><Link to="../#" className="li1"><i className="fa fa-linkedin" aria-hidden="true" /></Link> </li>
+                <li><Link to="../#" className="wa1"><i className="fa fa-whatsapp" aria-hidden="true" /></Link> </li>
+                <li><Link to="../#" className="sh1"><i className="fa fa-envelope-o" aria-hidden="true" /></Link> </li>
               </ul>
             </div>
           </section>
