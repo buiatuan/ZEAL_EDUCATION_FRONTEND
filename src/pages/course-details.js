@@ -2,7 +2,7 @@ import React ,{Component} from "react";
 import { Link } from "react-router-dom";
 import { HeaderClient } from "../layout/HeaderClient";
 import { FooterClient } from "../layout/FooterClient";
-export class Course_detail extends Component{
+export class CourseDetail extends Component{
     render() {
       return (
         <div>

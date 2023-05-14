@@ -2,7 +2,7 @@ import React ,{Component} from "react";
 import { Link } from 'react-router-dom';
 import { HeaderClient } from "../layout/HeaderClient";
 import { FooterClient } from "../layout/FooterClient";
-export class Db_time_line extends Component{
+export class DbTimeLine extends Component{
     render() {
       return (
         <div>
