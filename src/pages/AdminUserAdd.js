@@ -39,47 +39,47 @@ export class AdminUserAdd extends Component{
                           <form>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" required />
+                                <input type="text" defaultValue className="validate"  required value="" />
                                 <label className>First name</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" required />
+                                <input type="text" defaultValue className="validate"  required value="" />
                                 <label className>Last name</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="number" defaultValue className="validate" required />
+                                <input type="number" defaultValue className="validate"  required value="" />
                                 <label className>Phone number</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="email" className="validate" defaultValue required />
+                                <input type="email" className="validate" defaultValue  required value="" />
                                 <label className>Email is</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" />
+                                <input type="text" defaultValue className="validate" value=""  />
                                 <label className>City</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" />
+                                <input type="text" defaultValue className="validate" value=""  />
                                 <label className>Country</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="password" defaultValue className="validate" />
+                                <input type="password" defaultValue className="validate" value="" />
                                 <label className>Password</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="password" defaultValue className="validate" />
+                                <input type="password" defaultValue className="validate" value="" />
                                 <label className>Confirm Password</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s12">
-                                <input type="text" defaultValue className="validate" />
+                                <input type="text" defaultValue className="validate" value=""  />
                                 <label>Student id</label>
                               </div>
                             </div>

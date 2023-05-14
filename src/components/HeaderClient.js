@@ -166,57 +166,56 @@ export class HeaderClient extends Component{
                                                 </div>
                                             </div>
                                         </li>
-                               
-                                        {/*
-                                        <li><Link class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</Link></li>*/}
-                                       
                                         <li>
                                             <Link to="../events">Events</Link>
                                         </li>
                                         
-                                        <li className="about-menu">
-                                            <Link to="../about" className="mm-arr">About us</Link>
+                               
+                                        {/*
+                                        <li><Link class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</Link></li>*/}
+                                        <li className="admi-menu">
+                                            <Link to="../#" className="mm-arr">Contact & Admission</Link>
                                             {/* MEGA MENU 1 */}
-                                            {/* <div className="mm-pos">
-                                                <div className="about-mm m-menu">
+                                            <div className="mm-pos">
+                                                <div className="admi-mm m-menu">
                                                     <div className="m-menu-inn">
-                                                        <div className="mm1-com mm1-s1">
+                                                        <div className="mm2-com mm1-com mm1-s1">
                                                             <div className="ed-course-in">
-                                                                <Link className="course-overlay menu-about" to="../admission">
-                                                                    <img src={require("../assets/images/h-about.jpg")} alt="" />
-                                                                    <span>Academics</span>
+                                                                <Link className="course-overlay" to="../awards">
+                                                                    <img src={require("../assets/images/h-about1.jpg")} alt="" />
+                                                                    <span>History and Award</span>
                                                                 </Link>
                                                             </div>
+                                                            <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                            <Link to="../awards" className="mm-r-m-btn">Read more</Link>
                                                         </div>
-                                                        <div className="mm1-com mm1-s2">
-                                                            <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
+                                                        <div className="mm2-com mm1-com mm1-s1">
+                                                            <div className="ed-course-in">
+                                                                <Link className="course-overlay" to="../about">
+                                                                    <img src={require("../assets/images/h-adm1.jpg")} alt="" />
+                                                                    <span>About US</span>
+                                                                </Link>
+                                                            </div>
+                                                            <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
                                                             <Link to="../about" className="mm-r-m-btn">Read more</Link>
                                                         </div>
-                                                        <div className="mm1-com mm1-s3">
-                                                            <ul>
-                                                                <li><Link to="../all-courses">All Courses</Link></li>
-                                                                <li><Link to="../course-details">Course details</Link></li>
-                                                                <li><Link to="../about">About</Link></li>
-                                                                <li><Link to="../admission">Admission</Link></li>
-                                                                <li><Link to="../awards">Awards</Link></li>
-                                                            </ul>
+                                                        <div className="mm2-com mm1-com mm1-s1">
+                                                            <div className="ed-course-in">
+                                                                <Link className="course-overlay" to="../contactus">
+                                                                    <img src={require("../assets/images/h-cam1.jpg")} alt="" />
+                                                                    <span>Contact US</span>
+                                                                </Link>
+                                                            </div>
+                                                            <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
+                                                            <Link to="../contactus" className="mm-r-m-btn">Read more</Link>
                                                         </div>
-                                                        <div className="mm1-com mm1-s4">
-                                                            <ul>
-                                                                <li><Link to="../dashboard">Student profile</Link></li>
-                                                                <li><Link to="../db-courses">Dashboard courses</Link></li>
-                                                                <li><Link to="../db-exams">Dashboard exams</Link></li>
-                                                                <li><Link to="../db-profile">Dashboard profile</Link></li>
-                                                                <li><Link to="../db-time-line">Dashboard timeline</Link></li>
-                                                            </ul>
-                                                        </div>
+                                                
                                                     </div>
                                                 </div>
-                                            </div> */}
+                                            </div>
                                         </li>
-                                        <li>
-                                            <Link to="../contactus">Contact us</Link>
-                                        </li>
+                                      
+                                   
                                     </ul>
                                 </div>
                             </div>

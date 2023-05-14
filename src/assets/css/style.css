@@ -3053,6 +3053,9 @@
 .dashboard-menu:hover .dashboard-mm{
     display: block;
 }
+.admi-menu:hover .admi-mm{
+    display: block;
+}
  .m-menu{
      position: absolute;
      overflow: hidden;

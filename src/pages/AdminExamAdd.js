@@ -57,23 +57,23 @@ export class AdminExamAdd extends Component{
                                   <form>
                                     <div className="row">
                                       <div className="input-field col s12">
-                                        <input type="text" defaultValue className="validate" />
+                                        <input type="text" defaultValue className="validate"  value=""/>
                                         <label className>Main exam name</label>
                                       </div>
                                       <div className="input-field col s12">
-                                        <input type="text" defaultValue className="validate" />
+                                        <input type="text" defaultValue className="validate"  value=""/>
                                         <label>Exam name</label>
                                       </div>
                                       <div className="input-field col s12">
-                                        <input type="text" defaultValue className="validate" />
+                                        <input type="text" defaultValue className="validate"  value=""/>
                                         <label>Date</label>
                                       </div>
                                       <div className="input-field col s12">
-                                        <input type="text" defaultValue className="validate" />
+                                        <input type="text" defaultValue className="validate"  value=""/>
                                         <label>Start time</label>
                                       </div>
                                       <div className="input-field col s12">
-                                        <input type="text" defaultValue className="validate" />
+                                        <input type="text" defaultValue className="validate" value=""/>
                                         <label>Duration</label>
                                       </div>
                                     </div>

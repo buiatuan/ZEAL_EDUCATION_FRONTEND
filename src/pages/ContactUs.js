@@ -51,7 +51,7 @@ export class ContactUs extends Component{
           <section id="map">
             <div className="row contact-map">
               {/* IFRAME: GET YOUR LOCATION FROM GOOGLE MAP */}
-              <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290413.804893654!2d-93.99620524741552!3d39.66116578737809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1469954001005' allowFullScreen />
+              <iframe title="Map Zeal Education" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.7719976966973!2d73.82256591157412!3d18.448658521292792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2953b7b878c49%3A0x81b2448774346377!2sZeal%20Education%20Society!5e0!3m2!1svi!2s!4v1684061457672!5m2!1svi!2s"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               <div className="container">
                 <div className="overlay-contact footer-part footer-part-form">
                   <div className="map-head">
@@ -61,13 +61,13 @@ export class ContactUs extends Component{
                   <form id="contact_form" name="contact_form" action="https://rn53themes.net/themes/demo/education-master/send.php">
                     <ul>
                       <li className="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
-                        <input type="text" id="f1" defaultValue name="f1" placeholder="Name" required /> </li>
+                        <input type="text" id="f1" defaultValue name="f1" placeholder="Name" required value=""/> </li>
                       <li className="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
-                        <input type="text" id="f2" defaultValue name="f2" placeholder="Phone" required /> </li>
+                        <input type="text" id="f2" defaultValue name="f2" placeholder="Phone" required value=""/> </li>
                       <li className="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
-                        <input type="text" id="f3" defaultValue name="f3" placeholder="City" required /> </li>
+                        <input type="text" id="f3" defaultValue name="f3" placeholder="City" required value=""/> </li>
                       <li className="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
-                        <input type="text" id="f4" defaultValue name="f4" placeholder="Country" required /> </li>
+                        <input type="text" id="f4" defaultValue name="f4" placeholder="Country" required value="" /> </li>
                       <li className="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
                         <textarea id="f5" name="f5" required defaultValue={""} />
                       </li>

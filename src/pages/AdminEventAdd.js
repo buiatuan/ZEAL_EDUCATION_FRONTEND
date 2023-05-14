@@ -39,7 +39,7 @@ export class AdminEventAdd extends Component{
                           <form>
                             <div className="row">
                               <div className="input-field col s12">
-                                <input type="text" defaultValue className="validate" required />
+                                <input type="text" defaultValue className="validate"  required value="" />
                                 <label className>Event name</label>
                               </div>
                             </div>
@@ -51,21 +51,21 @@ export class AdminEventAdd extends Component{
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" required />
+                                <input type="text" defaultValue className="validate"  required value="" />
                                 <label className>Date</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="text" className="validate" defaultValue required />
+                                <input type="text" className="validate" defaultValue  required value="" />
                                 <label className>Time</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" />
+                                <input type="text" defaultValue className="validate" value=""  />
                                 <label className>City</label>
                               </div>
                               <div className="input-field col s6">
-                                <input type="text" defaultValue className="validate" />
+                                <input type="text" defaultValue className="validate"  value="" />
                                 <label className>Country</label>
                               </div>
                             </div>
