@@ -10,7 +10,7 @@ export class HeaderAdmin extends Component{
           <div className="col-md-2 col-sm-3 col-xs-6 sb1-1">
             <Link to="../#" className="btn-close-menu"><i className="fa fa-times" aria-hidden="true" /></Link>
             <Link to="../#" className="atab-menu"><i className="fa fa-bars tab-menu" aria-hidden="true" /></Link>
-            <Link to="../index" className="logo"><img src={require("../assets/images/logo1.png")} alt="" />
+            <Link to="../admin" className="logo"><img src={require("../assets/images/logo1.png")} alt="" />
             </Link>
           </div>
           {/*== SEARCH ==*/}

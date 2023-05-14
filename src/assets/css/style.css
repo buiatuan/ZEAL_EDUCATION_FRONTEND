@@ -4251,7 +4251,7 @@ left: 0;
 .sb2-1 {
     float: left;
     width: 20%;
-    background: #263238;
+   
     color: #fff;
     height: 100%;
     position: absolute;
@@ -4281,6 +4281,7 @@ left: 0;
     overflow: hidden;
     padding: 15px;
     background: #e66030;
+    padding-top: 30px;
 }
 .sb2-12 ul {
     padding: 0px;
