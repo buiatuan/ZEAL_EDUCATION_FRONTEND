@@ -32,7 +32,7 @@ import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
 import { AdminEventAll } from "./pages/AdminEventAll";
 import { AdminEventAdd } from "./pages/AdminEventAdd";
 // import Exam admin
-// import {AdminExamAll} from "./pages/AdminExamAll";
+import { AdminExamAll } from "./pages/AdminExamAll";
 
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
@@ -56,7 +56,6 @@ const AppRoutes = [
     path: "/Blog",
     element: <Blog />,
   },
-
 
   {
     path: "/Departments",
@@ -164,10 +163,10 @@ const AppRoutes = [
     element: <AdminEventAdd />,
   },
   // Exam Admin
-  // {
-  //   path:'/AdminExamAll',
-  //   element:<AdminExamAll/>
-  // },
+  {
+    path: "/AdminExamAll",
+    element: <AdminExamAll />,
+  },
   {
     path: "/AdminExamAdd",
     element: <AdminExamAdd />,
