@@ -1,5 +1,5 @@
 import React ,{Component} from "react";
-
+import { Link } from 'react-router-dom';
 import { HeaderClient } from "../layout/HeaderClient";
 import { FooterClient } from "../layout/FooterClient";
 export class Admission extends Component{
@@ -86,6 +86,28 @@ export class Admission extends Component{
 
           {/*SECTION END*/}
           {/*SECTION START*/}
+          {/*SECTION END*/}
+        {/*SECTION START*/}
+        <section>
+          <div className="full-bot-book">
+            <div className="container">
+              <div className="row">
+                <div className="bot-book">
+                  <div className="col-md-2 bb-img">
+                    <img src={require('../assets/images/3.png')} alt="" />
+                  </div>
+                  <div className="col-md-7 bb-text">
+                    <h4>therefore always free from repetition</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                  </div>
+                  <div className="col-md-3 bb-link">
+                    <Link to="../CousrseDetails">Book This Course</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
           <FooterClient/>
             {/*Import jQuery before materialize.js*/}
             </div>

@@ -1,7 +1,7 @@
 
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
-import { Blog } from "./pages/blog";
+import { Blog } from "./pages/Blog";
 //import { AdminQuickLink } from "./pages/AdminQuickLink";
 //import { AdminSeminarAdd } from "./pages/AdminSeminarAdd";
 //import { AdminSeminarAll } from "./pages/AdminSeminarAll";
@@ -16,15 +16,25 @@ import { Blog } from "./pages/blog";
 //import { AdminAllMenu } from "./pages/AdminAllMenu";
 //import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 //import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
-import { AllCourses } from "./pages/all-courses";
-import { CourseDetail } from "./pages/course-details";
-import { Admission } from "./pages/admission";
-import { Awards } from "./pages/awards";
-import { Dashboard } from "./pages/dashboard";
-import { DbCourses } from "./pages/db-courses";
-import { DbExams } from "./pages/db-exams";
-import { DbProfile } from "./pages/db-profile";
-import { DbTimeTine } from "./pages/db-time-line";
+import { AllCourses } from "./pages/AllCourses";
+import { CourseDetail } from "./pages/CourseDetails";
+import { Admission } from "./pages/Admission";
+import { Awards } from "./pages/Awards";
+import { Dashboard } from "./pages/Dashboard";
+import { DbCourses } from "./pages/DbCourses";
+import { DbExams } from "./pages/DbExam";
+import { DbProfile } from "./pages/DbProfile";
+import { DbTimeLine } from "./pages/DbTimeLine";
+import { Events } from "./pages/Events";
+import { ContactUs } from "./pages/ContactUs";
+import { EventDetail } from "./pages/EventDetail";
+import { Seminar } from "./pages/Seminar";
+import { Departments } from "./pages/Departments";
+import { EvenRegister } from "./pages/EventRegister";
+import { Facilities } from "./pages/Facilities";
+import { FacilitiesDetail } from "./pages/FacilitiesDetail";
+import { GalleryPhoto } from "./pages/GalleryPhoto";
+import { Research } from "./pages/Research";
 const AppRoutes = [
   {
     index: true,
@@ -37,6 +47,30 @@ const AppRoutes = [
      {
       path:'/Blog',
       element:<Blog/>
+     },
+     {
+path:'/Departments',
+element:<Departments/>
+     },
+     {
+path:'/EvenRegister',
+element:<EvenRegister/>
+     },
+     {
+          path:'/Facilities',
+          element:<Facilities/>
+     },
+     {
+path:'/FacilitiesDetail',
+element:<FacilitiesDetail/>
+     },
+     {
+path:'/GalleryPhoto',
+element:<GalleryPhoto/>
+     },
+     {
+path:'/Research',
+element:<Research/>
      },
      //<{
       //path:'/AdminQuickLink',
@@ -95,11 +129,11 @@ const AppRoutes = [
       //element:<AdminAdmissionMenu/>
      //},
      {
-      path:'/All-courses',
+      path:'/AllCourses',
       element:<AllCourses/>
      },
      {
-      path:'/Course-detail',
+      path:'/CourseDetail',
       element:<CourseDetail/>
      },
      {
@@ -111,25 +145,42 @@ path:'/Dashboard',
 element:<Dashboard/>
      },
      {
-path:'/Db-courses',
+path:'/DbCourses',
 element:<DbCourses/>
      },
      {
-      path:'/DbTime-line',
+      path:'/DbTimeLine',
       element:<DbTimeLine/>
      },
      {
-      path:'/Db-exams',
+      path:'/DbExams',
       element:<DbExams/>
      },
      {
-      path:'/Db-profile',
+      path:'/DbProfile',
       element:<DbProfile/>
      },
      {
       path:'/Awards',
       element:<Awards/>
+     },
+     {
+          path:'/Events',
+          element:<Events/>
+     },
+     {
+          path:'/ContactUs',
+          element:<ContactUs/>
+     },
+     {
+          path:'/EventDetail',
+          element:<EventDetail/>
+     },
+     {
+          path:'/Seminar',
+          element:<Seminar/>
      }
+
 ];
 
 export default AppRoutes;

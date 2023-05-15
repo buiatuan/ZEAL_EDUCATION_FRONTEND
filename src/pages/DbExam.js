@@ -2,7 +2,7 @@ import React ,{Component} from "react";
 import { Link } from 'react-router-dom';
 import { HeaderClient } from "../layout/HeaderClient";
 import { FooterClient } from "../layout/FooterClient";
-export class DbTimeLine extends Component{
+export class DbExams extends Component{
     render() {
       return (
         <div>
@@ -20,8 +20,8 @@ export class DbTimeLine extends Component{
                     <li><Link to="../dashboard">My Dashboard</Link></li>
                     <li><Link to="../db-profile">Profile</Link></li>
                     <li><Link to="../db-courses">Courses</Link></li>
-                    <li><Link to="../db-exams">Exams</Link></li>
-                    <li><Link to="../db-time-line" className="pro-act">Time Line</Link></li>
+                    <li><Link to="../db-exams" className="pro-act">Exams</Link></li>
+                    <li><Link to="../db-time-line">Time Line</Link></li>
                     <li><Link to="../#">Entry</Link></li>
                     <li><Link to="../#">Notifications</Link></li>
                   </ul>
@@ -49,34 +49,34 @@ export class DbTimeLine extends Component{
                 <div className="col-md-9">
                   <div className="udb">
                     <div className="udb-sec udb-time">
-                      <h4><img src={require('../assets/images/icon/db4.png')} alt="" /> Class Time Line</h4>
+                      <h4><img src={require('../assets/images/icon/db5.png')} alt="" /> Exam Details</h4>
                       <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                       <div className="tour_head1 udb-time-line days">
                         <ul>
                           <li className="l-info-pack-plac"> <i className="fa fa-clock-o" aria-hidden="true" />
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
-                                <h5>Today</h5>
-                                <span>10Sep 2018</span>
+                                <h5>Exam 01</h5>
+                                <span>Start date: 10Sep 2018</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>
                                   <li>
-                                    <div className="sdb-cl-class-tim">
-                                      <span>9:30 am</span>
-                                      <span>10:15 am</span>
+                                    <div className="sdb-cl-class-tim tooltipped" data-position="top" data-delay={50} data-tooltip="Exam timing">
+                                      <span>10:00 am</span>
+                                      <span>01:15 pm</span>
                                     </div>
-                                    <div className="sdb-cl-class-name">
+                                    <div className="sdb-cl-class-name tooltipped" data-position="top" data-delay={50} data-tooltip="Exam name and status">
                                       <h5>Software Testing <span>John Smith</span></h5>
                                       <span className="sdn-hall-na">Apj Hall 112</span>
                                     </div>
                                   </li>
                                   <li>
-                                    <div className="sdb-cl-class-tim">
+                                    <div className="sdb-cl-class-tim tooltipped" data-position="top" data-delay={50} data-tooltip="Exam timing">
                                       <span>10:15 am</span>
                                       <span>11:00 am</span>
                                     </div>
-                                    <div className="sdb-cl-class-name">
+                                    <div className="sdb-cl-class-name tooltipped" data-position="top" data-delay={50} data-tooltip="Exam name and status">
                                       <h5>Mechanical Design Classes <span>Stephanie</span></h5>
                                       <span className="sdn-hall-na">Apj Hall 112</span>
                                     </div>
@@ -98,17 +98,17 @@ export class DbTimeLine extends Component{
                           <li className="l-info-pack-plac"> <i className="fa fa-clock-o" aria-hidden="true" />
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
-                                <h5>Tuesday</h5>
-                                <span>11Sep 2018</span>
+                                <h5>Exam 02</h5>
+                                <span>Start date: 24Nov 2018</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>
                                   <li>
-                                    <div className="sdb-cl-class-tim">
+                                    <div className="sdb-cl-class-tim tooltipped" data-position="top" data-delay={50} data-tooltip="Exam timing">
                                       <span>9:30 am</span>
                                       <span>10:15 am</span>
                                     </div>
-                                    <div className="sdb-cl-class-name">
+                                    <div className="sdb-cl-class-name tooltipped" data-position="top" data-delay={50} data-tooltip="Exam name and status">
                                       <h5>Agriculture <span>John Smith</span></h5>
                                       <span className="sdn-hall-na">Apj Hall 112</span>
                                     </div>
@@ -140,8 +140,8 @@ export class DbTimeLine extends Component{
                           <li className="l-info-pack-plac"> <i className="fa fa-clock-o" aria-hidden="true" />
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
-                                <h5>Wednesday</h5>
-                                <span>12Sep 2018</span>
+                                <h5>Exam 03</h5>
+                                <span>Start date: 18Dec 2018</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>
@@ -194,6 +194,26 @@ export class DbTimeLine extends Component{
           </section>
           {/*SECTION END*/}
           {/*SECTION START*/}
+          <section>
+          <div className="full-bot-book">
+            <div className="container">
+              <div className="row">
+                <div className="bot-book">
+                  <div className="col-md-2 bb-img">
+                    <img src={require('../assets/images/3.png')} alt="" />
+                  </div>
+                  <div className="col-md-7 bb-text">
+                    <h4>therefore always free from repetition</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                  </div>
+                  <div className="col-md-3 bb-link">
+                    <Link to="../CousrseDetails">Book This Course</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
           <FooterClient/>
             {/*Import jQuery before materialize.js*/}
             </div>

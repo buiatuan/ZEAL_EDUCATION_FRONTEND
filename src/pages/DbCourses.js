@@ -171,6 +171,26 @@ export class DbCourses extends Component{
               </div>
             </div>
           </section>
+          <section>
+          <div className="full-bot-book">
+            <div className="container">
+              <div className="row">
+                <div className="bot-book">
+                  <div className="col-md-2 bb-img">
+                    <img src={require('../assets/images/3.png')} alt="" />
+                  </div>
+                  <div className="col-md-7 bb-text">
+                    <h4>therefore always free from repetition</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                  </div>
+                  <div className="col-md-3 bb-link">
+                    <Link to="../CousrseDetails">Book This Course</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
           {/*SECTION END*/}
           {/*SECTION START*/}
           <FooterClient/>
