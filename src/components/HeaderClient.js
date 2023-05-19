@@ -8,10 +8,10 @@ export class HeaderClient extends Component {
         this.social_Header = React.createRef();
         this.loginHeader = React.createRef();
         this.pop_close = React.createRef();
-        this.loginSuccess=React.createRef();
-        this.loginSuccess_AccountName=React.createRef();
-        this.noneLogin=React.createRef();
-        this.dashboard_menu=React.createRef();
+        this.loginSuccess = React.createRef();
+        this.loginSuccess_AccountName = React.createRef();
+        this.noneLogin = React.createRef();
+        this.dashboard_menu = React.createRef();
         this.state = {
             Scholar: JSON.parse(localStorage.getItem('Account')),
         };
@@ -30,54 +30,51 @@ export class HeaderClient extends Component {
             },
             body: JSON.stringify(datasend),
         })
-            .then((response) => response.text())
+            .then((response) => response.json())
             .then((data) => {
-                localStorage.setItem('Token', data);
+                localStorage.setItem('Token', data.accessToken);
             })
             .catch((err) => {
                 console.log(err);
             });
     }
-    async getIdAccount() {
-        try {
-            const response = await fetch('https://localhost:7156/api/ScholarDetail/GetIdAccount', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(String(this.userName.current.value)),
-            });
+    // async getIdAccount() {
+    //     try {
+    //         const response = await fetch('https://localhost:7156/api/ScholarDetail/GetIdAccount', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(String(this.userName.current.value)),
+    //         });
 
-            const data = await response.text();
-            const id = parseInt(data);
+    //         const data = await response.text();
+    //         const id = parseInt(data);
 
-            return id;
-        } catch (error) {
-            console.log(error);
-            return null;
-        }
-    }
+    //         return id;
+    //     } catch (error) {
+    //         console.log(error);
+    //         return null;
+    //     }
+    // }
     logOut(e) {
         e.preventDefault();
         this.social_Header.current.style.display = 'block';
-        this.noneLogin.current.style.display='block';
-        this.loginSuccess.current.style.display='none';
+        this.noneLogin.current.style.display = 'block';
+        this.loginSuccess.current.style.display = 'none';
         localStorage.removeItem('Account');
-        this.dashboard_menu.current.style.display="none";
+        this.dashboard_menu.current.style.display = 'none';
     }
-    displayLogin(){
+    displayLogin() {
         this.social_Header.current.style.display = 'none';
-        this.noneLogin.current.style.display='none';
-        this.loginSuccess.current.style.display='block';
+        this.noneLogin.current.style.display = 'none';
+        this.loginSuccess.current.style.display = 'block';
         this.pop_close.current.click();
-        
-        
-           this.loginSuccess_AccountName.current.innerHTML=`Hello: ${this.state.Scholar.name} `;
-          this.dashboard_menu.current.style.display="block";
-        
+
+        this.loginSuccess_AccountName.current.innerHTML = `Hello: ${this.state.Scholar.name} `;
+        this.dashboard_menu.current.style.display = 'block';
     }
-    componentDidMount(){
-        if(this.state.Scholar!==null){
+    componentDidMount() {
+        if (this.state.Scholar !== null) {
             this.displayLogin();
-          
         }
     }
     async handleLogin(e) {
@@ -85,9 +82,20 @@ export class HeaderClient extends Component {
         await this.getToken(e);
         var token = localStorage.getItem('Token');
         if (token && token.trim() !== '') {
-            var id = await this.getIdAccount();
+            // var id = await this.getIdAccount();
             try {
-                const response = await fetch('https://localhost:7156/api/ScholarDetail/GetDetail/' + id);
+                var myHeaders = new Headers();
+                myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+                console.log(localStorage.getItem('Token'));
+                var requestOptions = {
+                    method: 'GET',
+                    headers: myHeaders,
+                    redirect: 'follow',
+                };
+                const response = await fetch(
+                    'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+                    requestOptions,
+                );
                 var data = await response.json();
                 // cap nhat gia tri cho state
                 await this.setState(
@@ -98,7 +106,7 @@ export class HeaderClient extends Component {
                         // set Account vao local storage
                         localStorage.setItem('Account', JSON.stringify(data));
                         console.log(this.state.Scholar);
-                       this.displayLogin();
+                        this.displayLogin();
                     },
                 );
             } catch (err) {
@@ -578,13 +586,16 @@ export class HeaderClient extends Component {
                                     </div>
                                     <div className="ed-com-t1-right" ref={this.loginHeader}>
                                         <div ref={this.loginSuccess} style={{ display: 'none' }}>
-                                            <b style={{ color: 'white', lineHeight: '30px' }} ref={this.loginSuccess_AccountName}>
+                                            <b
+                                                style={{ color: 'white', lineHeight: '30px' }}
+                                                ref={this.loginSuccess_AccountName}
+                                            >
                                                 {/* Hello: {this.state.Scholar.name} */}
                                             </b>
                                             <button
                                                 type="button"
                                                 className=" text-bold"
-                                                style={{marginLeft:"10px"}}
+                                                style={{ marginLeft: '10px' }}
                                                 onClick={(e) => {
                                                     this.logOut(e);
                                                 }}
@@ -665,7 +676,11 @@ export class HeaderClient extends Component {
                                             <li>
                                                 <Link to="../allcourses"> Courses</Link>
                                             </li>
-                                            <li className="dashboard-menu" ref={this.dashboard_menu} style={{display:'none'}}>
+                                            <li
+                                                className="dashboard-menu"
+                                                ref={this.dashboard_menu}
+                                                style={{ display: 'none' }}
+                                            >
                                                 <Link to="../dashboard" className="mm-arr">
                                                     User Dashboard
                                                 </Link>
