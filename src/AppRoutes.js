@@ -3,7 +3,7 @@ import { About } from "./pages/About";
 import { Blog } from "./pages/blog";
 
 import { AllCourses } from "./pages/AllCourses";
-import { CourseDetail } from "./pages/CourseDetails";
+import  CourseDetail  from "./pages/CourseDetails";
 import { Admission } from "./pages/Admission";
 import { Awards } from "./pages/Awards";
 import { Dashboard } from "./pages/Dashboard";
