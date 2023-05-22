@@ -18,7 +18,8 @@ export class HeaderClient extends Component {
             Scholar: JSON.parse(localStorage.getItem('Account')),
             Login:{
                 username:"",
-                passwork:""
+                passwork:"",
+                RoleId:-1
             },
             CreateAccount:{
            
@@ -51,7 +52,18 @@ export class HeaderClient extends Component {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 localStorage.setItem('Token', data.accessToken);
+               if(data.roleId===1|| data.roleId===2){
+                if (window.confirm("Bạn có muốn  chuyển sang trang admin không?")) {
+                    // Thực hiện hành động nếu người dùng đồng ý
+                    window.location.href=("http://localhost:3000/admin");
+                  } else {
+                    // Thực hiện hành động nếu người dùng từ chối
+                    console.log("Người dùng đã từ chối");
+                  }
+               
+               }
             })
             .catch((err) => {
                 console.log(err);
