@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { HeaderClient } from "../components/HeaderClient";
 import { FooterClient } from "../components/FooterClient";
 export class Dashboard extends Component{
+  constructor(){
+    super();
+    this.state={
+    Scholar: JSON.parse(localStorage.getItem('Account'))
+    }
+  }
     render() {
       return (
         <div>
@@ -18,12 +24,12 @@ export class Dashboard extends Component{
                 <div className="col-md-9 col-md-offset-3">
                   <ul>
                     <li><Link to="../dashboard" className="pro-act">My Dashboard</Link></li>
-                    <li><Link to="../db-profile">Profile</Link></li>
-                    <li><Link to="../db-courses">Courses</Link></li>
-                    <li><Link to="../db-exams">Exams</Link></li>
-                    <li><Link to="../db-time-line">Time Line</Link></li>
-                    <li><Link to="../#">Entry</Link></li>
-                    <li><Link to="../#">Notifications</Link></li>
+                    <li><Link to="../dbprofile">Profile</Link></li>
+                    <li><Link to="../dbcourses">Courses</Link></li>
+                    <li><Link to="../dbexams">Exams</Link></li>
+                    <li><Link to="../dbtimeline">Time Line</Link></li>
+                    <li><Link to="../#" onClick={(e)=>{e.preventDefault()}}>Entry</Link></li>
+                    <li><Link to="../#" onClick={(e)=>{e.preventDefault()}}>Notifications</Link></li>
                   </ul>
                 </div>
               </div>
@@ -37,21 +43,20 @@ export class Dashboard extends Component{
                   <div className="pro-user-bio">
                     <ul>
                       <li>
-                        <h4>Emily Jessica</h4>
+                        <h4>{this.state.Scholar.name}</h4>
                       </li>
-                      <li>Student Id: ST17241</li>
-                      <li><Link to="../#!"><i className="fa fa-facebook" /> Facebook: my sample</Link></li>
-                      <li><Link to="../#!"><i className="fa fa-google-plus" /> Google: my sample</Link></li>
-                      <li><Link to="../#!"><i className="fa fa-twitter" /> Twitter: my sample</Link></li>
+                      <li>Student Id: ST{this.state.Scholar.id}</li>
+                      <li><Link to="../#!"><i className="fa fa-facebook" /> Facebook: Facebook.com</Link></li>
+                      <li><Link to="../#!"><i className="fa fa-google-plus" /> Google: Google.com</Link></li>
+                      <li><Link to="../#!"><i className="fa fa-twitter" /> Twitter: Twitter.com</Link></li>
                     </ul>
                   </div>
                 </div>
                 <div className="col-md-9">
                   <div className="udb">
                     <div className="udb-sec udb-prof">
-                      <h4><img src={require('../assets/images/icon/db1.png')} alt="" /> My Profile</h4>
-                      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its components. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-                        to using 'Content here, content here', making it look like readable English.</p>
+                      <h4><img src={require('../assets/images/icon/db1.png')} alt="" /> My Description</h4>
+                      <p>{this.state.Scholar.descreption}</p>
                     </div>
                     <div className="udb-sec udb-cour">
                       <h4><img src={require('../assets/images/icon/db2.png')} alt="" /> Booking Courses</h4>

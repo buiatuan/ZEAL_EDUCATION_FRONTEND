@@ -56,9 +56,27 @@ export class HeaderClient extends Component {
             .catch((err) => {
                 console.log(err);
                 localStorage.setItem('Token', '');
+                
             });
     }
-
+   async checkToken(){
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    console.log(localStorage.getItem('Token'));
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    };
+    const response = await fetch(
+        'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+        requestOptions,
+    );
+    if(response.ok!==true){
+        localStorage.removeItem('Token');
+        localStorage.removeItem('Account');
+    }
+   }
     logOut(e) {
         e.preventDefault();
         this.social_Header.current.style.display = 'block';
@@ -77,6 +95,7 @@ export class HeaderClient extends Component {
         this.dashboard_menu.current.style.display = 'block';
     }
     componentDidMount() {
+        this.checkToken();
         if (this.state.Scholar !== null) {
             this.displayLogin();
         }

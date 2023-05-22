@@ -87,8 +87,8 @@ const AppRoutes = [
     element: <AllCourses />,
   },
   {
-    path: "/CourseDetail",
-    element: <CourseDetail />,
+    path: "/CourseDetail/:id",
+    element: CourseDetail ,
   },
   {
     path: "/Admission",

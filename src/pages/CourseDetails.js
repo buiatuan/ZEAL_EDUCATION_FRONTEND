@@ -1,11 +1,73 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { HeaderClient } from '../components/HeaderClient';
 import { FooterClient } from '../components/FooterClient';
 
-
+const FCourseDetail = () => {
+    var idparam = useParams();
+    var AllEvent= async ()=>{
+        try {
+            const response = await fetch('https://localhost:7156/api/ScholarEvent/GetListEvent');
+            if (response.ok) {
+                const data = await response.json();
+               return data;
+            } else {
+                throw new Error('Error: ' + response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching event data:', error);
+        }
+    };
+    var   Course= async()=>{
+        try {
+            const response = await fetch(`https://localhost:7156/api/ScholarCourse/GetDetail/${this.props.id}`);
+            if (response.ok) {
+                var data = await response.json();
+                return data;
+            } else {
+                throw new Error('Error: ' + response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching event data:', error);
+        }
+    }
+    
+    return <CourseDetail id={idparam} AllEvent={AllEvent} Course={Course}/>;
+};
 class CourseDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            CourseDetail: this.props.Course,
+            AllEvent: this.props.AllEvent==null?this.props.AllEvent :[],
+        };
+        console.log(props.id);
+    }
+    
+    displayEvent() {
+        var eventRender = this.state.AllEvent.map((e) => {
+            return (
+                <li>
+                    <div className="ho-ev-link ho-ev-link-full">
+                        <Link to="../#">
+                            <h4>{e.name}</h4>
+                        </Link>
+                        <p>{e.location}</p>
+                        <span>{e.startDate}</span>
+                    </div>
+                </li>
+            );
+        });
 
+        return eventRender;
+    }
+    componentDidMount() {
+        this.getCouseDetail();
+        this.getAllEvent();
+    }
+    componentDidUpdate() {
+        console.log(this.state.AllEvent);
+    }
 
     render() {
         return (
@@ -37,7 +99,7 @@ class CourseDetail extends Component {
                                                         <div className="row">
                                                             <div className="input-field col s12">
                                                                 <input type="text" className="validate" />
-                                                                <label>Email id</label>
+                                                                <label>Email</label>
                                                             </div>
                                                         </div>
                                                         <div className="row">
@@ -46,25 +108,25 @@ class CourseDetail extends Component {
                                                                 <label>Phone</label>
                                                             </div>
                                                         </div>
+                                                        {/* <div className="row">
+                                  <div className="input-field col s12">
+                                    <select>
+                                      <option value disabled selected>Select Course</option>
+                                      <option value={1}>Option 1</option>
+                                      <option value={2}>Option 2</option>
+                                      <option value={3}>Option 3</option>
+                                    </select>
+                                  </div>
+                                </div> */}
                                                         <div className="row">
                                                             <div className="input-field col s12">
-                                                                <select>
-                                                                    <option value disabled selected>
-                                                                        Select Course
-                                                                    </option>
-                                                                    <option value={1}>Option 1</option>
-                                                                    <option value={2}>Option 2</option>
-                                                                    <option value={3}>Option 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row">
-                                                            <div className="input-field col s12">
-                                                                <input
-                                                                    type="submit"
-                                                                    defaultValue="APPLY NOW"
-                                                                    className="waves-effect waves-light light-btn"
-                                                                />
+                                                                <i class="waves-effect waves-light light-btn waves-input-wrapper">
+                                                                    <input
+                                                                        type="submit"
+                                                                        value="APPLY NOW"
+                                                                        className="waves-button-input"
+                                                                    />
+                                                                </i>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -79,69 +141,35 @@ class CourseDetail extends Component {
                                             </div>
                                         </div>
                                         <div className="ho-event">
-                                            <ul>
-                                                <li>
-                                                    <div className="ho-ev-link ho-ev-link-full">
-                                                        <Link to="../#">
-                                                            <h4>Workshop PHP</h4>
-                                                        </Link>
-                                                        <p>Nulla at velit convallis venenatis.</p>
-                                                        <span>9:15 am – 5:00 pm</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="ho-ev-link ho-ev-link-full">
-                                                        <Link to="../#">
-                                                            <h4>Workshop PHP</h4>
-                                                        </Link>
-                                                        <p>Nulla at velit convallis venenatis.</p>
-                                                        <span>9:15 am – 5:00 pm</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="ho-ev-link ho-ev-link-full">
-                                                        <Link to="../#">
-                                                            <h4>Workshop PHP</h4>
-                                                        </Link>
-                                                        <p>Nulla at velit convallis venenatis.</p>
-                                                        <span>9:15 am – 5:00 pm</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="ho-ev-link ho-ev-link-full">
-                                                        <Link to="../#">
-                                                            <h4>Workshop PHP</h4>
-                                                        </Link>
-                                                        <p>Nulla at velit convallis venenatis.</p>
-                                                        <span>9:15 am – 5:00 pm</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                            <ul>{this.displayEvent()}</ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="cor-mid-img">
-                                        <img src={require('../assets/images/course.jpg')} alt="" />
+                                        <img
+                                            src={`https://funix.edu.vn/wp-content/uploads/2023/05/ngon-ngu-lap-trinh-php-1-1024x576.jpg`}
+                                            alt=""
+                                        />
                                     </div>
                                     <div className="cor-con-mid">
                                         <div className="cor-p1">
-                                            <h2>Biological Sciences</h2>
-                                            <span>Category: Software Testing</span>
+                                            <h2>{this.state.CourseDetail.name}</h2>
+                                            <span>{this.state.CourseDetail.courseType}</span>
                                             <div className="share-btn">
                                                 <ul>
                                                     <li>
-                                                        <Link to="../#">
+                                                        <Link to="https://www.facebook.com/">
                                                             <i className="fa fa-facebook fb1" /> Share On Facebook
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link to="../#">
+                                                        <Link to="https://twitter.com/">
                                                             <i className="fa fa-twitter tw1" /> Share On Twitter
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link to="../#">
+                                                        <Link to="https://plus.google.com/">
                                                             <i className="fa fa-google-plus gp1" /> Share On Google Plus
                                                         </Link>
                                                     </li>
@@ -150,82 +178,35 @@ class CourseDetail extends Component {
                                         </div>
                                         <div className="cor-p4">
                                             <h3>Course Details:</h3>
-                                            <p>
-                                                There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have suffered alteration in some form, by injected humour, or
-                                                randomised words which don't look even slightly believable. If you are
-                                                going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                                                anything embarrassing hidden in the middle of text. All the Lorem Ipsum
-                                                generators on the Internet tend to repeat predefined chunks as
-                                                necessary, making this the first true generator on the Internet. It uses
-                                                a dictionary of over 200 Latin words, combined with a handful of model
-                                                sentence structures, to generate Lorem Ipsum which looks reasonable. The
-                                                generated Lorem Ipsum is therefore always free from repetition, injected
-                                                humour, or non-characteristic words etc.
-                                            </p>
-                                            <p>
-                                                {' '}
-                                                It was popularised in the 1960s with the release of Letraset sheets
-                                                containing Lorem Ipsum passages, and more recently with desktop
-                                                publishing software like Aldus PageMaker including versions of Lorem
-                                                Ipsum.
-                                            </p>
+                                            <p>{this.state.CourseDetail.descreption}</p>
+                                            <p>Tuition Fees : {this.state.CourseDetail.tuitionFees}</p>
                                         </div>
-                                        <div className="cor-p5">
-                                            <h3>Course Syllabus</h3>
-                                            <ul className="nav nav-tabs">
-                                                <li className="active">
-                                                    <Link data-toggle="tab" href="#home">
-                                                        <img src={require('../assets/images/icon/cor4.png')} alt="" />{' '}
-                                                        <span>Requirements</span>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link data-toggle="tab" href="#menu1">
-                                                        <img src={require('../assets/images/icon/cor3.png')} alt="" />
-                                                        <span>Fees</span>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link data-toggle="tab" href="#menu2">
-                                                        <img src={require('../assets/images/icon/cor1.png')} alt="" />
-                                                        <span>Student Profile</span>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link data-toggle="tab" href="#menu2">
-                                                        <img src={require('../assets/images/icon/cor5.png')} alt="" />
-                                                        <span>How to Apply</span>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                            <div className="tab-content">
-                                                <div id="home" className="tab-pane fade in active">
-                                                    <h4>Home</h4>
-                                                    <p>
-                                                        There are many variations of passages of Lorem Ipsum available,
-                                                        but the majority have suffered alteration in some form, by
-                                                        injected humour, or randomised words which don't look even
-                                                        slightly believable.
-                                                    </p>
-                                                    <p>
-                                                        {' '}
-                                                        It was popularised in the 1960s with the release of Letraset
-                                                        sheets containing Lorem Ipsum passages, and more recently with
-                                                        desktop publishing software like Aldus PageMaker including
-                                                        versions of Lorem Ipsum.
-                                                    </p>
-                                                </div>
-                                                <div id="menu1" className="tab-pane fade">
-                                                    <h4>Menu 1</h4>
-                                                    <p>Some content in menu 1.</p>
-                                                </div>
-                                                <div id="menu2" className="tab-pane fade">
-                                                    <h4>Menu 2</h4>
-                                                    <p>Some content in menu 2.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {/* <div className="cor-p5">
+                          <h3>Course Syllabus</h3>
+                          <ul className="nav nav-tabs">
+                            <li className="active"><Link data-toggle="tab" href="#home">
+                                <img src={require('../assets/images/icon/cor4.png')} alt="" /> <span>Requirements</span></Link>
+                            </li>
+                            <li><Link data-toggle="tab" href="#menu1"><img src={require('../assets/images/icon/cor3.png')} alt="" /><span>Fees</span></Link></li>
+                            <li><Link data-toggle="tab" href="#menu2"><img src={require('../assets/images/icon/cor1.png')} alt="" /><span>Student Profile</span></Link></li>
+                            <li><Link data-toggle="tab" href="#menu2"><img src={require('../assets/images/icon/cor5.png')} alt="" /><span>How to Apply</span></Link></li>
+                          </ul>
+                          <div className="tab-content">
+                            <div id="home" className="tab-pane fade in active">
+                              <h4>Home</h4>
+  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                              <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                            <div id="menu1" className="tab-pane fade">
+                              <h4>Menu 1</h4>
+                              <p>Some content in menu 1.</p>
+                            </div>
+                            <div id="menu2" className="tab-pane fade">
+                              <h4>Menu 2</h4>
+                              <p>Some content in menu 2.</p>
+                            </div>
+                          </div>
+                        </div> */}
                                         <div className="cor-p4">
                                             <h3>A typical weekly timetable:</h3>
                                             <p>
@@ -420,15 +401,12 @@ class CourseDetail extends Component {
                                                         </div>
                                                         <div className="input-field col s6">
                                                             <input type="text" className="validate" />
-                                                            <label>Email id</label>
+                                                            <label>Email</label>
                                                         </div>
                                                     </div>
                                                     <div className="row">
                                                         <div className="input-field col s12">
-                                                            <textarea
-                                                                className="materialize-textarea"
-                                                                defaultValue={''}
-                                                            />
+                                                            <textarea className="materialize-textarea" value={''} />
                                                             <label>Message</label>
                                                         </div>
                                                     </div>
@@ -436,7 +414,7 @@ class CourseDetail extends Component {
                                                         <div className="input-field col s12">
                                                             <input
                                                                 type="submit"
-                                                                defaultValue="Submit"
+                                                                value="SUBMIT"
                                                                 className="waves-effect waves-light btn-book"
                                                             />
                                                         </div>
@@ -473,11 +451,13 @@ class CourseDetail extends Component {
                                                     </div>
                                                     <div className="row">
                                                         <div className="input-field col s12">
-                                                            <input
-                                                                type="submit"
-                                                                defaultValue="Login"
-                                                                className="waves-effect waves-light light-btn"
-                                                            />
+                                                            <i class="waves-effect waves-light light-btn waves-input-wrapper">
+                                                                <input
+                                                                    type="submit"
+                                                                    value="LOGIN"
+                                                                    className="waves-button-input"
+                                                                />
+                                                            </i>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -556,4 +536,4 @@ class CourseDetail extends Component {
         );
     }
 }
-export default CourseDetail;
+export default <FCourseDetail />;

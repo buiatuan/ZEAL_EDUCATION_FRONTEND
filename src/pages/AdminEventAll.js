@@ -3,6 +3,44 @@ import { Link } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 export class AdminEventAll extends Component{
+  constructor(){
+    super();
+    this.state={
+      AllEvent:[]
+    }
+  }
+  async getAllEvent(){
+    var res= await fetch('https://localhost:7156/api/AdminEvent/GetListEvent',{method:'get'});
+    var data= await res.json();
+    this.setState({
+      AllEvent:data
+    })
+  }
+  displayEvent(){
+    const result=this.state.AllEvent.map(e=>{
+      const status= e.status===1? (<span className="label label-success">Active</span> ) : (<span className="label label-danger">UnActive</span>);
+      return(
+        <tr>
+        <td>{e.id}</td>
+        <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>
+        <td>{e.name}</td>
+        <td>{e.startDate}</td>
+        <td>{e.location}</td>
+        <td>
+          {status}
+        </td>
+        <td><Link to="../admineventedit" className="ad-st-view">Edit</Link></td>
+      </tr>
+      )
+    });
+    return result;
+  }
+  componentDidMount(){
+    this.getAllEvent();
+  }
+  componentDidUpdate(){
+    console.log(this.state.AllEvent);
+  }
     render() {
         
       return (
@@ -50,6 +88,7 @@ export class AdminEventAll extends Component{
                                 </tr>
                               </thead>
                               <tbody>
+                                {this.displayEvent()}
                                 <tr>
                                   <td>1</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>

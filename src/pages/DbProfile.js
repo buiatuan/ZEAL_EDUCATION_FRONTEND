@@ -17,13 +17,13 @@ export class DbProfile extends Component{
               <div className="container">
                 <div className="col-md-9 col-md-offset-3">
                   <ul>
-                    <li><Link to="../dashboard">My Dashboard</Link></li>
-                    <li><Link to="../db-profile" className="pro-act">Profile</Link></li>
-                    <li><Link to="../db-courses">Courses</Link></li>
-                    <li><Link to="../db-exams">Exams</Link></li>
-                    <li><Link to="../db-time-line">Time Line</Link></li>
-                    <li><Link to="../#">Entry</Link></li>
-                    <li><Link to="../#">Notifications</Link></li>
+                  <li><Link to="../dashboard" className="pro-act">My Dashboard</Link></li>
+                    <li><Link to="../dbprofile">Profile</Link></li>
+                    <li><Link to="../dbcourses">Courses</Link></li>
+                    <li><Link to="../dbexams">Exams</Link></li>
+                    <li><Link to="../dbtimeline">Time Line</Link></li>
+                    <li><Link to="../#" onClick={(e)=>{e.preventDefault()}}>Entry</Link></li>
+                    <li><Link to="../#" onClick={(e)=>{e.preventDefault()}}>Notifications</Link></li>
                   </ul>
                 </div>
               </div>
