@@ -3,25 +3,45 @@ import { Link } from 'react-router-dom';
 export class HeaderClient extends Component {
     constructor(props) {
         super(props);
-        this.userName = React.createRef();
-        this.userPass = React.createRef();
+
         this.social_Header = React.createRef();
         this.loginHeader = React.createRef();
         this.pop_close = React.createRef();
         this.loginSuccess = React.createRef();
         this.loginSuccess_AccountName = React.createRef();
         this.noneLogin = React.createRef();
+        this.userName=React.createRef();
+        this.userPass=React.createRef();
         this.dashboard_menu = React.createRef();
+        this.loginFail = React.createRef();
         this.state = {
             Scholar: JSON.parse(localStorage.getItem('Account')),
+            Login:{
+                username:"",
+                passwork:"",
+                RoleId:-1
+            },
+            CreateAccount:{
+           
+            username: '',
+            password: '',
+            name: '',
+            age: 0,
+            gender: 'M',
+            address: '',
+            descreption: '',
+            
+            dateOfbirth: '',
+            }
         };
     }
     async getToken(e) {
         e.preventDefault();
         var datasend = {
-            username: String(this.userName.current.value),
-            password: String(this.userPass.current.value),
-        };
+            "username": this.state.Login.username,
+            "password": this.state.Login.passwork
+          }
+        console.log(this.state.Login);
 
         await fetch('https://localhost:7156/api/Auth/Login', {
             method: 'POST',
@@ -32,29 +52,43 @@ export class HeaderClient extends Component {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 localStorage.setItem('Token', data.accessToken);
+               if(data.roleId===1|| data.roleId===2){
+                if (window.confirm("Bạn có muốn  chuyển sang trang admin không?")) {
+                    // Thực hiện hành động nếu người dùng đồng ý
+                    window.location.href=("http://localhost:3000/admin");
+                  } else {
+                    // Thực hiện hành động nếu người dùng từ chối
+                    console.log("Người dùng đã từ chối");
+                  }
+               
+               }
             })
             .catch((err) => {
                 console.log(err);
+                localStorage.setItem('Token', '');
+                
             });
     }
-    // async getIdAccount() {
-    //     try {
-    //         const response = await fetch('https://localhost:7156/api/ScholarDetail/GetIdAccount', {
-    //             method: 'POST',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify(String(this.userName.current.value)),
-    //         });
-
-    //         const data = await response.text();
-    //         const id = parseInt(data);
-
-    //         return id;
-    //     } catch (error) {
-    //         console.log(error);
-    //         return null;
-    //     }
-    // }
+   async checkToken(){
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    console.log(localStorage.getItem('Token'));
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    };
+    const response = await fetch(
+        'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+        requestOptions,
+    );
+    if(response.ok!==true){
+        localStorage.removeItem('Token');
+        localStorage.removeItem('Account');
+    }
+   }
     logOut(e) {
         e.preventDefault();
         this.social_Header.current.style.display = 'block';
@@ -73,13 +107,26 @@ export class HeaderClient extends Component {
         this.dashboard_menu.current.style.display = 'block';
     }
     componentDidMount() {
+        this.checkToken();
         if (this.state.Scholar !== null) {
             this.displayLogin();
         }
     }
+    handleChangeLogin(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState(prevState => ({
+            Login: {
+              ...prevState.Login,
+              [name]: value
+            }
+          }));
+      }
     async handleLogin(e) {
         e.preventDefault();
         await this.getToken(e);
+
         var token = localStorage.getItem('Token');
         if (token && token.trim() !== '') {
             // var id = await this.getIdAccount();
@@ -113,8 +160,50 @@ export class HeaderClient extends Component {
                 console.log(err);
             }
             // edit header
+        } else {
+            this.userName.current.style.borderBottom = '2px solid red';
+            this.userPass.current.style.borderBottom = '2px solid red';
+            this.loginFail.current.style.display = 'block';
         }
     }
+    handleOnchangeCreateAccount(event){
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState(prevState => ({
+            CreateAccount: {
+              ...prevState.CreateAccount,
+              [name]: value
+            }
+          }));
+    }
+    async handleCreateAccount(e) {
+        e.preventDefault();
+        var datasent = {
+          
+            username: this.state.CreateAccount.username,
+            password:this.state.CreateAccount.password,
+            name: this.state.CreateAccount.name,
+            age: parseInt(this.state.CreateAccount.age),
+            gender: this.state.CreateAccount.gender,
+            address: this.state.CreateAccount.address,
+            descreption: this.state.CreateAccount.descreption,
+     
+            dateOfbirth: this.state.CreateAccount.dateOfbirth,
+        };
+         var res= await fetch('https://localhost:7156/api/ScholarRegister/Create',{
+         method:'POST'  , 
+         headers:{
+           'Content-Type':'application/json' 
+         },
+         body:JSON.stringify(datasent)
+        });
+        if(res.ok){
+            var data= await res.text();
+            alert(data);
+        }
+    }
+
     render() {
         return (
             <div>
@@ -170,14 +259,21 @@ export class HeaderClient extends Component {
                                                 type="text"
                                                 data-ng-model="name"
                                                 className="validate"
+                                                name='username'
                                                 ref={this.userName}
+                                                value={this.state.Login.username}
+                                                onChange={(e)=>this.handleChangeLogin(e)}
                                             />
                                             <label>User name</label>
                                         </div>
                                     </div>
                                     <div>
                                         <div className="input-field s12">
-                                            <input type="password" className="validate" ref={this.userPass} />
+                                            <input type="password" className="validate" 
+                                             value={this.state.Login.passwork}
+                                             name='passwork'
+                                             ref={this.userPass}
+                                             onChange={(e)=>this.handleChangeLogin(e)}/>
                                             <label>Password</label>
                                         </div>
                                     </div>
@@ -191,6 +287,12 @@ export class HeaderClient extends Component {
                                     </div>
                                     <div>
                                         <div className="input-field s4">
+                                            <p
+                                                style={{ color: 'red', fontSize: '10px', display: 'none' }}
+                                                ref={this.loginFail}
+                                            >
+                                                UserName or Password is Incorrect !
+                                            </p>
                                             <input
                                                 type="submit"
                                                 defaultValue="Login"
@@ -255,53 +357,79 @@ export class HeaderClient extends Component {
                                 </Link>
                                 <h4>Create an Account</h4>
                                 <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                                <form className="s12">
-                                    <div>
-                                        <div className="input-field s12">
-                                            <input type="text" data-ng-model="name1" className="validate" />
-                                            <label>User name</label>
-                                        </div>
+                                <form onSubmit={(e) => this.handleCreateAccount(e)} className="s12">
+                                    <div className="form-group">
+                                        <label htmlFor="username">Username:</label>
+                                        <input type="text" className="form-control" id="username" name="username" required
+                                         value={this.state.CreateAccount.username}
+                                         onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                         />
                                     </div>
-                                    <div>
-                                        <div className="input-field s12">
-                                            <input type="email" className="validate" />
-                                            <label>Email id</label>
-                                        </div>
+                                    <div className="form-group">
+                                        <label htmlFor="password">Password:</label>
+                                        <input type="password" className="form-control" id="password" name="password"
+                                          value={this.state.CreateAccount.password}
+                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        required/>
                                     </div>
-                                    <div>
-                                        <div className="input-field s12">
-                                            <input type="password" className="validate" />
-                                            <label>Password</label>
-                                        </div>
+                                    <div className="form-group">
+                                        <label htmlFor="name">Name:</label>
+                                        <input type="text" 
+                                          value={this.state.CreateAccount.name}
+                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        className="form-control" id="name" name="name" required/>
                                     </div>
-                                    <div>
-                                        <div className="input-field s12">
-                                            <input type="password" className="validate" />
-                                            <label>Confirm password</label>
-                                        </div>
+                                    <div className="form-group">
+                                        <label htmlFor="age">Age:</label>
+                                        <input type="number"
+                                          value={this.state.CreateAccount.Age}
+                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        className="form-control" id="age" name="age" required/>
                                     </div>
-                                    <div>
-                                        <div className="input-field s4">
-                                            <input
-                                                type="submit"
-                                                defaultValue="Register"
-                                                className="waves-effect waves-light log-in-btn"
-                                            />
-                                        </div>
+                                    <div className="form-group">
+                                        <label htmlFor="gender">Gender:</label>
+                                        <select className="form-control" id="gender" name="gender"
+                                               value={this.state.CreateAccount.gender}
+                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        required>
+                                            <option value="">--Select--</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="O">Orther</option>
+                                        </select>
                                     </div>
-                                    <div>
-                                        <div className="input-field s12">
-                                            {' '}
-                                            <Link
-                                                to="../#"
-                                                data-dismiss="modal"
-                                                data-toggle="modal"
-                                                data-target="#modal1"
-                                            >
-                                                Are you a already member ? Login
-                                            </Link>{' '}
-                                        </div>
+                                    <div className="form-group">
+                                        <label htmlFor="address">Address:</label>
+                                        <textarea className="form-control" id="address"
+                                               value={this.state.CreateAccount.address}
+                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        name="address" required></textarea>
                                     </div>
+                                    <div className="form-group">
+                                        <label htmlFor="descreption">Description:</label>
+                                        <textarea
+                                               value={this.state.CreateAccount.address}
+                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                            className="form-control"
+                                            id="descreption"
+                                            name="descreption"
+                                        ></textarea>
+                                    </div>
+                              
+                                    <div className="form-group">
+                                        <label htmlFor="dateOfbirth">Date of Birth:</label>
+                                        <input
+                                               value={this.state.CreateAccount.dateOfbirth}
+                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                            type="datetime-local"
+                                            className="form-control"
+                                            id="dateOfbirth"
+                                            name="dateOfbirth"
+                                        />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">
+                                      Create
+                                    </button>
                                 </form>
                             </div>
                         </div>

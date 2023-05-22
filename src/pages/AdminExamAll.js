@@ -3,6 +3,37 @@ import { Link } from "react-router-dom";
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 export class AdminExamAll extends Component {
+  constructor(){
+    super();
+    this.state={
+      AllExam:[]
+    }
+  }
+  async getAllExam(){
+    var res= await fetch('https://localhost:7156/api/AdminExam/GetList',{method:'get'});
+    var data= await res.json();
+    this.setState({
+      AllEvent:data
+    })
+  }
+  displayAllExam(){
+    var result=this.state.AllExam.map(e=>{
+      return(
+        <tr>
+        <th>{e.id}</th>
+        <th>{e.name}</th>
+        <th>{e.startDate}</th>
+        <th>{e.endDate}</th>
+        <th>{e.createdBy}</th>
+        <th>Edit</th>
+      </tr>
+      )
+    });
+    return result;
+  }
+  componentDidMount(){
+    this.getAllExam();
+  }
   render() {
     return (
       <div>
@@ -52,12 +83,13 @@ export class AdminExamAll extends Component {
                                 <th>#</th>
                                 <th>Exam Name</th>
                                 <th>Start Date</th>
-                                <th>Start Time</th>
-                                <th>Duration</th>
+                                <th>End Date</th>
+                                <th>Created By</th>
                                 <th>Edit</th>
                               </tr>
                             </thead>
                             <tbody>
+                              {this.displayAllExam()}
                               <tr>
                                 <td>1</td>
                                 <td>Semester 1</td>
