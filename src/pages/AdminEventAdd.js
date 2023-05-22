@@ -28,12 +28,12 @@ const AdminEventAdd = ()=>{
       description: formData.description,
     };
     console.log(requestBody.startDate);
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
     // Send the data to the API
     fetch('https://localhost:7156/api/AdminEvent/Create', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers:myHeaders,
       body: JSON.stringify(requestBody),
     })
       .then(response => {

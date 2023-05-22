@@ -31,11 +31,11 @@ const AdminAddCourses = () => {
     };
     
     // Send the data to the API
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
     fetch('https://localhost:7156/api/AdminCourse/Create', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: myHeaders,
       body: JSON.stringify(requestBody),
     })
       .then(response => {

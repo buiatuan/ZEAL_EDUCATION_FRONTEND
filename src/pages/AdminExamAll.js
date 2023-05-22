@@ -10,7 +10,9 @@ export class AdminExamAll extends Component {
     }
   }
   async getAllExam(){
-    var res= await fetch('https://localhost:7156/api/AdminExam/GetList',{method:'get'});
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    var res= await fetch('https://localhost:7156/api/AdminExam/GetList',{method:'get',headers:myHeaders});
     var data= await res.json();
     this.setState({
       AllEvent:data
