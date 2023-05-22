@@ -3,7 +3,7 @@ import { About } from "./pages/About";
 import { Blog } from "./pages/blog";
 
 import { AllCourses } from "./pages/AllCourses";
-import  CourseDetail  from "./pages/CourseDetails";
+import CourseDetails from "./pages/CourseDetails";
 import { Admission } from "./pages/Admission";
 import { Awards } from "./pages/Awards";
 import { Dashboard } from "./pages/Dashboard";
@@ -30,7 +30,7 @@ import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
 import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
 // import event
 import { AdminEventAll } from "./pages/AdminEventAll";
-import { AdminEventAdd } from "./pages/AdminEventAdd";
+import AdminEventAdd from "./pages/AdminEventAdd";
 // import Exam admin
 import { AdminExamAll } from "./pages/AdminExamAll";
 
@@ -39,7 +39,7 @@ import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
 import { Admin } from "./pages/Admin";
 import { AdminExamAdd } from "./pages/AdminExamAdd";
 import { AdminAllCourses } from "./pages/AdminAllCourses";
-import { AdminAddCourses } from "./pages/AdminAddCourses";
+import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
 import { AdminUserAdd } from "./pages/AdminUserAdd";
 const AppRoutes = [
@@ -87,8 +87,8 @@ const AppRoutes = [
     element: <AllCourses />,
   },
   {
-    path: "/CourseDetail/:id",
-    element: CourseDetail ,
+    path: "/CourseDetails/:id",
+    element: <CourseDetails/>
   },
   {
     path: "/Admission",

@@ -414,4 +414,3 @@ const CourseDetails = async ()=>
 
 export default CourseDetails ;
 
-
