@@ -1,11 +1,74 @@
-import React ,{Component} from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { HeaderClient } from "../components/HeaderClient";
 import { FooterClient } from "../components/FooterClient";
-export class CourseDetail extends Component{
-    render() {
-      return (
-        <div>
+import React, { useEffect, useState } from 'react';
+
+const CourseDetails = async ()=>
+{
+  const id = useParams();
+  
+  const [userData,setUserData] = useState(null);
+  const [eventData,setEventData] = useState([]);
+  
+  await useEffect(()=>{
+    const fetchData = async ()=>{
+      try{
+        const response = await fetch(`https://localhost:7156/api/ScholarCourse/GetDetail/${id}`);
+        if(response.ok)
+        {
+          const jsonData = await response.json();
+          setUserData(jsonData);
+        }else{
+          console.log('Error occurred:', response.status);
+        }
+      }catch (error) {
+        console.log('Error occurred:', error.message);
+      }
+    };
+    fetchData();
+  });
+  console.log(userData);
+  
+  await useEffect(()=>{
+    const fetchData = async ()=>{
+      try{
+        const response = await fetch('https://localhost:7156/api/ScholarEvent/GetListEvent');
+        if(response.ok)
+        {
+          const jsonData = await response.json();
+          setEventData(jsonData);
+        }else{
+          console.log('Error occurred:', response.status);
+        }
+      }catch (error) {
+        console.log('Error occurred:', error.message);
+      }
+    };
+    fetchData();
+  }, []);
+  console.log(eventData);
+
+  var eventRender = [];
+    for (let i = 0; i < 3; i++) {
+      eventRender.push(
+        <li key={i}>
+          <div className="ho-ev-link ho-ev-link-full">
+            <Link to="../#">
+              <h4>{this.eventData[i].name}</h4>
+            </Link>
+            <p>{this.eventData[i].location}</p>
+            <span>{this.eventData[i].startDate}</span>
+          </div>
+        </li>
+      ) 
+    }
+  
+  // Render loading state or fetched user data
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+  return  (
+    <div>
           {/* MOBILE MENU */}
           <HeaderClient/>
           {/*END HEADER SECTION*/}
@@ -33,7 +96,7 @@ export class CourseDetail extends Component{
                               <div className="row">
                                 <div className="input-field col s12">
                                   <input type="text" className="validate" />
-                                  <label>Email id</label>
+                                  <label>Email</label>
                                 </div>
                               </div>
                               <div className="row">
@@ -42,7 +105,7 @@ export class CourseDetail extends Component{
                                   <label>Phone</label>
                                 </div>
                               </div>
-                              <div className="row">
+                              {/* <div className="row">
                                 <div className="input-field col s12">
                                   <select>
                                     <option value disabled selected>Select Course</option>
@@ -51,10 +114,12 @@ export class CourseDetail extends Component{
                                     <option value={3}>Option 3</option>
                                   </select>
                                 </div>
-                              </div>
+                              </div> */}
                               <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="submit" defaultValue="APPLY NOW" className="waves-effect waves-light light-btn" />
+                                  <i class="waves-effect waves-light light-btn waves-input-wrapper">
+                                    <input type="submit" value="APPLY NOW" className="waves-button-input"/>
+                                  </i>
                                 </div>
                               </div>
                             </form>
@@ -70,74 +135,36 @@ export class CourseDetail extends Component{
                       </div>
                       <div className="ho-event">
                         <ul>
-                          <li>
-                            <div className="ho-ev-link ho-ev-link-full">
-                              <Link to="../#">
-                                <h4>Workshop PHP</h4>
-                              </Link>
-                              <p>Nulla at velit convallis venenatis.</p>
-                              <span>9:15 am – 5:00 pm</span>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="ho-ev-link ho-ev-link-full">
-                              <Link to="../#">
-                                <h4>Workshop PHP</h4>
-                              </Link>
-                              <p>Nulla at velit convallis venenatis.</p>
-                              <span>9:15 am – 5:00 pm</span>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="ho-ev-link ho-ev-link-full">
-                              <Link to="../#">
-                                <h4>Workshop PHP</h4>
-                              </Link>
-                              <p>Nulla at velit convallis venenatis.</p>
-                              <span>9:15 am – 5:00 pm</span>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="ho-ev-link ho-ev-link-full">
-                              <Link to="../#">
-                                <h4>Workshop PHP</h4>
-                              </Link>
-                              <p>Nulla at velit convallis venenatis.</p>
-                              <span>9:15 am – 5:00 pm</span>
-                            </div>
-                          </li>
+                          {this.eventRender}
                         </ul>
                       </div>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="cor-mid-img">
-                      <img src={require('../assets/images/course.jpg')} alt="" />
+                      <img src={this.userData.image} alt="" />
                     </div>
                     <div className="cor-con-mid">
                       <div className="cor-p1">
-                        <h2>Biological Sciences</h2>
-                        <span>Category: Software Testing</span>
+                        <h2>{this.userData.name}</h2>
+                        <span>{this.userData.courseType}</span>
                         <div className="share-btn">
                           <ul>
-                            <li><Link to="../#"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
+                            <li><Link to="https://www.facebook.com/"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
                             </li>
-                            <li><Link to="../#"><i className="fa fa-twitter tw1" /> Share On Twitter</Link>
+                            <li><Link to="https://twitter.com/"><i className="fa fa-twitter tw1" /> Share On Twitter</Link>
                             </li>
-                            <li><Link to="../#"><i className="fa fa-google-plus gp1" /> Share On Google Plus</Link>
+                            <li><Link to="https://plus.google.com/"><i className="fa fa-google-plus gp1" /> Share On Google Plus</Link>
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div className="cor-p4">
                         <h3>Course Details:</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
-                          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
-                          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-                        <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>{this.userData.descreption}</p>
+                        <p>Tuition Fees : {this.userData.tuitionFees}</p>
                       </div>
-                      <div className="cor-p5">
+                      {/* <div className="cor-p5">
                         <h3>Course Syllabus</h3>
                         <ul className="nav nav-tabs">
                           <li className="active"><Link data-toggle="tab" href="#home">
@@ -162,7 +189,7 @@ export class CourseDetail extends Component{
                             <p>Some content in menu 2.</p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="cor-p4">
                         <h3>A typical weekly timetable:</h3>
                         <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -272,18 +299,18 @@ export class CourseDetail extends Component{
                               </div>
                               <div className="input-field col s6">
                                 <input type="text" className="validate" />
-                                <label>Email id</label>
+                                <label>Email</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s12">
-                                <textarea className="materialize-textarea" defaultValue={""} />
+                                <textarea className="materialize-textarea" value={""} />
                                 <label>Message</label>
                               </div>
                             </div>
                             <div className="row">
                               <div className="input-field col s12">
-                                <input type="submit" defaultValue="Submit" className="waves-effect waves-light btn-book" />
+                                <input type="submit" value="SUBMIT" className="waves-effect waves-light btn-book"/>
                               </div>
                             </div>
                           </form>
@@ -316,7 +343,9 @@ export class CourseDetail extends Component{
                             </div>
                             <div className="row">
                               <div className="input-field col s12">
-                                <input type="submit" defaultValue="Login" className="waves-effect waves-light light-btn" />
+                                <i class="waves-effect waves-light light-btn waves-input-wrapper">
+                                  <input type="submit" value="LOGIN" className="waves-button-input"/>
+                                </i>
                               </div>
                             </div>
                           </form>
@@ -380,6 +409,10 @@ export class CourseDetail extends Component{
           <FooterClient/>
             {/*Import jQuery before materialize.js*/}
             </div>
-    );
-  }
-};
+  );
+}
+
+export default CourseDetails ;
+
+
+
