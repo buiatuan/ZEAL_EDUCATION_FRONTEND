@@ -3,8 +3,95 @@ import { Link } from "react-router-dom";
 import { HeaderClient } from "../components/HeaderClient";
 import { FooterClient } from "../components/FooterClient";
 export class AllCourses extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      Course: []
+    };
+  }
+  async GetListCourse()
+    {
+      try {
+        const response = await fetch('https://localhost:7156/api/ScholarCourse/GetListCourse', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+          const jsonData = await response.json();
+          this.setState({
+             Course : jsonData
+          },()=>{
+            // console.log(this.state.Course);
+          });
+          
+        } else {
+          console.log('Error occurred:', response.status);
+        }
+        
+      } catch (error) {
+        console.log('Error occurred:', error.message);
+      }
+      
+    } 
+    componentDidMount(){
+      this.GetListCourse();
+    }
     render() {
-      return (
+      console.log(this.state.Course);
+      const dataArray = this.state.Course;
+      
+      const render1 = [];
+      for (let i = 0; i < dataArray.length/2; i++) {
+        render1.push
+        (
+          <div className="home-top-cour" key={i}>
+          {/*POPULAR COURSES IMAGE*/}
+          <div className="col-md-3"> <img src={`${dataArray[i].image}`} alt="" /> </div>
+          {/*POPULAR COURSES: CONTENT*/}
+          <div className="col-md-9 home-top-cour-desc">
+          <Link to={`../CourseDetails/${dataArray[i].id}`}>
+            <h3>{dataArray[i].name}</h3>
+          </Link>
+          <h4>{dataArray[i].courseType}</h4>
+          <p>{dataArray[i].description}</p> <span className="home-top-cour-rat">4.2</span>
+          <div className="hom-list-share">
+            <ul>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
+            </ul>
+          </div>
+          </div>
+          </div>
+        );
+      }
+      const render2 = [];
+      for (let i = dataArray.length-1; i > dataArray.length/2; i--) {
+        render2.push
+        (
+          <div className="home-top-cour" key={i}>
+          {/*POPULAR COURSES IMAGE*/}
+          <div className="col-md-3"> <img src={`${dataArray[i].image}`} alt="" /> </div>
+          {/*POPULAR COURSES: CONTENT*/}
+          <div className="col-md-9 home-top-cour-desc">
+          <Link to={`../CourseDetails/${dataArray[i].id}`}>
+            <h3>{dataArray[i].name}</h3>
+          </Link>
+          <h4>{dataArray[i].courseType}</h4>
+          <p>{dataArray[i].description}</p> <span className="home-top-cour-rat">4.2</span>
+          <div className="hom-list-share">
+            <ul>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
+            </ul>
+          </div>
+          </div>
+          </div>
+        );
+      }
+      
+        return (
         <div>
       <HeaderClient/>
           <section className="pop-cour">
@@ -18,170 +105,12 @@ export class AllCourses extends Component{
               <div className="row">
                 <div className="col-md-6">
                   <div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-1.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Aerospace Engineering</h3>
-                        </Link>
-                        <h4>Technology / Space / Aerospace</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-2.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Agriculture Courses</h3>
-                        </Link>
-                        <h4>Technology / Space / Aerospace</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 320</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-3.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Marine Engineering</h3>
-                        </Link>
-                        <h4>Technology / Ocean / Marine</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-4.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Building, Construction Management</h3>
-                        </Link>
-                        <h4>Technology / Construction / Building</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 124</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    {render1}
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-5.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Fashion Technology</h3>
-                        </Link>
-                        <h4>Technology / Trends / Fashion</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-6.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Agriculture Courses</h3>
-                        </Link>
-                        <h4>Technology / Space / Aerospace</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />40 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 320</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-7.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Marine Engineering</h3>
-                        </Link>
-                        <h4>Technology / Ocean / Marine</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />04 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 1020</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    {/*POPULAR COURSES*/}
-                    <div className="home-top-cour">
-                      {/*POPULAR COURSES IMAGE*/}
-                      <div className="col-md-3"> <img src={require('../assets/images/course/sm-8.jpg')} alt="" /> </div>
-                      {/*POPULAR COURSES: CONTENT*/}
-                      <div className="col-md-9 home-top-cour-desc">
-                        <Link to="../CourseDetail">
-                          <h3>Building, Construction Management</h3>
-                        </Link>
-                        <h4>Technology / Construction / Building</h4>
-                        <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p> <span className="home-top-cour-rat">4.2</span>
-                        <div className="hom-list-share">
-                          <ul>
-                            <li><Link to="../CourseDetail"><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-eye" aria-hidden="true" />32 Aavailable</Link> </li>
-                            <li><Link to="../CourseDetail"><i className="fa fa-share-alt" aria-hidden="true" /> 124</Link> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    {render2}
                   </div>
                 </div>
               </div>
