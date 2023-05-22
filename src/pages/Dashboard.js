@@ -6,7 +6,8 @@ export class Dashboard extends Component{
   constructor(){
     super();
     this.state={
-    Scholar: JSON.parse(localStorage.getItem('Account'))
+    Scholar: JSON.parse(localStorage.getItem('Account')),
+   
     }
   }
     render() {

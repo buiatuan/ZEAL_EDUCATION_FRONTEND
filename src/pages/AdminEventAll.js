@@ -10,7 +10,9 @@ export class AdminEventAll extends Component{
     }
   }
   async getAllEvent(){
-    var res= await fetch('https://localhost:7156/api/AdminEvent/GetListEvent',{method:'get'});
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    var res= await fetch('https://localhost:7156/api/AdminEvent/GetListEvent',{method:'get',headers:myHeaders});
     var data= await res.json();
     this.setState({
       AllEvent:data

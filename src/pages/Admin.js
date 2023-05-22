@@ -8,11 +8,14 @@ export class Admin extends Component {
         this.state = {
             AllCouses: [],
             AllScholar: [],
+     
         };
     }
     async getCouses() {
         try {
-            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', { method: 'get' });
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', { method: 'get',headers:myHeaders });
             var data = await res.json();
             this.setState({
                 AllCouses: data,
@@ -23,7 +26,9 @@ export class Admin extends Component {
     }
     async getScholar() {
         try {
-            var res = await fetch('https://localhost:7156/api/AdminScholar/GetListScholar', { method: 'get' });
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+            var res = await fetch('https://localhost:7156/api/AdminScholar/GetListScholar',{ method: 'get',headers:myHeaders });
             var data = await res.json();
             this.setState({
                 AllScholar: data,
