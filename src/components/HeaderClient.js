@@ -88,6 +88,12 @@ export class HeaderClient extends Component {
         localStorage.removeItem('Token');
         localStorage.removeItem('Account');
     }
+    else{
+        var data= await response.json();
+   
+        localStorage.setItem('Account', JSON.stringify(data));
+    }
+    
    }
     logOut(e) {
         e.preventDefault();
