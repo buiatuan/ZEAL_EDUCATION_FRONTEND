@@ -3,6 +3,78 @@ import { Link } from 'react-router-dom';
 import { HeaderClient } from '../components/HeaderClient';
 import { FooterClient } from '../components/FooterClient';
 export class DbCourses extends Component {
+    constructor() {
+        super();
+        this.state = {
+            Scholar: JSON.parse(localStorage.getItem('Account')),
+        };
+    }
+    showRegisterCourse() {
+        var list = this.state.Scholar.courseList === null ? [] : this.state.Scholar.courseList;
+        const result = list.map((e) => {
+            return (
+                <li>
+                    <Link to={`../CourseDetails/${e.id}`}>
+                        <div className="list-mig-like-com com-mar-bot-30">
+                            <div className="list-mig-lc-img">
+                                {' '}
+                                <img src={`${e.image}`} alt="" />{' '}
+                                <span className="home-list-pop-rat list-mi-pr">Duration:150 Days</span>
+                            </div>
+                            <div className="list-mig-lc-con">
+                                <h5>{e.name}</h5>
+                                <p>{e.courseType}</p>
+                            </div>
+                        </div>
+                    </Link>
+                </li>
+            );
+        });
+        return result;
+    }
+    showCourseStatus() {
+        var list = this.state.Scholar.courseList === null ? [] : this.state.Scholar.courseList;
+        const result = list.map((e) => {
+            var status =
+                e.status === 1 ? (
+                    <span className="pro-user-act">Active</span>
+                ) : (
+                    <span className="bg-danger text-light">Non-Active</span>
+                );
+            var poinAss =
+                e.assignmetPoint === null ? (
+                    <span className="text-info">Future</span>
+                ) : (
+                    <span className="text-success"> {e.assignmetPoint} </span>
+                );
+            var poinExam =
+                e.testPoint === null ? (
+                    <span className="text-info">Future</span>
+                ) : (
+                    <span className="text-success"> {e.testPoint} </span>
+                );
+            var btnUnsub =
+                e.status === 1 ? (
+                    <button className="btn btn-danger  text-capitalize btn-xs" disabled="true">
+                        UnSubribe
+                    </button>
+                ) : (
+                    <button className="btn btn-danger  text-capitalize btn-xs">UnSubribe</button>
+                );
+            return (
+                <tr>
+                    <td> {e.courseCode} </td>
+                    <td> {e.name} </td>
+
+                    <td>{status}</td>
+                    <td>{poinAss}</td>
+                    <td>{poinExam}</td>
+                    <td>{btnUnsub}</td>
+                </tr>
+            );
+        });
+        return result;
+    }
     render() {
         return (
             <div>
@@ -66,101 +138,7 @@ export class DbCourses extends Component {
                             </div>
                             <div className="col-md-9">
                                 <div className="udb">
-                                    <div className="udb-sec udb-cour">
-                                        <h4>
-                                            <img src={require('../assets/images/icon/db2.png')} alt="" /> Booking
-                                            Courses
-                                        </h4>
-                                        <p>
-                                            Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                                            their default model text.The point of using Lorem Ipsummaking it look like
-                                            readable English.
-                                        </p>
-                                        <div className="sdb-cours">
-                                            <ul>
-                                                <li>
-                                                    <Link to="../#">
-                                                        <div className="list-mig-like-com com-mar-bot-30">
-                                                            <div className="list-mig-lc-img">
-                                                                {' '}
-                                                                <img
-                                                                    src={require('../assets/images/course/3.jpg')}
-                                                                    alt=""
-                                                                />{' '}
-                                                                <span className="home-list-pop-rat list-mi-pr">
-                                                                    Duration:150 Days
-                                                                </span>{' '}
-                                                            </div>
-                                                            <div className="list-mig-lc-con">
-                                                                <h5>Master of Science</h5>
-                                                                <p>Illinois City,</p>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="../#">
-                                                        <div className="list-mig-like-com com-mar-bot-30">
-                                                            <div className="list-mig-lc-img">
-                                                                {' '}
-                                                                <img
-                                                                    src={require('../assets/images/course/4.jpg')}
-                                                                    alt=""
-                                                                />{' '}
-                                                                <span className="home-list-pop-rat list-mi-pr">
-                                                                    Duration:60 Days
-                                                                </span>{' '}
-                                                            </div>
-                                                            <div className="list-mig-lc-con">
-                                                                <h5>Java Programming</h5>
-                                                                <p>Illinois City,</p>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="../#">
-                                                        <div className="list-mig-like-com com-mar-bot-30">
-                                                            <div className="list-mig-lc-img">
-                                                                {' '}
-                                                                <img
-                                                                    src={require('../assets/images/course/5.jpg')}
-                                                                    alt=""
-                                                                />{' '}
-                                                                <span className="home-list-pop-rat list-mi-pr">
-                                                                    Duration:30 Days
-                                                                </span>{' '}
-                                                            </div>
-                                                            <div className="list-mig-lc-con">
-                                                                <h5>Aeronautical Engineering</h5>
-                                                                <p>Illinois City,</p>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="../#">
-                                                        <div className="list-mig-like-com com-mar-bot-30">
-                                                            <div className="list-mig-lc-img">
-                                                                {' '}
-                                                                <img
-                                                                    src={require('../assets/images/course/3.jpg')}
-                                                                    alt=""
-                                                                />{' '}
-                                                                <span className="home-list-pop-rat list-mi-pr">
-                                                                    Duration:20 Days
-                                                                </span>{' '}
-                                                            </div>
-                                                            <div className="list-mig-lc-con">
-                                                                <h5>Master of Science</h5>
-                                                                <p>Illinois City,</p>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                               
                                     <div className="udb-sec udb-cour-stat">
                                         <h4>
                                             <img src={require('../assets/images/icon/db3.png')} alt="" /> Course Status
@@ -174,116 +152,16 @@ export class DbCourses extends Component {
                                             <table className="bordered responsive-table">
                                                 <thead>
                                                     <tr>
-                                                        <th>No</th>
+                                                        <th>Code</th>
                                                         <th>Course Name</th>
-                                                        <th>Start Date</th>
-                                                        <th>End Date</th>
+
                                                         <th>Status</th>
-                                                        <th>Edit</th>
-                                                        <th>View</th>
+                                                        <th>Assignment Point</th>
+                                                        <th>Exam Point</th>
+                                                        <th>Unsubscribe</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>01</td>
-                                                        <td>Software Testing</td>
-                                                        <td>12May 2018</td>
-                                                        <td>18Aug 2018</td>
-                                                        <td>
-                                                            <span className="pro-user-act">active</span>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-edit" className="pro-edit">
-                                                                edit
-                                                            </Link>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-view" className="pro-edit">
-                                                                view
-                                                            </Link>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>02</td>
-                                                        <td>Mechanical Design</td>
-                                                        <td>05Jan 2019</td>
-                                                        <td>10Feb 2019</td>
-                                                        <td>
-                                                            <span className="pro-user-act">active</span>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-edit" className="pro-edit">
-                                                                edit
-                                                            </Link>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-view" className="pro-edit">
-                                                                view
-                                                            </Link>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>03</td>
-                                                        <td>Architecture &amp; Planning</td>
-                                                        <td>21Jun 2020</td>
-                                                        <td>08Dec 2020</td>
-                                                        <td>
-                                                            <span className="pro-user-act">active</span>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-edit" className="pro-edit">
-                                                                edit
-                                                            </Link>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-view" className="pro-edit">
-                                                                view
-                                                            </Link>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>04</td>
-                                                        <td>Board Exam Training</td>
-                                                        <td>08Jun 2018</td>
-                                                        <td>21Sep 2018</td>
-                                                        <td>
-                                                            <span className="pro-user-act pro-user-de-act">
-                                                                de-active
-                                                            </span>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-edit" className="pro-edit">
-                                                                edit
-                                                            </Link>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-view" className="pro-edit">
-                                                                view
-                                                            </Link>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>05</td>
-                                                        <td>Yoga Training Classes</td>
-                                                        <td>16JFeb 2018</td>
-                                                        <td>26Mar 2018</td>
-                                                        <td>
-                                                            <span className="pro-user-act pro-user-de-act">
-                                                                de-active
-                                                            </span>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-edit" className="pro-edit">
-                                                                edit
-                                                            </Link>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="../sdb-course-view" className="pro-edit">
-                                                                view
-                                                            </Link>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
+                                                <tbody>{this.showCourseStatus()}</tbody>
                                             </table>
                                         </div>
                                     </div>

@@ -160,32 +160,7 @@ export class Dashboard extends Component {
                                             <ul>{this.showRegisterCourse()}</ul>
                                         </div>
                                     </div>
-                                    <div className="udb-sec udb-cour-stat">
-                                        <h4>
-                                            <img src={require('../assets/images/icon/db3.png')} alt="" /> Course Status
-                                        </h4>
-                                        <p>
-                                            Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                                            their default model text.The point of using Lorem Ipsummaking it look like
-                                            readable English.
-                                        </p>
-                                        <div className="pro-con-table">
-                                            <table className="bordered responsive-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Code</th>
-                                                        <th>Course Name</th>
-
-                                                        <th>Status</th>
-                                                        <th>Assignment Point</th>
-                                                        <th>Exam Point</th>
-                                                        <th>Unsubscribe</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>{this.showCourseStatus()}</tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>
