@@ -41,8 +41,10 @@ import { AdminExamAdd } from "./pages/AdminExamAdd";
 import { AdminAllCourses } from "./pages/AdminAllCourses";
 import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
-import { AdminUserAdd } from "./pages/AdminUserAdd";
 import CourseDetails from "./pages/CourseDetails";
+import AdminEventEdit from "./pages/AdminEventEdit";
+import {AdminTeacherAll} from "./pages/AdminTeacherAll";
+import AdminTeacherAdd from "./pages/AdminTeacherAdd";
 const AppRoutes = [
   {
     index: true,
@@ -150,10 +152,6 @@ const AppRoutes = [
     path: "/AdminUserAll",
     element: <AdminUserAll />,
   },
-  {
-    path: "/AdminUserAdd",
-    element: <AdminUserAdd />,
-  },
   // event admin
   {
     path: "/AdminEventAll",
@@ -162,6 +160,10 @@ const AppRoutes = [
   {
     path: "/AdminEventAdd",
     element: <AdminEventAdd />,
+  },
+  {
+    path: "/AdminEventEdit",
+    element: <AdminEventEdit />,
   },
   // Exam Admin
   {
@@ -211,6 +213,15 @@ const AppRoutes = [
     path: "/AdminAdmissionMenu",
     element: <AdminAdmissionMenu />,
   },
+  //admin teacher
+  {
+    path: "/AdminTeacherAll",
+    element: <AdminTeacherAll />,
+  },
+  {
+    path: "/AdminTeacherAdd",
+    element: <AdminTeacherAdd />
+  }
 ];
 
 export default AppRoutes;
