@@ -1,6 +1,12 @@
 import React, {Component} from "react";
 import {Link } from "react-router-dom";
 export class HeaderAdmin extends Component{
+  constructor(){
+    super();
+    this.state={
+      AccountAdmin:JSON.parse(localStorage.getItem('Account'))
+    }
+  }
     render(){
         return(
             <div>
@@ -31,7 +37,7 @@ export class HeaderAdmin extends Component{
           {/*== MY ACCCOUNT ==*/}
           <div className="col-md-2 col-sm-3 col-xs-6">
             {/* Dropdown Trigger */}
-            <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={require("../assets/images/user/6.png")} alt="" />My Account <i className="fa fa-angle-down" aria-hidden="true" />
+            <Link className="waves-effect dropdown-button top-user-pro" to="../#" data-activates="top-menu"><img src={'https://randomuser.me/api/portraits/men/1.jpg'} alt="" />{this.state.AccountAdmin.name} <i className="fa fa-angle-down" aria-hidden="true" />
             </Link>
             {/* Dropdown Structure */}
             <ul id="top-menu" className="dropdown-content top-menu-sty">

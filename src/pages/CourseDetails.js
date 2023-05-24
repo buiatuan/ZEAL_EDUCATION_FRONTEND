@@ -3,40 +3,51 @@ import { HeaderClient } from "../components/HeaderClient";
 import { FooterClient } from "../components/FooterClient";
 import React, { useEffect, useState } from 'react';
 
-const CourseDetails = async ()=>
+
+const CourseDetails =  ()=>
 {
-  const id = useParams();
-  
-  const [userData,setUserData] = useState(null);
+  const {id} = useParams();
+  const Account={
+    name:localStorage.getItem('Account') ? JSON.parse(localStorage.getItem('Account')).name : '',
+    Phone:localStorage.getItem('Account')? JSON.parse(localStorage.getItem('Account')).phoneNumber:'',
+    Email:localStorage.getItem('Account')? JSON.parse(localStorage.getItem('Account')).email:''
+  }
+  const [course,setcourse] = useState(
+    {
+      courseCode: "MH-JAVA_2",
+      name: "Java 2",
+      tuitionFees: 2000000.00000000,
+      courseType: "CHUYEN_NGANH",
+      descreption: "Môn h?c chuyên ngành",
+      image: "project/image/anh_1.jpg",
+      quantity: 0
+  }
+  );
+ 
   const [eventData,setEventData] = useState([]);
+
   
-  await useEffect(()=>{
-    const fetchData = async ()=>{
-      try{
-        const response = await fetch(`https://localhost:7156/api/ScholarCourse/GetDetail/${id}`);
-        if(response.ok)
-        {
-          const jsonData = await response.json();
-          setUserData(jsonData);
-        }else{
-          console.log('Error occurred:', response.status);
-        }
-      }catch (error) {
-        console.log('Error occurred:', error.message);
-      }
-    };
+
+   useEffect(()=>{
+     const fetchData= async ()=>{
+      const course= await getCouses();
+      const allEvent= await getAllEvent();
+      setcourse(course);
+      setEventData(allEvent);
+      
+      
+     };
     fetchData();
   });
-  console.log(userData);
-  
-  await useEffect(()=>{
-    const fetchData = async ()=>{
+   const getCouses= async ()=>{
       try{
-        const response = await fetch('https://localhost:7156/api/ScholarEvent/GetListEvent');
+        var myHeaders = new Headers();
+        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+        const response = await fetch(`https://localhost:7156/api/ScholarCourse/GetDetail/${id}`,{headers:myHeaders});
         if(response.ok)
         {
           const jsonData = await response.json();
-          setEventData(jsonData);
+           return jsonData;
         }else{
           console.log('Error occurred:', response.status);
         }
@@ -44,27 +55,82 @@ const CourseDetails = async ()=>
         console.log('Error occurred:', error.message);
       }
     };
-    fetchData();
-  }, []);
-  console.log(eventData);
-
-  var eventRender = [];
+    const getAllEvent= async ()=>{
+      try{
+        var myHeaders = new Headers();
+        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+        const response = await fetch('https://localhost:7156/api/ScholarEvent/GetListEvent',{headers:myHeaders});
+        if(response.ok)
+        {
+          const jsonData = await response.json();
+          return jsonData;
+        }else{
+          console.log('Error occurred:', response.status);
+        }
+      }catch (error) {
+        console.log('Error occurred:', error.message);
+      }
+    }
+  
+   var displayEvent=()=>{
+   var eventRender=[];
+   
+    if(eventData.length>3)
     for (let i = 0; i < 3; i++) {
       eventRender.push(
-        <li key={i}>
+        <li style={{background:`url(${eventData[i].image})`}}>
           <div className="ho-ev-link ho-ev-link-full">
             <Link to="../#">
-              <h4>{this.eventData[i].name}</h4>
+              <h4  className="text-light">{eventData[i].name}</h4>
             </Link>
-            <p>{this.eventData[i].location}</p>
-            <span>{this.eventData[i].startDate}</span>
+            <p  className="text-light">{eventData[i].location}</p>
+            <span  className="text-light">{eventData[i].startDate}</span>
           </div>
         </li>
       ) 
     }
+    else eventRender=eventData.map(e=>{
+      return(
+        <li style={{background:`url(${e.image})`}}>
+          <div className="ho-ev-link ho-ev-link-full">
+            <Link to="../#">
+              <h4  className="text-light">{e.name}</h4>
+            </Link>
+            <p  className="text-light">{e.location}</p>
+            <span  className="text-light">{e.startDate}</span>
+          </div>
+        </li>
+      )
+    })
+   
+   return eventRender;
+
+   }
+ const registerCourse=(e)=>{
+  e.preventDefault();
+  var acc=JSON.parse(localStorage.getItem('Account'));
+  var send={
+   "courseId": parseInt(id),
+   "scholarId": acc.id
+  }
+  console.log(send)
+  var myHeaders = new Headers();
+        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+        myHeaders.append('Content-Type', 'application/json');
+     fetch('https://localhost:7156/api/ScholarRegister/CourseRegister',{
+      method:'post',
+       headers: myHeaders,
+      body:JSON.stringify(send)
+     }).then(res=>{
+      if(res.ok)window.confirm("Register this Course is Success")
+      else window.alert("Register failed")
+     })
+ }
+
+  
   
   // Render loading state or fetched user data
-  if (!userData) {
+  if (!course) {
     return <div>Loading...</div>;
   }
   return  (
@@ -82,27 +148,27 @@ const CourseDetails = async ()=>
                       <div className="cor-top-deta">
                         <div className="ho-st-login cor-apply field-com">
                           <div className="col s12">
-                            <form className="col s12">
+                            <form className="col s12" onSubmit={e=>registerCourse(e)} >
                               <div className="cor-left-app-tit">
                                 <h4>Apply This Course</h4>
                                 <p>Nulla at velit convallis lectus.</p>
                               </div>
                               <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="text" className="validate" />
-                                  <label>Full Name</label>
+                                  <input type="text" className="validate"  value={Account.name} placeholder="Full Name"/>
+                            
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="text" className="validate" />
-                                  <label>Email</label>
+                                  <input type="text" className="validate" value={Account.Email} placeholder="Email" />
+      
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="text" className="validate" />
-                                  <label>Phone</label>
+                                  <input type="text" className="validate"value={Account.Phone} placeholder="Phone Number" />
+                            
                                 </div>
                               </div>
                               {/* <div className="row">
@@ -135,19 +201,19 @@ const CourseDetails = async ()=>
                       </div>
                       <div className="ho-event">
                         <ul>
-                          {this.eventRender}
+                          {displayEvent()}
                         </ul>
                       </div>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="cor-mid-img">
-                      <img src={this.userData.image} alt="" />
+                      <img src={course.image} alt="" />
                     </div>
                     <div className="cor-con-mid">
                       <div className="cor-p1">
-                        <h2>{this.userData.name}</h2>
-                        <span>{this.userData.courseType}</span>
+                        <h2>{course.name}</h2>
+                        <span>{course.courseType}</span>
                         <div className="share-btn">
                           <ul>
                             <li><Link to="https://www.facebook.com/"><i className="fa fa-facebook fb1" /> Share On Facebook</Link>
@@ -161,8 +227,8 @@ const CourseDetails = async ()=>
                       </div>
                       <div className="cor-p4">
                         <h3>Course Details:</h3>
-                        <p>{this.userData.descreption}</p>
-                        <p>Tuition Fees : {this.userData.tuitionFees}</p>
+                        <p>{course.descreption}</p>
+                        <p>Tuition Fees : {course.tuitionFees}</p>
                       </div>
                       {/* <div className="cor-p5">
                         <h3>Course Syllabus</h3>

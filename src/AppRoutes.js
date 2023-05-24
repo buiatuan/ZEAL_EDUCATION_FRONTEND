@@ -3,7 +3,7 @@ import { About } from "./pages/About";
 import { Blog } from "./pages/blog";
 
 import { AllCourses } from "./pages/AllCourses";
-import CourseDetails from "./pages/CourseDetails";
+
 import { Admission } from "./pages/Admission";
 import { Awards } from "./pages/Awards";
 import { Dashboard } from "./pages/Dashboard";
@@ -42,6 +42,7 @@ import { AdminAllCourses } from "./pages/AdminAllCourses";
 import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
 import { AdminUserAdd } from "./pages/AdminUserAdd";
+import CourseDetails from "./pages/CourseDetails";
 const AppRoutes = [
   {
     index: true,
@@ -81,15 +82,15 @@ const AppRoutes = [
     path: "/Research",
     element: <Research />,
   },
-
+  {
+    path:"/CourseDetails/:id",
+    element: <CourseDetails/>,
+  },
   {
     path: "/AllCourses",
     element: <AllCourses />,
   },
-  {
-    path: "/CourseDetails/:id",
-    element: <CourseDetails/>
-  },
+
   {
     path: "/Admission",
     element: <Admission />,

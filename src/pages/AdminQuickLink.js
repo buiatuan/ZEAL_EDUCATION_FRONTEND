@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 export class AdminQuickLink extends Component{
+  
     render() {
 
       return (

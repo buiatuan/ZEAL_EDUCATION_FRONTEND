@@ -25,6 +25,8 @@ export class HeaderClient extends Component {
            
             username: '',
             password: '',
+            email: "",
+            phoneNumber: null,
             name: '',
             age: 0,
             gender: 'M',
@@ -88,6 +90,12 @@ export class HeaderClient extends Component {
         localStorage.removeItem('Token');
         localStorage.removeItem('Account');
     }
+    else{
+        var data= await response.json();
+   
+        localStorage.setItem('Account', JSON.stringify(data));
+    }
+    
    }
     logOut(e) {
         e.preventDefault();
@@ -184,13 +192,16 @@ export class HeaderClient extends Component {
             username: this.state.CreateAccount.username,
             password:this.state.CreateAccount.password,
             name: this.state.CreateAccount.name,
+            email:this.state.CreateAccount.email,
+            phoneNumber: String(this.state.CreateAccount.phoneNumber),
             age: parseInt(this.state.CreateAccount.age),
             gender: this.state.CreateAccount.gender,
             address: this.state.CreateAccount.address,
             descreption: this.state.CreateAccount.descreption,
-     
+             
             dateOfbirth: this.state.CreateAccount.dateOfbirth,
         };
+        console.log(datasent);
          var res= await fetch('https://localhost:7156/api/ScholarRegister/Create',{
          method:'POST'  , 
          headers:{
@@ -201,6 +212,7 @@ export class HeaderClient extends Component {
         if(res.ok){
             var data= await res.text();
             alert(data);
+            this.pop_close.current.click();
         }
     }
 
@@ -380,6 +392,20 @@ export class HeaderClient extends Component {
                                         className="form-control" id="name" name="name" required/>
                                     </div>
                                     <div className="form-group">
+                                        <label htmlFor="email">Email:</label>
+                                        <input type="email" 
+                                          value={this.state.CreateAccount.email}
+                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        className="form-control" id="email" name="email" required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="phoneNumber">Phone Number:</label>
+                                        <input type="number" 
+                                          value={this.state.CreateAccount.phoneNumber}
+                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                        className="form-control" id="phoneNumber" name="phoneNumber" required/>
+                                    </div>
+                                    <div className="form-group">
                                         <label htmlFor="age">Age:</label>
                                         <input type="number"
                                           value={this.state.CreateAccount.Age}
@@ -408,7 +434,7 @@ export class HeaderClient extends Component {
                                     <div className="form-group">
                                         <label htmlFor="descreption">Description:</label>
                                         <textarea
-                                               value={this.state.CreateAccount.address}
+                                               value={this.state.CreateAccount.descreption}
                                                onChange={(e)=>this.handleOnchangeCreateAccount(e)}
                                             className="form-control"
                                             id="descreption"
@@ -722,7 +748,7 @@ export class HeaderClient extends Component {
                                             </b>
                                             <button
                                                 type="button"
-                                                className=" text-bold"
+                                                className="bg-light btn text-bold text-dark btn-xs m-2 text-capitalize"
                                                 style={{ marginLeft: '10px' }}
                                                 onClick={(e) => {
                                                     this.logOut(e);
@@ -843,8 +869,12 @@ export class HeaderClient extends Component {
                                                             </div>
                                                             <div className="mm1-com mm1-s3">
                                                                 <ul>
+                                                                   
                                                                     <li>
-                                                                        <Link to="../dashboard">Student profile</Link>
+                                                                        <Link to="../dashboard" >Dashboard </Link>
+                                                                    </li>
+                                                                    <li>
+                                                                        <Link to="../dbprofile">Student profile</Link>
                                                                     </li>
                                                                     <li>
                                                                         <Link to="../dbcourses">Dashboard courses</Link>
@@ -852,14 +882,8 @@ export class HeaderClient extends Component {
                                                                     <li>
                                                                         <Link to="../dbexams">Dashboard exams</Link>
                                                                     </li>
-                                                                    <li>
-                                                                        <Link to="../dbprofile">Dashboard profile</Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link to="../dbtimeline">
-                                                                            Dashboard timeline
-                                                                        </Link>
-                                                                    </li>
+                                                                
+                                                                   
                                                                 </ul>
                                                             </div>
                                                         </div>
