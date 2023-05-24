@@ -9,8 +9,8 @@ const CourseDetails =  ()=>
   const {id} = useParams();
   const Account={
     name:localStorage.getItem('Account') ? JSON.parse(localStorage.getItem('Account')).name : '',
-    Phone:'',
-    Email:''
+    Phone:localStorage.getItem('Account')? JSON.parse(localStorage.getItem('Account')).phoneNumber:'',
+    Email:localStorage.getItem('Account')? JSON.parse(localStorage.getItem('Account')).email:''
   }
   const [course,setcourse] = useState(
     {
@@ -159,18 +159,18 @@ const CourseDetails =  ()=>
                             
                                 </div>
                               </div>
-                              {/* <div className="row">
+                              <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="text" className="validate" />
-                                  <label>Email</label>
+                                  <input type="text" className="validate" value={Account.Email} placeholder="Email" />
+      
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="input-field col s12">
-                                  <input type="text" className="validate" />
-                                  <label>Phone</label>
+                                  <input type="text" className="validate"value={Account.Phone} placeholder="Phone Number" />
+                            
                                 </div>
-                              </div> */}
+                              </div>
                               {/* <div className="row">
                                 <div className="input-field col s12">
                                   <select>
