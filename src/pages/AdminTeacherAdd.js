@@ -85,19 +85,19 @@ const AdminTeacherAdd = ()=>{
                         <form onSubmit={e=>handleSubmit(e)}>
                           <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
+                            <input type="text" required className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="username" className="form-label">Username</label>
-                            <input type="text" className="form-control" name="username" id="username" placeholder="Enter username" onChange={e=>handleChange(e)}/>
+                            <input type="text" required className="form-control" name="username" id="username" placeholder="Enter username" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
-                            <input type="text" className="form-control" id="password" name="password" placeholder="Enter password" onChange={e=>handleChange(e)}/>
+                            <input type="text" required className="form-control" id="password" name="password" placeholder="Enter password" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="age" className="form-label">Age</label>
-                            <input type="number" min={0} max={100} className="form-control" id="age" name="age" placeholder="Enter age" onChange={e=>handleChange(e)}/>
+                            <input type="number" required min={0} max={100} className="form-control" id="age" name="age" placeholder="Enter age" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
@@ -110,15 +110,15 @@ const AdminTeacherAdd = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="email" name="email" placeholder="Enter email" onChange={e=>handleChange(e)}/>
+                            <input type="email" required className="form-control" id="email" name="email" placeholder="Enter email" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
-                            <input className="form-control" id="phoneNumber" name="phoneNumber" rows="3" placeholder="Enter phone number" onChange={e=>handleChange(e)}/>
+                            <input className="form-control" required id="phoneNumber" name="phoneNumber" rows="3" placeholder="Enter phone number" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="address" className="form-label">Address</label>
-                            <input className="form-control" id="address" name="address" rows="3" placeholder="Enter address" onChange={e=>handleChange(e)}/>
+                            <input className="form-control" required id="address" name="address" rows="3" placeholder="Enter address" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="gender" className="form-label">Gender</label>

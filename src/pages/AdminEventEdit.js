@@ -12,6 +12,7 @@ const AdminEventEdit = ()=>{
   const [formData, setFormData] = useState({
     name: '',
     startDate: '',
+    endTime: '',
     location: '',
     status: '',
     description: '',
@@ -46,6 +47,7 @@ const AdminEventEdit = ()=>{
     const requestBody = {
       name : formData.name,
       startDate: formData.startDate,
+      endTime: formData.endTime,
       location: formData.location,
       status: formData.status,
       description: formData.description,
@@ -99,15 +101,19 @@ const AdminEventEdit = ()=>{
                         <form onSubmit={e=>handleSubmit(e)}>
                           <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" value={formData.name} className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
+                            <input type="text" required value={formData.name} className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="startDate" className="form-label">Start Date</label>
-                            <input type="datetime-local" value={new Date(formData.startDate).toLocaleString()} className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                            <input type="datetime-local" required value={new Date(formData.startDate).toLocaleString()} className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                          </div>
+                          <div className="mb-3">
+                            <label htmlFor="endTime" className="form-label">End Date</label>
+                            <input type="datetime-local" required value={new Date(formData.endTime).toLocaleString()} className="form-control" name="endTime" id="endTime" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="location" className="form-label">Location</label>
-                            <input type="text" value={formData.location} className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
+                            <input type="text" required value={formData.location} className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>

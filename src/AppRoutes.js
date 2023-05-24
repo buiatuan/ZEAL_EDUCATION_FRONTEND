@@ -41,7 +41,6 @@ import { AdminExamAdd } from "./pages/AdminExamAdd";
 import { AdminAllCourses } from "./pages/AdminAllCourses";
 import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
-import { AdminUserAdd } from "./pages/AdminUserAdd";
 import CourseDetails from "./pages/CourseDetails";
 import AdminEventEdit from "./pages/AdminEventEdit";
 import {AdminTeacherAll} from "./pages/AdminTeacherAll";
@@ -152,10 +151,6 @@ const AppRoutes = [
   {
     path: "/AdminUserAll",
     element: <AdminUserAll />,
-  },
-  {
-    path: "/AdminUserAdd",
-    element: <AdminUserAdd />,
   },
   // event admin
   {

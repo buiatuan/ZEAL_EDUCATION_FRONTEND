@@ -47,11 +47,11 @@ studentDashBoard() {
                         <span className="list-enq-city">{e.address}</span>
                     </Link>
                 </td>
-                <td>+01 8574 6854</td>
+                <td>{e.phoneNumber}</td>
                 <td>{e.email}</td>
-                <td>Illinois</td>
-                <td>ST10231</td>
-                <td>16 Feb 1987</td>
+                <td>{e.address}</td>
+                <td>{e.id}</td>
+                <td>{new Date(e.dateOfbirth).toLocaleDateString()}</td>
                 <td>{status}</td>
                 <td>
                     <Link to="../admin-student-details" className="ad-st-view">

@@ -7,6 +7,7 @@ const AdminEventAdd = ()=>{
   const [formData, setFormData] = useState({
     name: '',
     startDate: '',
+    endTime: '',
     location: '',
     status: '',
     description: '',
@@ -22,7 +23,8 @@ const AdminEventAdd = ()=>{
     // Prepare the request body
     const requestBody = {
       name : formData.name,
-      startDate: formData.startDate.toString(),
+      startDate: formData.startDate,
+      endTime: formData.endTime,
       location: formData.location,
       status: formData.status,
       description: formData.description,
@@ -71,21 +73,25 @@ const AdminEventAdd = ()=>{
                   <div className="box-inn-sp admin-form">
                     <div className="inn-title">
                       <h4>Add Event</h4>
-                      <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
+                      {/* <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p> */}
                     </div>
                     <div className="tab-inn">
                         <form onSubmit={e=>handleSubmit(e)}>
                           <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
+                            <input type="text" required className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="startDate" className="form-label">Start Date</label>
-                            <input type="datetime-local" className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                            <input type="datetime-local" required className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                          </div>
+                          <div className="mb-3">
+                            <label htmlFor="endTime" className="form-label">End Date</label>
+                            <input type="datetime-local" required className="form-control" name="endTime" id="endTime" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="location" className="form-label">Location</label>
-                            <input type="text" className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
+                            <input type="text" required className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
