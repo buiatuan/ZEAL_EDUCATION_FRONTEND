@@ -122,7 +122,10 @@ const CourseDetails =  ()=>
        headers: myHeaders,
       body:JSON.stringify(send)
      }).then(res=>{
-      if(res.ok)window.confirm("Register this Course is Success")
+      if(res.ok){
+        window.confirm("Register this Course is Success");
+        window.location.reload();
+      }
       else window.alert("Register failed")
      })
  }

@@ -2797,6 +2797,7 @@ select {
 }
 .sdb-cours ul li {
     width: 50%;
+    height: 224px;
     float: left;
     padding-right: 15px;
     margin-bottom: 15px;
