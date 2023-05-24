@@ -1,9 +1,14 @@
-import React, {useState} from "react";
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import { Link, useParams } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 
-const AdminEventAdd = ()=>{
+const AdminEventEdit = ()=>{
+  var myHeaders = new Headers();
+  myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+  
+  const {id} = useParams();
+    
   const [formData, setFormData] = useState({
     name: '',
     startDate: '',
@@ -11,6 +16,24 @@ const AdminEventAdd = ()=>{
     status: '',
     description: '',
   });
+  
+  useEffect(()=>{
+    const fetchData = ()=>{
+        try{
+            const response = fetch(`https://localhost:7156/api/AdminEvent/GetDetail/${id}`);
+            if(response.ok)
+            {
+              const jsonData = response.json();
+              setFormData(jsonData);
+            }else{
+              console.log('Error occurred:', response.status);
+            }
+          }catch (error) {
+            console.log('Error occurred:', error.message);
+          }
+    };
+    fetchData();
+  },formData)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,22 +45,21 @@ const AdminEventAdd = ()=>{
     // Prepare the request body
     const requestBody = {
       name : formData.name,
-      startDate: formData.startDate.toString(),
+      startDate: formData.startDate,
       location: formData.location,
       status: formData.status,
       description: formData.description,
     };
-    console.log(requestBody.startDate);
-    var myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    console.log(requestBody);
+    
     // Send the data to the API
-    fetch('https://localhost:7156/api/AdminEvent/Create', {
+    fetch('https://localhost:7156/api/AdminEvent/Edit', {
       method: 'POST',
       headers:myHeaders,
       body: JSON.stringify(requestBody),
     })
       .then(response => {
-        if(response.ok) alert("ADD SUCCESS!");
+        if(response.ok) alert("EDIT SUCCESS!");
       })
       .catch(error => {
         console.error('Error sending form data:', error);
@@ -77,19 +99,19 @@ const AdminEventAdd = ()=>{
                         <form onSubmit={e=>handleSubmit(e)}>
                           <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
+                            <input type="text" value={formData.name} className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="startDate" className="form-label">Start Date</label>
-                            <input type="datetime-local" className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                            <input type="datetime-local" value={new Date(formData.startDate).toLocaleString()} className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="location" className="form-label">Location</label>
-                            <input type="text" className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
+                            <input type="text" value={formData.location} className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
-                            <select className="form-select" required id="status" name="status" onChange={e=>handleChange(e)}>
+                            <select className="form-select" id="status" required name="status" value={formData.status} onChange={e=>handleChange(e)}>
                               <option>Choose status</option>
                               <option value="1">Active</option>
                               <option value="0">Inactive</option>
@@ -115,4 +137,4 @@ const AdminEventAdd = ()=>{
   );
 }
 
-export default AdminEventAdd;
+export default AdminEventEdit;
