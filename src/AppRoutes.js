@@ -13,7 +13,7 @@ import { DbProfile } from "./pages/DbProfile";
 import { DbTimeLine } from "./pages/DbTimeLine";
 import { Events } from "./pages/Events";
 import { ContactUs } from "./pages/ContactUs";
-import { EventDetail } from "./pages/EventDetail";
+import  EventDetail  from "./pages/EventDetail";
 import { Seminar } from "./pages/Seminar";
 import { Departments } from "./pages/Departments";
 import { EvenRegister } from "./pages/EventRegister";
@@ -42,6 +42,7 @@ import { AdminAllCourses } from "./pages/AdminAllCourses";
 import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
 import CourseDetails from "./pages/CourseDetails";
+import NotFound from "./pages/NotFound";
 import AdminEventEdit from "./pages/AdminEventEdit";
 import {AdminTeacherAll} from "./pages/AdminTeacherAll";
 import AdminTeacherAdd from "./pages/AdminTeacherAdd";
@@ -130,14 +131,17 @@ const AppRoutes = [
     element: <ContactUs />,
   },
   {
-    path: "/EventDetail",
+    path: "/EventDetail/:id",
     element: <EventDetail />,
   },
   {
     path: "/Seminar",
     element: <Seminar />,
   },
-
+   {
+    path:'/notfound',
+    element:<NotFound/>
+   },
   // page admin
   {
     path: "/Admin",
