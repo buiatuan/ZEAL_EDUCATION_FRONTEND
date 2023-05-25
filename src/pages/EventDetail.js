@@ -250,7 +250,7 @@ const EventDetail = () => {
                                                         Suspendisse rutrum eros vitae ex egestas, sed lobortis turpis
                                                         facilisis.{' '}
                                                     </p>
-                                                    <h5>Best college award 2018</h5>
+                                                    <h5>Best college award 2023</h5>
                                                     <p>
                                                         Sed nec egestas dui. Donec facilisis mauris sit amet auctor
                                                         pellentesque. Suspendisse sagittis sagittis lobortis.

@@ -18,7 +18,7 @@ export class FacilitiesDetail extends Component{
                       <div className="ho-event pg-eve-main pg-blog">
                         <ul>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="../event-register">

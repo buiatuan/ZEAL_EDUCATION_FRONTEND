@@ -41,9 +41,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-1.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Space Research with Nasa</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Space Research with Nasa</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-1.png')} alt="" /></div>
                               </div>
                             </div>
@@ -54,9 +54,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-2.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Attention deficit disorder</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Attention deficit disorder</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-2.png')} alt="" /></div>
                               </div>
                             </div>
@@ -67,9 +67,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-4.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Anorexia Nervosa</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Anorexia Nervosa</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-3.png')} alt="" /></div>
                               </div>
                             </div>
@@ -80,9 +80,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-5.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Internet Speed</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Internet Speed</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-4.png')} alt="" /></div>
                               </div>
                             </div>
@@ -93,9 +93,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-6.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Mobile Communications</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Mobile Communications</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-5.png')} alt="" /></div>
                               </div>
                             </div>
@@ -106,9 +106,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-7.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Learning disabilities</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Learning disabilities</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-6.png')} alt="" /></div>
                               </div>
                             </div>
@@ -119,9 +119,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-8.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Anorexia Nervosa</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Anorexia Nervosa</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-7.png')} alt="" /></div>
                               </div>
                             </div>
@@ -132,9 +132,9 @@ export class Research extends Component{
                                 <img src={require('../assets/images/course/sm-3.jpg')} alt="" />
                               </div>
                               <div className="ed-rsear-dec">
-                                <h4><Link to="../#">Internet Speed</Link></h4>
-                                <Link to="../#">Status <span>Success</span></Link>
-                                <Link to="../#">Duration <span>120 Days</span></Link>
+                                <h4><Link onClick={e=>{e.preventDefault()}} to="../#">Internet Speed</Link></h4>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Status <span>Success</span></Link>
+                                <Link onClick={e=>{e.preventDefault()}} to="../#">Duration <span>120 Days</span></Link>
                                 <div className="ed-flag"><img src={require('../assets/images/icon/flag-8.png')} alt="" /></div>
                               </div>
                             </div>
@@ -166,7 +166,7 @@ export class Research extends Component{
                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
                     </div>
                     <div className="col-md-3 bb-link">
-                      <Link to="../course-details">Book This Course</Link>
+                      <Link onClick={e=>{e.preventDefault()}} to="../course-details">Book This Course</Link>
                     </div>
                   </div>
                 </div>

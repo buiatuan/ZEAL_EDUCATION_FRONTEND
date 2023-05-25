@@ -95,8 +95,8 @@ export class Admin extends Component {
                     </td>
                     <td>{e.courseCode}</td>
                     <td>60 Days(420hrs)</td>
-                    <td>03 Jun 2018</td>
-                    <td>12 Aug 2018</td>
+                    <td>03 Jun 2023</td>
+                    <td>12 Aug 2023</td>
                     <td>{e.tuitionFees}</td>
                     <td>
                       
@@ -295,7 +295,7 @@ export class Admin extends Component {
                                                                     <span className="txt-dark weight-500">Samsing</span>
                                                                 </td>
                                                                 <td>50</td>
-                                                                <td>15 April 2018</td>
+                                                                <td>15 April 2023</td>
                                                                 <td>New york, United States</td>
                                                                 <td>
                                                                     <span className="label label-success">Active</span>
@@ -308,7 +308,7 @@ export class Admin extends Component {
                                                                     </span>
                                                                 </td>
                                                                 <td>75</td>
-                                                                <td>21 Jun 2018</td>
+                                                                <td>21 Jun 2023</td>
                                                                 <td>New york, United States</td>
                                                                 <td>
                                                                     <span className="label label-success">Active</span>
@@ -319,7 +319,7 @@ export class Admin extends Component {
                                                                     <span className="txt-dark weight-500">Samsing</span>
                                                                 </td>
                                                                 <td>50</td>
-                                                                <td>15 April 2018</td>
+                                                                <td>15 April 2023</td>
                                                                 <td>United States</td>
                                                                 <td>
                                                                     <span className="label label-success">Active</span>
@@ -332,7 +332,7 @@ export class Admin extends Component {
                                                                     </span>
                                                                 </td>
                                                                 <td>75</td>
-                                                                <td>21 Jun 2018</td>
+                                                                <td>21 Jun 2023</td>
                                                                 <td>United States</td>
                                                                 <td>
                                                                     <span className="label label-success">Active</span>

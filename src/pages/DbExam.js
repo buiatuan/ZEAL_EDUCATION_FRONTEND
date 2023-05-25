@@ -11,6 +11,9 @@ export class DbExams extends Component {
     }
     showExam(){
         var list =this.state.Scholar.exams===null?[]:this.state.Scholar.exams;
+        if(list.length===0) return(
+            <p>You don't have any Exam</p>
+        )
         var result=list.map(e=>{
             
             var poinExam =
@@ -132,81 +135,8 @@ export class DbExams extends Component {
                                                 {this.showExam()}
                                                 <li className="l-info-pack-plac">
                                                     {' '}
-                                                    <i className="fa fa-clock-o" aria-hidden="true" />
-                                                    <div className="sdb-cl-tim">
-                                                        <div className="sdb-cl-day">
-                                                            <h5>Exam 01</h5>
-                                                            <span>Start date: 10Sep 2018</span>
-                                                        </div>
-                                                        <div className="sdb-cl-class">
-                                                            <ul>
-                                                                <li>
-                                                                    <div
-                                                                        className="sdb-cl-class-tim tooltipped"
-                                                                        data-position="top"
-                                                                        data-delay={50}
-                                                                        data-tooltip="Exam timing"
-                                                                    >
-                                                                        <span>10:00 am</span>
-                                                                        <span>01:15 pm</span>
-                                                                    </div>
-                                                                    <div
-                                                                        className="sdb-cl-class-name tooltipped"
-                                                                        data-position="top"
-                                                                        data-delay={50}
-                                                                        data-tooltip="Exam name and status"
-                                                                    >
-                                                                        <h5>
-                                                                            Software Testing <span>John Smith</span>
-                                                                        </h5>
-                                                                        <span className="sdn-hall-na">
-                                                                            Apj Hall 112
-                                                                        </span>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div
-                                                                        className="sdb-cl-class-tim tooltipped"
-                                                                        data-position="top"
-                                                                        data-delay={50}
-                                                                        data-tooltip="Exam timing"
-                                                                    >
-                                                                        <span>10:15 am</span>
-                                                                        <span>11:00 am</span>
-                                                                    </div>
-                                                                    <div
-                                                                        className="sdb-cl-class-name tooltipped"
-                                                                        data-position="top"
-                                                                        data-delay={50}
-                                                                        data-tooltip="Exam name and status"
-                                                                    >
-                                                                        <h5>
-                                                                            Mechanical Design Classes{' '}
-                                                                            <span>Stephanie</span>
-                                                                        </h5>
-                                                                        <span className="sdn-hall-na">
-                                                                            Apj Hall 112
-                                                                        </span>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="sdb-cl-class-tim">
-                                                                        <span>11:00 am</span>
-                                                                        <span>11:45 am</span>
-                                                                    </div>
-                                                                    <div className="sdb-cl-class-name sdb-cl-class-name-lev">
-                                                                        <h5>
-                                                                            Board Exam Training Classes{' '}
-                                                                            <span>Matthew</span>
-                                                                        </h5>
-                                                                        <span className="sdn-hall-na">
-                                                                            Apj Hall 112
-                                                                        </span>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                 
                                                 </li>
                                                
                                             </ul>

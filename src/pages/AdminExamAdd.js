@@ -113,7 +113,7 @@ export class AdminExamAdd extends Component{
                                       <label>Exam name</label>
                                     </div>
                                     <div className="input-field col s12">
-                                      <input type="text" defaultValue="12 may 2018" className="validate" />
+                                      <input type="text" defaultValue="12 may 2023" className="validate" />
                                       <label>Date</label>
                                     </div>
                                     <div className="input-field col s12">
@@ -160,7 +160,7 @@ export class AdminExamAdd extends Component{
                                       <label>Exam name</label>
                                     </div>
                                     <div className="input-field col s12">
-                                      <input type="text" defaultValue="12 may 2018" className="validate" />
+                                      <input type="text" defaultValue="12 may 2023" className="validate" />
                                       <label>Date</label>
                                     </div>
                                     <div className="input-field col s12">
@@ -207,7 +207,7 @@ export class AdminExamAdd extends Component{
                                       <label>Exam name</label>
                                     </div>
                                     <div className="input-field col s12">
-                                      <input type="text" defaultValue="12 may 2018" className="validate" />
+                                      <input type="text" defaultValue="12 may 2023" className="validate" />
                                       <label>Date</label>
                                     </div>
                                     <div className="input-field col s12">
@@ -254,7 +254,7 @@ export class AdminExamAdd extends Component{
                                       <label>Exam name</label>
                                     </div>
                                     <div className="input-field col s12">
-                                      <input type="text" defaultValue="12 may 2018" className="validate" />
+                                      <input type="text" defaultValue="12 may 2023" className="validate" />
                                       <label>Date</label>
                                     </div>
                                     <div className="input-field col s12">

@@ -52,13 +52,13 @@ export class AllCourses extends Component{
           <Link to={`../CourseDetails/${dataArray[i].id}`}>
             <h3>{dataArray[i].name}</h3>
           </Link>
-          <h4>{dataArray[i].courseType}</h4>
-          <p>{dataArray[i].description}</p> <span className="home-top-cour-rat">4.2</span>
+          <h4>Course-Type: {dataArray[i].courseType} | Course-Code: {dataArray[i].courseCode} </h4>
+          <span className="home-top-cour-rat"><i class="fas fa-star text-warning"></i></span>
+          <b className="card-price text-success">Fees: {dataArray[i].tuitionFees} $ </b>
           <div className="hom-list-share">
             <ul>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Read More</Link> </li>
+            
             </ul>
           </div>
           </div>
@@ -76,14 +76,15 @@ export class AllCourses extends Component{
           <div className="col-md-9 home-top-cour-desc">
           <Link to={`../CourseDetails/${dataArray[i].id}`}>
             <h3>{dataArray[i].name}</h3>
+          
+           
           </Link>
-          <h4>{dataArray[i].courseType}</h4>
-          <p>{dataArray[i].description}</p> <span className="home-top-cour-rat">4.2</span>
+          <h4>Course-Type: {dataArray[i].courseType} | Course-Code: {dataArray[i].courseCode} </h4>
+          <b className="card-price text-success">Fees: {dataArray[i].tuitionFees} $ </b>
           <div className="hom-list-share">
             <ul>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Book Now</Link> </li>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-eye" aria-hidden="true" />10 Aavailable</Link> </li>
-              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-share-alt" aria-hidden="true" /> 570</Link> </li>
+              <li><Link to={`../CourseDetails/${dataArray[i].id}`}><i className="fa fa-bar-chart" aria-hidden="true" /> Read More</Link> </li>
+            
             </ul>
           </div>
           </div>

@@ -95,7 +95,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>1</td>
                                 <td>Semester 1</td>
-                                <td>28 May 2018</td>
+                                <td>28 May 2023</td>
                                 <td>10:00AM</td>
                                 <td>03:00</td>
                                 <td>
@@ -111,7 +111,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>2</td>
                                 <td>Exam 1</td>
-                                <td>14 June 2018</td>
+                                <td>14 June 2023</td>
                                 <td>01:00PM</td>
                                 <td>03:00</td>
                                 <td>
@@ -127,7 +127,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>3</td>
                                 <td>Semester 1</td>
-                                <td>28 May 2018</td>
+                                <td>28 May 2023</td>
                                 <td>10:00AM</td>
                                 <td>03:00</td>
                                 <td>
@@ -143,7 +143,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>4</td>
                                 <td>Exam 1</td>
-                                <td>14 June 2018</td>
+                                <td>14 June 2023</td>
                                 <td>01:00PM</td>
                                 <td>03:00</td>
                                 <td>
@@ -159,7 +159,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>5</td>
                                 <td>Semester 1</td>
-                                <td>28 May 2018</td>
+                                <td>28 May 2023</td>
                                 <td>10:00AM</td>
                                 <td>03:00</td>
                                 <td>
@@ -175,7 +175,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>6</td>
                                 <td>Exam 1</td>
-                                <td>14 June 2018</td>
+                                <td>14 June 2023</td>
                                 <td>01:00PM</td>
                                 <td>03:00</td>
                                 <td>
@@ -191,7 +191,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>7</td>
                                 <td>Semester 1</td>
-                                <td>28 May 2018</td>
+                                <td>28 May 2023</td>
                                 <td>10:00AM</td>
                                 <td>03:00</td>
                                 <td>
@@ -207,7 +207,7 @@ export class AdminExamAll extends Component {
                               <tr>
                                 <td>8</td>
                                 <td>Exam 1</td>
-                                <td>14 June 2018</td>
+                                <td>14 June 2023</td>
                                 <td>01:00PM</td>
                                 <td>03:00</td>
                                 <td>
