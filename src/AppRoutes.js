@@ -37,7 +37,7 @@ import { AdminExamAll } from "./pages/AdminExamAll";
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
 import { Admin } from "./pages/Admin";
-import { AdminExamAdd } from "./pages/AdminExamAdd";
+import AdminExamAdd from "./pages/AdminExamAdd";
 import { AdminAllCourses } from "./pages/AdminAllCourses";
 import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
