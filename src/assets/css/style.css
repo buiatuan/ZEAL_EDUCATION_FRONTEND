@@ -3,7 +3,7 @@
  * Project: Education Master HTML Template
  * Version: v1.0
  * Copyright 2017-2020 rn53themes
- * Last Changes: 10 jan 2018
+ * Last Changes: 10 jan 2023
  * Author: RN53 Themes
  * Email:      rn53themes@gmail.com
  * Website:    http://www.rn53themes.net 
@@ -1123,7 +1123,8 @@ label {
     transition: all 0.5s ease;
 }
 .home-top-cour img {
-    width: 100%;
+    width: 120px;
+    height: 102px;
 }
 .home-top-cour-desc {
 }
@@ -1147,7 +1148,7 @@ label {
 }
 .home-top-cour-rat {
     position: absolute;
-    background: #607d8b;
+
     padding: 0px 5px;
     font-weight: 600;
     color: #fff;

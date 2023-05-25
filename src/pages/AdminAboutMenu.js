@@ -53,7 +53,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-1" />
                                   </td>
                                   <td>index</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -64,7 +64,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-2" />
                                   </td>
                                   <td>about</td>
-                                  <td>05 June 2018</td>
+                                  <td>05 June 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -75,7 +75,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-3" />
                                   </td>
                                   <td>all-course</td>
-                                  <td>18 December 2018</td>
+                                  <td>18 December 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -86,7 +86,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-4" />
                                   </td>
                                   <td>course-details</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -97,7 +97,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-5" />
                                   </td>
                                   <td>events</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -108,7 +108,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-6" />
                                   </td>
                                   <td>seminar</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -119,7 +119,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-7" />
                                   </td>
                                   <td>admission</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -130,7 +130,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-8" />
                                   </td>
                                   <td>awards</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -141,7 +141,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-9" />
                                   </td>
                                   <td>student-profile</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -152,7 +152,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-10" />
                                   </td>
                                   <td>dashboard</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>
@@ -163,7 +163,7 @@ export class AdminAboutMenu extends Component{
                                     <label htmlFor="filled-in-box-11" />
                                   </td>
                                   <td>exam-time-line</td>
-                                  <td>12 May 2018</td>
+                                  <td>12 May 2023</td>
                                   <td>
                                     <span className="label label-success">Active</span>
                                   </td>

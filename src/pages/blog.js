@@ -202,7 +202,7 @@ export class Blog extends Component{
                                   <div className="ed-course-in">
                                     <Link className="course-overlay" href="seminar">
                                       <img src={require('../assets/images/h-res1.jpg')} alt="" />
-                                      <span>Seminar 2018</span>
+                                      <span>Seminar 2023</span>
                                     </Link>
                                   </div>
                                   <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
@@ -388,7 +388,7 @@ export class Blog extends Component{
                       <div className="ho-event pg-eve-main pg-blog">
                         <ul>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="/event-register">
@@ -413,7 +413,7 @@ export class Blog extends Component{
                             </div>
                           </li>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="/event-register">
@@ -438,7 +438,7 @@ export class Blog extends Component{
                             </div>
                           </li>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="/event-register">
@@ -463,7 +463,7 @@ export class Blog extends Component{
                             </div>
                           </li>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="/event-register">
@@ -488,7 +488,7 @@ export class Blog extends Component{
                             </div>
                           </li>
                           <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
+                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2023</span>
                             </div>
                             <div className="pg-eve-desc pg-blog-desc">
                               <Link to="/event-register">
@@ -649,7 +649,7 @@ export class Blog extends Component{
             <div className="container">
               <div className="row">
                 <div className="copy-right">
-                  <p>Copyrights © 2018 RN53Themes. All rights reserved.</p>
+                  <p>Copyrights © 2023 RN53Themes. All rights reserved.</p>
                 </div>
               </div>
             </div>

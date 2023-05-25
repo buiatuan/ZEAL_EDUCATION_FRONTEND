@@ -34,7 +34,7 @@ export class Events extends Component{
           <Link to="../EventRegister">
             <h4> {e.name} </h4>
           </Link>
-          <p>{e.location} </p>
+          <p>Location: {e.location} </p>
           <span>Start:{ (new Date(e.startDate)).getHours() } h - End: { (new Date(e.endTime)).getHours() } h  </span>
         </div>
         <div className="pg-eve-reg">
@@ -65,20 +65,7 @@ export class Events extends Component{
                       <div className="ho-event pg-eve-main">
                         <ul>
                           {this.showAllEvent()}
-                          <li>
-                            <div className="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
-                            </div>
-                            <div className="ho-ev-link pg-eve-desc">
-                              <Link to="../EventRegister">
-                                <h4>Latinoo College Expo 2018 - DONATION</h4>
-                              </Link>
-                              <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                              <span>9:15 am – 5:00 pm</span>
-                            </div>
-                            <div className="pg-eve-reg">
-                              <Link to="../EventRegister">Register</Link><Link to="../EventDetail">Read more</Link>
-                            </div>
-                          </li>
+                         
                           
                         </ul>
                       </div>

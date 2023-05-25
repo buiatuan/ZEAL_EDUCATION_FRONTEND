@@ -53,8 +53,8 @@ export class AdminSeminarAll extends Component{
                                 <tr>
                                   <td>1</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>
-                                  <td>Admissions Information 2018</td>
-                                  <td>21 June 2018</td>
+                                  <td>Admissions Information 2023</td>
+                                  <td>21 June 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>
@@ -65,7 +65,7 @@ export class AdminSeminarAll extends Component{
                                   <td>2</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-2.jpg')} alt="" /></span></td>
                                   <td>CUNY Assessment Test Workshop</td>
-                                  <td>05 April 2018</td>
+                                  <td>05 April 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>
@@ -76,7 +76,7 @@ export class AdminSeminarAll extends Component{
                                   <td>3</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-3.jpg')} alt="" /></span></td>
                                   <td>Fire &amp; ice launch party</td>
-                                  <td>12 December 2018</td>
+                                  <td>12 December 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>
@@ -87,7 +87,7 @@ export class AdminSeminarAll extends Component{
                                   <td>4</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-4.jpg')} alt="" /></span></td>
                                   <td>Educate to Empower NYE Party</td>
-                                  <td>21 June 2018</td>
+                                  <td>21 June 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>
@@ -97,8 +97,8 @@ export class AdminSeminarAll extends Component{
                                 <tr>
                                   <td>5</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-5.jpg')} alt="" /></span></td>
-                                  <td>Latinoo College Expo 2018 - DONATION</td>
-                                  <td>21 June 2018</td>
+                                  <td>Latinoo College Expo 2023 - DONATION</td>
+                                  <td>21 June 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>
@@ -109,7 +109,7 @@ export class AdminSeminarAll extends Component{
                                   <td>6</td>
                                   <td><span className="list-img"><img src={require('../assets/images/course/sm-6.jpg')} alt="" /></span></td>
                                   <td>Training at Team Fabio Clemente</td>
-                                  <td>21 June 2018</td>
+                                  <td>21 June 2023</td>
                                   <td>los angeles</td>
                                   <td>
                                     <span className="label label-success">Active</span>

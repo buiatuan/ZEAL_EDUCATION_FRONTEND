@@ -20,7 +20,7 @@ export class EvenRegister extends Component{
                   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                   <div className="semi-deta eve-deta">
                     <ul>
-                      <li>DATE:<span>Jan 01, 2018</span></li>
+                      <li>DATE:<span>Jan 01, 2023</span></li>
                       <li>Time:<span>02:00 PM GMT</span></li>
                       <li>Topic:<span>Feature Technology</span></li>
                       <li>Location:<span>illinois, united states</span></li>

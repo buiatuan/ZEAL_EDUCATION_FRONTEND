@@ -42,8 +42,8 @@ export class AdminAllCourses extends Component {
                     </td>
                     <td>{e.courseCode}</td>
                     <td>60 Days(420hrs)</td>
-                    <td>03 Jun 2018</td>
-                    <td>12 Aug 2018</td>
+                    <td>03 Jun 2023</td>
+                    <td>12 Aug 2023</td>
                     <td>{e.tuitionFees}</td>
                     <td>
                         <span className="label label-success">Active</span>

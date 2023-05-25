@@ -122,7 +122,7 @@ export class Awards extends Component{
                             <div className="time-hide time-hide-3">
                               <h5>Best college award 2000</h5>
                               <p>Sed nec egestas dui. Donec facilisis mauris sit amet auctor pellentesque. Suspendisse sagittis sagittis lobortis. Suspendisse rutrum eros vitae ex egestas, sed lobortis turpis facilisis. </p>
-                              <h5>Best college award 2018</h5>
+                              <h5>Best college award 2023</h5>
                               <p>Sed nec egestas dui. Donec facilisis mauris sit amet auctor pellentesque. Suspendisse sagittis sagittis lobortis. Suspendisse rutrum eros vitae ex egestas, sed lobortis turpis facilisis. </p>
                             </div>
                             <Link to="../#!" className="s17-sprit age-dwarr-btn time-hide-3-btn">

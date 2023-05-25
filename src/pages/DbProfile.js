@@ -133,12 +133,7 @@ export class DbProfile extends Component {
                                                     point of using Lorem Ipsum is that it has a more-or-less normal
                                                     distribution of letters
                                                 </p>
-                                                <Link
-                                                    to="../#"
-                                                    className="waves-effect waves-light btn-large sdb-btn sdb-btn-edit"
-                                                >
-                                                    <i className="fa fa-pencil" /> Edit my profile
-                                                </Link>
+                                             
                                             </div>
                                         </div>
                                     </div>

@@ -166,7 +166,7 @@ export class FooterClient extends Component {
           <div className="container">
             <div className="row">
               <div className="copy-right">
-                <p>Copyrights © 2018 RN53Themes. All rights reserved.</p>
+                <p>Copyrights © 2023 RN53Themes. All rights reserved.</p>
               </div>
             </div>
           </div>

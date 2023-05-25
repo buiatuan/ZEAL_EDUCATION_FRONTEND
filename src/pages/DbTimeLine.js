@@ -57,7 +57,7 @@ export class DbTimeLine extends Component{
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
                                 <h5>Today</h5>
-                                <span>10Sep 2018</span>
+                                <span>10Sep 2023</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>
@@ -99,7 +99,7 @@ export class DbTimeLine extends Component{
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
                                 <h5>Tuesday</h5>
-                                <span>11Sep 2018</span>
+                                <span>11Sep 2023</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>
@@ -141,7 +141,7 @@ export class DbTimeLine extends Component{
                             <div className="sdb-cl-tim">
                               <div className="sdb-cl-day">
                                 <h5>Wednesday</h5>
-                                <span>12Sep 2018</span>
+                                <span>12Sep 2023</span>
                               </div>
                               <div className="sdb-cl-class">
                                 <ul>

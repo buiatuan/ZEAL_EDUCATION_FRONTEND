@@ -14,13 +14,13 @@ export class Seminar extends Component{
           <div className="semi-inn">
             <div className="semi-com semi-left">
               <div className="all-title quote-title qu-new semi-text">
-                <h2>Seminar 2018</h2>
+                <h2>Seminar 2023</h2>
                 <p>Fusce purus mauris, blandit vitae purus eget, viverra volutpat nibh. Nam in elementum nisi, a placerat nisi. Quisque ullamcorper magna in odio rhoncus semper.Sed nec ultricies velit. Aliquam non massa id enim ultrices aliquet a ac
                   tortor.</p>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 <div className="semi-deta">
                   <ul>
-                    <li>DATE:<span>Jan 01, 2018</span></li>
+                    <li>DATE:<span>Jan 08, 2023</span></li>
                     <li>Time:<span>02:00 PM GMT</span></li>
                     <li>Topic:<span>Feature Technology</span></li>
                     <li>Location:<span>illinois, united states</span></li>

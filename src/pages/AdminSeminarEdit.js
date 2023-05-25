@@ -39,7 +39,7 @@ export class AdminSeminarEdit extends Component{
                           <form>
                             <div className="row">
                               <div className="input-field col s12">
-                                <input type="text" defaultValue="Latinoo College Expo 2018 - DONATION" className="validate" required />
+                                <input type="text" defaultValue="Latinoo College Expo 2023 - DONATION" className="validate" required />
                                 <label className>Seminar name</label>
                               </div>
                             </div>
@@ -51,7 +51,7 @@ export class AdminSeminarEdit extends Component{
                             </div>
                             <div className="row">
                               <div className="input-field col s6">
-                                <input type="text" defaultValue="Jan 01, 2018" className="validate" required />
+                                <input type="text" defaultValue="Jan 01, 2023" className="validate" required />
                                 <label className>Date</label>
                               </div>
                               <div className="input-field col s6">
