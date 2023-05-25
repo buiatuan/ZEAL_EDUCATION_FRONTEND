@@ -43,6 +43,7 @@ import AdminAddCourses from "./pages/AdminAddCourses";
 import { AdminUserAll } from "./pages/AdminUserAll";
 import { AdminUserAdd } from "./pages/AdminUserAdd";
 import CourseDetails from "./pages/CourseDetails";
+import NotFound from "./pages/NotFound";
 const AppRoutes = [
   {
     index: true,
@@ -135,7 +136,10 @@ const AppRoutes = [
     path: "/Seminar",
     element: <Seminar />,
   },
-
+   {
+    path:'/notfound',
+    element:<NotFound/>
+   },
   // page admin
   {
     path: "/Admin",

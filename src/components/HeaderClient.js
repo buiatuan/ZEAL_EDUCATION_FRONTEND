@@ -74,7 +74,9 @@ export class HeaderClient extends Component {
             });
     }
    async checkToken(){
-    var myHeaders = new Headers();
+   
+    try {
+        var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
     console.log(localStorage.getItem('Token'));
     var requestOptions = {
@@ -94,6 +96,9 @@ export class HeaderClient extends Component {
         var data= await response.json();
    
         localStorage.setItem('Account', JSON.stringify(data));
+    }
+    } catch (error) {
+        window.location.href='../notfound'
     }
     
    }
