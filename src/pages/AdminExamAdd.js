@@ -105,7 +105,7 @@ const AdminExamAdd = ()=>{
                                   <label htmlFor="courseId">Course Name</label>
                                   <div className="mb-3">
                                     <select className="form-select" required onChange={e=>handleChange(e)} name="courseId">
-                                      <option>Choose a course name</option>
+                                      <option style={{}}>Choose a course name</option>
                                       {optionCourse}
                                     </select>
                                   </div>

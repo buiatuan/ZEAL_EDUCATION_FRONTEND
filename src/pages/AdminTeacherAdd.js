@@ -38,6 +38,7 @@ const AdminTeacherAdd = ()=>{
     
     var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    myHeaders.append('Content-Type', 'application/json');
     // Send the data to the API
     fetch('https://localhost:7156/api/AdminTeacher/CreateTeacher', {
       method: 'POST',
@@ -78,7 +79,7 @@ const AdminTeacherAdd = ()=>{
                 <div className="col-md-12">
                   <div className="box-inn-sp admin-form">
                     <div className="inn-title">
-                      <h4>Add Event</h4>
+                      <h4>Add Teacher</h4>
                       <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
                     </div>
                     <div className="tab-inn">

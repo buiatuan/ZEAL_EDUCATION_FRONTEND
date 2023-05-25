@@ -32,7 +32,7 @@ import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
 import { AdminEventAll } from "./pages/AdminEventAll";
 import AdminEventAdd from "./pages/AdminEventAdd";
 // import Exam admin
-import { AdminExamAll } from "./pages/AdminExamAll";
+import AdminExamAll from "./pages/AdminExamAll";
 
 import { AdminAboutMenu } from "./pages/AdminAboutMenu";
 import { AdminAdmissionMenu } from "./pages/AdminAdmissionMenu";
