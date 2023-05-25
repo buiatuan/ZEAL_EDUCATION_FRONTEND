@@ -32,9 +32,47 @@ export class DbCourses extends Component {
         });
         return result;
     }
+    cancelRegister(e,idCourse){
+       e.preventDefault();
+       var id=parseInt(idCourse);
+       var myHeaders = new Headers();
+       myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+       fetch(`https://localhost:7156/api/ScholarRegister/CourseCancel/${id}`,{
+        method:'PUT',
+        headers:myHeaders
+        
+       }).then(res=>{
+        if(res.ok){
+            
+            alert("UnSubcribe course is Success");
+           
+            window.location.reload();
+            
+            
+         
+        }
+        else{
+            alert("Can not Unsubribe this course");
+        }
+       })
+       .then(err=>{
+        console.log(err)
+       })
+    }
+   
     showCourseStatus() {
         var list = this.state.Scholar.courseList === null ? [] : this.state.Scholar.courseList;
+        var noData=  <tr>
+        <td> No Data</td>
+        <td> No Data</td>
+        <td> No Data</td>
+        <td> No Data</td>
+        <td> No Data</td>
+        <td> No Data</td>
+        
+    </tr>;
         const result = list.map((e) => {
+            var id=e.id;
             var status =
                 e.status === 1 ? (
                     <span className="pro-user-act">Active</span>
@@ -55,11 +93,12 @@ export class DbCourses extends Component {
                 );
             var btnUnsub =
                 e.status === 1 ? (
-                    <button className="btn btn-danger  text-capitalize btn-xs" disabled="true">
+                    <button className="btn btn-danger  text-capitalize btn-xs" disabled={true}>
                         UnSubribe
                     </button>
                 ) : (
-                    <button className="btn btn-danger  text-capitalize btn-xs">UnSubribe</button>
+                    <button className="btn btn-danger  text-capitalize btn-xs" type='button' onClick={(e) => this.cancelRegister(e, id)}>UnSubribe</button>
+
                 );
             return (
                 <tr>
@@ -73,7 +112,7 @@ export class DbCourses extends Component {
                 </tr>
             );
         });
-        return result;
+        return result.length===0? noData:result ;
     }
     render() {
         return (
