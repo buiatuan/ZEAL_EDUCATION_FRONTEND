@@ -26,12 +26,13 @@ export class AdminEventAll extends Component{
         <td>{e.id}</td>
         <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>
         <td>{e.name}</td>
-        <td>{e.startDate}</td>
+        <td>{new Date(e.startDate).toLocaleString()}</td>
+        <td>{new Date(e.endTime).toLocaleString()}</td>
         <td>{e.location}</td>
         <td>
           {status}
         </td>
-        <td><Link to="../admineventedit" className="ad-st-view">Edit</Link></td>
+        <td><Link to="../adminEventEdit" className="ad-st-view">Edit</Link></td>
       </tr>
       )
     });
@@ -80,10 +81,11 @@ export class AdminEventAll extends Component{
                             <table className="table table-hover">
                               <thead>
                                 <tr>
-                                  <th>#</th>
+                                  <th>ID</th>
                                   <th>Image</th>
                                   <th>Name</th>
                                   <th>Start Date</th>
+                                  <th>End Date</th>
                                   <th>Location</th>
                                   <th>Status</th>
                                   <th>Edit</th>
@@ -91,72 +93,6 @@ export class AdminEventAll extends Component{
                               </thead>
                               <tbody>
                                 {this.displayEvent()}
-                                <tr>
-                                  <td>1</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>
-                                  <td>Admissions Information 2018</td>
-                                  <td>21 June 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-2.jpg')} alt="" /></span></td>
-                                  <td>CUNY Assessment Test Workshop</td>
-                                  <td>05 April 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-3.jpg')} alt="" /></span></td>
-                                  <td>Fire &amp; ice launch party</td>
-                                  <td>12 December 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-4.jpg')} alt="" /></span></td>
-                                  <td>Educate to Empower NYE Party</td>
-                                  <td>21 June 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-5.jpg')} alt="" /></span></td>
-                                  <td>Latinoo College Expo 2018 - DONATION</td>
-                                  <td>21 June 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td><span className="list-img"><img src={require('../assets/images/course/sm-6.jpg')} alt="" /></span></td>
-                                  <td>Training at Team Fabio Clemente</td>
-                                  <td>21 June 2018</td>
-                                  <td>los angeles</td>
-                                  <td>
-                                    <span className="label label-success">Active</span>
-                                  </td>
-                                  <td><Link to="../admin-event-edit" className="ad-st-view">Edit</Link></td>
-                                </tr>
                               </tbody>
                             </table>
                           </div>

@@ -57,15 +57,15 @@ export class SidebarAdmin extends Component {
               </li>
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-user" aria-hidden="true" /> Users
+                  <i className="fa fa-user" aria-hidden="true" /> Teachers
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../AdminUserAll">All Users</Link>
+                      <Link to="../AdminTeacherAll">All Teacher</Link>
                     </li>
                     <li>
-                      <Link to="../AdminUserAdd">Add New user</Link>
+                      <Link to="../AdminTeacherAdd">Add New teacher</Link>
                     </li>
                   </ul>
                 </div>

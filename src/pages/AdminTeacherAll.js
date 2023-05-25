@@ -2,29 +2,29 @@ import React,{Component} from "react";
 import { Link } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
-export class AdminUserAll extends Component{
+export class AdminTeacherAll extends Component{
   
   constructor(props) {
     super(props);
     this.state = {
-        AllScholar: [],
+        AllTeacher: [],
     };
 }
-async getScholar() {
+async getTeacher() {
     try {
         var myHeaders = new Headers();
         myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-        var res = await fetch('https://localhost:7156/api/AdminScholar/GetListScholar', { method: 'get',headers:myHeaders });
+        var res = await fetch('https://localhost:7156/api/AdminTeacher/GetListTeacher', { method: 'get',headers:myHeaders });
         var data = await res.json();
         this.setState({
-            AllScholar: data,
+            AllTeacher: data,
         });
     } catch (err) {
         console.log(err);
     }
 }
-studentDashBoard() {
-    const result = this.state.AllScholar.map((e) => {
+teacherDashBoard() {
+    const result = this.state.AllTeacher.map((e) => {
         const min = 1;
         const max = 90;
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -51,10 +51,10 @@ studentDashBoard() {
                 <td>{e.email}</td>
                 <td>{e.address}</td>
                 <td>{e.id}</td>
-                <td>{new Date(e.dateOfbirth).toLocaleDateString()}</td>
+                <td>{e.dateOfbirth}</td>
                 <td>{status}</td>
                 <td>
-                    <Link to="../admin-student-details" className="ad-st-view">
+                    <Link to="../#!" className="ad-st-view">
                         View
                     </Link>
                 </td>
@@ -64,7 +64,7 @@ studentDashBoard() {
     return result;
 }
 componentDidMount() {
-    this.getScholar();
+    this.getTeacher();
 }
 render() {
     return (
@@ -86,7 +86,7 @@ render() {
                                     </Link>
                                 </li>
                                 <li className="active-bre">
-                                    <Link to="../#"> Users(Students)</Link>
+                                    <Link to="../#"> Users(Teachers)</Link>
                                 </li>
                                 <li className="page-back">
                                     <Link to="../index">
@@ -101,9 +101,9 @@ render() {
                                 <div className="col-md-12">
                                     <div className="box-inn-sp">
                                         <div className="inn-title">
-                                            <h4>Student Details</h4>
+                                            <h4>Teacher Details</h4>
                                             <p>
-                                                All about students like name, student id, phone, email, country,
+                                                All about teachers like name, student id, phone, email, country,
                                                 city and more
                                             </p>
                                         </div>
@@ -123,7 +123,7 @@ render() {
                                                             <th>View</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>{this.studentDashBoard()}</tbody>
+                                                    <tbody>{this.teacherDashBoard()}</tbody>
                                                 </table>
                                             </div>
                                         </div>
