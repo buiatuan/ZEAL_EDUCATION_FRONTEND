@@ -1352,6 +1352,11 @@ label {
     background: url(../images/ev-in-bg1.jpg) no-repeat;
     background-size: cover;
 }
+.in-ev-latest-bg-3 {
+    background: url('https://i1.wp.com/trendernewsreport.com/wp-content/uploads/2020/04/48694791_m.jpg?fit=2408%2C1742&ssl=1')
+        no-repeat;
+    background-size: cover;
+}
 .ho-lat-ev {
     position: relative;
 }

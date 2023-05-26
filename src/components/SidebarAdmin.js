@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 export class SidebarAdmin extends Component {
+  constructor(){
+    super();
+    this.state={
+  
+      AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account')),
+      RoleId: localStorage.getItem('RoleId')
+    }
+  }
     componentDidMount() {
         // Khởi tạo collapsible trong componentDidMount của component
         var elems = document.querySelectorAll('.collapsible');
@@ -18,13 +26,13 @@ export class SidebarAdmin extends Component {
             <ul>
               <li>
                 <img
-                  src={require("../assets/images/placeholder.jpg")}
+                  src={`https://randomuser.me/api/portraits/men/1.jpg`}
                   alt=""
                 />
               </li>
               <li>
                 <h5>
-                  Victoria Baker <span> Santa Ana, CA</span>
+                  {this.state.AccountAdmin.name} <span> Santa Ana, CA</span>
                 </h5>
               </li>
               <li />
