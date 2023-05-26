@@ -54,7 +54,7 @@ teacherDashBoard() {
                 <td>{e.dateOfbirth}</td>
                 <td>{status}</td>
                 <td>
-                    <Link to="../#!" className="ad-st-view">
+                    <Link to={`../AdminTeacherView/${e.id}`} className="ad-st-view">
                         View
                     </Link>
                 </td>

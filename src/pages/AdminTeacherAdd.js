@@ -13,6 +13,7 @@ const AdminTeacherAdd = ()=>{
     email: '',
     phoneNumber: '',
     address: '',
+    dateOfbirth: '',
     status: '',
   });
 
@@ -33,6 +34,7 @@ const AdminTeacherAdd = ()=>{
         email: formData.email,
         phoneNumber: formData.phoneNumber,
         address: formData.address,
+        dateOfbirth: formData.dateOfbirth,
         status: formData.status
     };
     
@@ -119,16 +121,20 @@ const AdminTeacherAdd = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
-                            <input className="form-control" required id="phoneNumber" name="phoneNumber" rows="3" placeholder="Enter phone number" onChange={e=>handleChange(e)}/>
+                            <input className="form-control" type="tel" required id="phoneNumber" name="phoneNumber" rows="3" placeholder="Enter phone number" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="address" className="form-label">Address</label>
-                            <input className="form-control" required id="address" name="address" rows="3" placeholder="Enter address" onChange={e=>handleChange(e)}/>
+                            <input className="form-control" type="text" required id="address" name="address" rows="3" placeholder="Enter address" onChange={e=>handleChange(e)}/>
+                          </div>
+                          <div className="mb-3">
+                            <label htmlFor="dateOfbirth" className="form-label">Address</label>
+                            <input className="form-control" type="datetime-local" required id="dateOfbirth" name="dateOfbirth" rows="3" placeholder="Enter date of birth" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="gender" className="form-label">Gender</label>
-                            <select className="form-select" required id="status" name="status" onChange={e=>handleChange(e)}>
-                              <option>Choose status</option>
+                            <select className="form-select" required id="gender" name="gender" onChange={e=>handleChange(e)}>
+                              <option>Choose gender</option>
                               <option value="m">Male</option>
                               <option value="f">Female</option>
                               <option value="o">Others</option>
