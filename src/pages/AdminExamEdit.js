@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {Link } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
+import { data } from 'jquery';
 
-const AdminExamAdd = ()=>{
+const AdminExamEdit = ()=>{
+  const id = useParams().id;
+  
   var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
     myHeaders.append('Content-Type', 'application/json');
@@ -11,13 +14,17 @@ const AdminExamAdd = ()=>{
   const [courseName, setCourseId] = useState([]);
   
   useEffect(()=>{
-    const fetchData = ()=>{
-      fetch('https://localhost:7156/api/AdminCourse/GetListCourse',{
-        method : 'GET',
-        headers : myHeaders
-      }).then(res=>res.json()).then(data=>setCourseId(data));
+    const fetchListCourse = async ()=>{
+      try{
+        await fetch('https://localhost:7156/api/AdminCourse/GetListCourse',{
+            method : 'GET',
+            headers : myHeaders
+        }).then(res=>res.json()).then(data=>setCourseId(data));
+      }catch(error){
+        console.log('Error occurred:', error.message);
+      }
     };
-    fetchData();
+    fetchListCourse();
   },[])
   
   const [formData, setFormData] = useState({
@@ -27,6 +34,19 @@ const AdminExamAdd = ()=>{
     courseId: '',
     descreption: ''
   });
+  
+  useEffect(()=>{
+    const fetchCourseDetail = async ()=>{
+        try{
+            await fetch(`https://localhost:7156/api/AdminExam/Details/${id}`,
+            {method: 'GET',headers:myHeaders})
+            .then(res=>res.json()).then(data=>setFormData(data));
+          }catch (error) {
+            console.log('Error occurred:', error.message);
+          }
+    };
+    fetchCourseDetail();
+  }, [])
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,17 +65,17 @@ const AdminExamAdd = ()=>{
     };
 
     // Send the data to the API
-    fetch('https://localhost:7156/api/AdminExam/Create', {
-      method: 'POST',
+    fetch(`https://localhost:7156/api/AdminExam/Edit/${id}`, {
+      method: 'PUT',
       headers:myHeaders,
       body: JSON.stringify(requestBody),
     })
       .then(response => {
         if(response.ok){
-          alert("ADD SUCCESS!");
+            alert("EDIT SUCCESS!");
         }else{
-          alert("ADD FAILED!");
-      }
+            alert("EDIT FAILED!");
+        }
       })
       .catch(error => {
         console.error('Error sending form data:', error);
@@ -83,7 +103,7 @@ const AdminExamAdd = ()=>{
               <ul>
                 <li><Link to="index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                 </li>
-                <li className="active-bre"><Link to="../AdminExamAdd"> Add New Exam</Link>
+                <li className="active-bre"><span> Edit Exam</span>
                 </li>
                 <li className="page-back"><Link to="index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                 </li>
@@ -108,8 +128,8 @@ const AdminExamAdd = ()=>{
                                 <div className="row">
                                   <label htmlFor="courseId">Course Name</label>
                                   <div className="mb-3">
-                                    <select className="form-select form-select-lg" required onChange={e=>handleChange(e)} name="courseId">
-                                      <option style={{}}>Choose a course name</option>
+                                    <select className="form-select form-select-lg" value={formData.courseId} required onChange={e=>handleChange(e)} name="courseId">
+                                      <option>Choose a course name</option>
                                       {optionCourse}
                                     </select>
                                   </div>
@@ -117,19 +137,19 @@ const AdminExamAdd = ()=>{
                                 <div className="row">
                                   <label htmlFor="examCode">Exam Code</label>
                                   <div className="input-field mb-3">
-                                    <input type="text" name="examCode" required className="validate" placeholder="Enter exam code" onChange={e=>handleChange(e)}/>
+                                    <input type="text" name="examCode" value={formData.examCode} required className="validate" placeholder="Enter exam code" onChange={e=>handleChange(e)}/>
                                   </div>
                                   <label htmlFor="startDate">Starting Date</label>
                                   <div className="input-field mb-3">
-                                    <input type="datetime-local" name="startDate" required className="validate" placeholder="Enter start date" onChange={e=>handleChange(e)}/>
+                                    <input type="datetime-local" name="startDate" value={formData.startDate} required className="validate" placeholder="Enter start date" onChange={e=>handleChange(e)}/>
                                   </div>
                                   <label htmlFor="endDate">Ending Date</label>
                                   <div className="input-field mb-3">
-                                    <input type="datetime-local" name="endDate" required className="validate" placeholder="Enter end date" onChange={e=>handleChange(e)}/>
+                                    <input type="datetime-local" name="endDate" value={formData.endDate} required className="validate" placeholder="Enter end date" onChange={e=>handleChange(e)}/>
                                   </div>
                                   <label htmlFor="descreption">Description</label>
                                   <div className="input-field mb-3">
-                                    <input type="text" name="descreption" className="validate" placeholder="Enter description" onChange={e=>handleChange(e)}/>
+                                    <input type="text" name="descreption" value={formData.descreption} className="validate" placeholder="Enter description" onChange={e=>handleChange(e)}/>
                                   </div>
                                 </div>
                                 <div className="row">
@@ -155,4 +175,4 @@ const AdminExamAdd = ()=>{
   );
 }
 
-export default AdminExamAdd;
+export default AdminExamEdit;
