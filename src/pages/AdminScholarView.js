@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 
-const AdminTeacherView = ()=>{
+const AdminScholarView = ()=>{
     const id = useParams().id;
   
     var myHeaders = new Headers();
@@ -11,22 +11,24 @@ const AdminTeacherView = ()=>{
     myHeaders.append('Content-Type', 'application/json');
     
     const [formData, setFormData] = useState({
-      username: '',
-      password: '',
+      id: '',
       name: '',
       age: '',
       gender: '',
+      address: '',
+      status: '',
       email: '',
       phoneNumber: '',
-      address: '',
+      descreption: '',
       dateOfbirth: '',
-      status: '',
+      batch: '',
+      faculty: '',
     });
   
     useEffect(()=>{
         const fetchCourseDetail = async ()=>{
             try{
-                await fetch(`https://localhost:7156/api/AdminTeacher/GetDetailTeacher/${id}`,
+                await fetch(`https://localhost:7156/api/AdminScholar/GetDetail/${id}`,
                 {method: 'GET',headers:myHeaders})
                 .then(res=>res.json()).then(data=>setFormData(data));
               }catch (error) {
@@ -69,20 +71,29 @@ const AdminTeacherView = ()=>{
                       <div className="tab-inn">
                           <form>
                             <div className="mb-3">
+                              <label htmlFor="id" className="form-label">ID</label>
+                              <input type="number" disabled className="form-control" name="id" value={formData.id} id="id" placeholder="Enter ID"/>
+                            </div>
+                            <div className="mb-3">
                               <label htmlFor="name" className="form-label">Name</label>
                               <input type="text" disabled className="form-control" id="name" name="name" value={formData.name} placeholder="Enter name"/>
                             </div>
                             <div className="mb-3">
-                              <label htmlFor="username" className="form-label">Username</label>
-                              <input type="password" disabled className="form-control" name="username" value={formData.username} id="username" placeholder="Enter username"/>
-                            </div>
-                            <div className="mb-3">
-                              <label htmlFor="password" className="form-label">Password</label>
-                              <input type="password" disabled className="form-control" id="password" name="password" value={formData.password} placeholder="Enter password"/>
-                            </div>
-                            <div className="mb-3">
                               <label htmlFor="age" className="form-label">Age</label>
                               <input type="number" disabled min={0} max={100} className="form-control" id="age" name="age" value={formData.age} placeholder="Enter age"/>
+                            </div>
+                            <div className="mb-3">
+                              <label htmlFor="gender" className="form-label">Gender</label>
+                              <select className="form-select form-select-lg" disabled id="gender" name="gender" value={formData.gender}>
+                                <option>Choose gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="O">Others</option>
+                              </select>                          
+                            </div>
+                            <div className="mb-3">
+                              <label htmlFor="address" className="form-label">Address</label>
+                              <input className="form-control" type="text" disabled id="address" name="address" rows="3" placeholder="Enter address" value={formData.address}/>
                             </div>
                             <div className="mb-3">
                               <label htmlFor="status" className="form-label">Status</label>
@@ -102,21 +113,20 @@ const AdminTeacherView = ()=>{
                               <input className="form-control" type="tel" disabled id="phoneNumber" name="phoneNumber" rows="3" placeholder="Enter phone number" value={formData.phoneNumber}/>
                             </div>
                             <div className="mb-3">
-                              <label htmlFor="address" className="form-label">Address</label>
-                              <input className="form-control" type="text" disabled id="address" name="address" rows="3" placeholder="Enter address" value={formData.address}/>
+                              <label htmlFor="descreption" className="form-label">Description</label>
+                              <textarea disabled className="form-control" id="descreption" name="descreption" row="3" value={formData.descreption} placeholder="Enter description"></textarea>
                             </div>
                             <div className="mb-3">
-                            <label htmlFor="dateOfbirth" className="form-label">Date Of Birth</label>
-                            <input type="datetime-local" disabled className="form-control" name="dateOfbirth" id="dateOfbirth" value={formData.dateOfbirth}/>
-                          </div>
+                                <label htmlFor="dateOfbirth" className="form-label">Date Of Birth</label>
+                                <input type="datetime-local" disabled className="form-control" name="dateOfbirth" id="dateOfbirth" value={formData.dateOfbirth}/>
+                            </div>
                             <div className="mb-3">
-                              <label htmlFor="gender" className="form-label">Gender</label>
-                              <select className="form-select form-select-lg" disabled id="gender" name="gender" value={formData.gender}>
-                                <option>Choose gender</option>
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
-                                <option value="O">Others</option>
-                              </select>                          
+                              <label htmlFor="batch" className="form-label">Batch</label>
+                              <input className="form-control" type="text" disabled id="batch" name="batch" rows="3" placeholder="Enter batch" value={formData.batch}/>
+                            </div>
+                            <div className="mb-3">
+                              <label htmlFor="faculty" className="form-label">Faculty</label>
+                              <input className="form-control" type="text" disabled id="faculty" name="faculty" rows="3" placeholder="Enter faculty" value={formData.faculty}/>
                             </div>
                           </form>
                       </div>
@@ -132,4 +142,4 @@ const AdminTeacherView = ()=>{
     );
   }
   
-  export default AdminTeacherView;
+  export default AdminScholarView;

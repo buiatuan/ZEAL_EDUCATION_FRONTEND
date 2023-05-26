@@ -38,13 +38,13 @@ export class Admin extends Component {
         }
     }
     studentDashBoard() {
-        const result = this.state.AllScholar.map((e) => {
+        const result = this.state.AllScholar.map((e,index) => {
             const min = 1;
             const max = 90;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
             const status= e.status===1? (<span className="label label-success">Active</span> ) : (<span className="label label-danger">UnActive</span>);
             return (
-                <tr>
+                <tr key={index}>
                     <td>
                         <span className="list-img">
                            
@@ -76,12 +76,12 @@ export class Admin extends Component {
         return result;
     }
     CourseDashnoard() {
-        const resultCourse = this.state.AllCouses.map((e) => {
+        const resultCourse = this.state.AllCouses.map((e,index) => {
             const min = 1;
             const max = 90;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
             return (
-                <tr>
+                <tr key={index}>
                     <td>
                         <span className="list-img">
                             <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
@@ -135,17 +135,12 @@ export class Admin extends Component {
                             <div className="sb2-2-2">
                                 <ul>
                                     <li>
-                                        <Link to="../">
-                                            <i className="fa fa-home" aria-hidden="true" /> Home
-                                        </Link>
+                                        <span>
+                                            <i className="fa fa-home" aria-hidden="true" /> Admin
+                                        </span>
                                     </li>
                                     <li className="active-bre">
-                                        <Link to="../#"> Dashboard</Link>
-                                    </li>
-                                    <li className="page-back">
-                                        <Link to="../">
-                                            <i className="fa fa-backward" aria-hidden="true" /> Back
-                                        </Link>
+                                        <span> Dashboard</span>
                                     </li>
                                 </ul>
                             </div>
@@ -162,28 +157,28 @@ export class Admin extends Component {
                                             <div className="dash-book dash-b-1">
                                                 <h5>All Courses</h5>
                                                 <h4>{this.state.AllCouses.length} </h4>
-                                                <Link to="../#">View more</Link>
+                                                <Link to="../AdminAllCourse">View more</Link>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="dash-book dash-b-2">
-                                                <h5>Admission</h5>
+                                                <h5>Register</h5>
                                                 <h4>672</h4>
-                                                <Link to="../#">View more</Link>
+                                                <Link to="../AdminCourseRegister">View more</Link>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="dash-book dash-b-3">
-                                                <h5>Students</h5>
+                                                <h5>Scholars</h5>
                                                 <h4>{this.state.AllScholar.length}</h4>
-                                                <Link to="../#">View more</Link>
+                                                <Link to="../AdminUserAll">View more</Link>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="dash-book dash-b-4">
-                                                <h5>Enquiry</h5>
+                                                <h5>Feedback</h5>
                                                 <h4>24</h4>
-                                                <Link to="../#">View more</Link>
+                                                <Link to="../AdminAllEnquiry">View more</Link>
                                             </div>
                                         </li>
                                     </ul>
@@ -258,386 +253,6 @@ export class Admin extends Component {
                                                         <tbody>
                                                           {this.CourseDashnoard()}
                                                           </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="sb2-2-3">
-                                <div className="row">
-                                    {/*== Country Campaigns ==*/}
-                                    <div className="col-md-6">
-                                        <div className="box-inn-sp">
-                                            <div className="inn-title">
-                                                <h4>Job Openings</h4>
-                                                <p>
-                                                    Randomised words which don't look even slightly believable. If you
-                                                    are going to use a passage
-                                                </p>
-                                            </div>
-                                            <div className="tab-inn">
-                                                <div className="table-responsive table-desi">
-                                                    <table className="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Company</th>
-                                                                <th>Openings</th>
-                                                                <th>Date</th>
-                                                                <th>Location</th>
-                                                                <th>Status</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">Samsing</span>
-                                                                </td>
-                                                                <td>50</td>
-                                                                <td>15 April 2023</td>
-                                                                <td>New york, United States</td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">
-                                                                        Microsofts
-                                                                    </span>
-                                                                </td>
-                                                                <td>75</td>
-                                                                <td>21 Jun 2023</td>
-                                                                <td>New york, United States</td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">Samsing</span>
-                                                                </td>
-                                                                <td>50</td>
-                                                                <td>15 April 2023</td>
-                                                                <td>United States</td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">
-                                                                        Microsofts
-                                                                    </span>
-                                                                </td>
-                                                                <td>75</td>
-                                                                <td>21 Jun 2023</td>
-                                                                <td>United States</td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/*== Country Campaigns ==*/}
-                                    <div className="col-md-6">
-                                        <div className="box-inn-sp">
-                                            <div className="inn-title">
-                                                <h4>Event Details</h4>
-                                                <p>Education is about teaching, learning skills and knowledge.</p>
-                                            </div>
-                                            <div className="tab-inn">
-                                                <div className="table-responsive table-desi">
-                                                    <table className="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>State</th>
-                                                                <th>Client</th>
-                                                                <th>Changes</th>
-                                                                <th>Budget</th>
-                                                                <th>Status</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">
-                                                                        California
-                                                                    </span>
-                                                                </td>
-                                                                <td>Beavis</td>
-                                                                <td>
-                                                                    <span className="txt-success">
-                                                                        <i
-                                                                            className="fa fa-angle-up"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                        <span>2.43%</span>
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">$1478</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">Florida</span>
-                                                                </td>
-                                                                <td>Felix</td>
-                                                                <td>
-                                                                    <span className="txt-success">
-                                                                        <i
-                                                                            className="fa fa-angle-up"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                        <span>1.43%</span>
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">$951</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="label label-danger">Closed</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">Hawaii</span>
-                                                                </td>
-                                                                <td>Cannibus</td>
-                                                                <td>
-                                                                    <span className="txt-danger">
-                                                                        <i
-                                                                            className="fa fa-angle-up"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                        <span>-8.43%</span>
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">$632</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="label label-default">Hold</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">Alaska</span>
-                                                                </td>
-                                                                <td>Neosoft</td>
-                                                                <td>
-                                                                    <span className="txt-success">
-                                                                        <i
-                                                                            className="fa fa-angle-up"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                        <span>7.43%</span>
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">$325</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="label label-default">Hold</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <span className="txt-dark weight-500">
-                                                                        New Jersey
-                                                                    </span>
-                                                                </td>
-                                                                <td>Hencework</td>
-                                                                <td>
-                                                                    <span className="txt-success">
-                                                                        <i
-                                                                            className="fa fa-angle-up"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                        <span>9.43%</span>
-                                                                    </span>
-                                                                </td>
-                                                                <td>
-                                                                    <span>$258</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span className="label label-success">Active</span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="sb2-2-3">
-                                <div className="row">
-                                    {/*== Listing Enquiry ==*/}
-                                    <div className="col-md-12">
-                                        <div className="box-inn-sp">
-                                            <div className="inn-title">
-                                                <h4>Exam Time Tables</h4>
-                                                <p>Education is about teaching, learning skills and knowledge.</p>
-                                            </div>
-                                            <div className="tab-inn">
-                                                <div className="table-responsive table-desi">
-                                                    <table className="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Select</th>
-                                                                <th>Degree</th>
-                                                                <th>Exam Name</th>
-                                                                <th>Start Date</th>
-                                                                <th>End Date</th>
-                                                                <th>Timing</th>
-                                                                <th>View</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        className="filled-in"
-                                                                        id="filled-in-box-1"
-                                                                        defaultChecked="checked"
-                                                                    />
-                                                                    <label htmlFor="filled-in-box-1" />
-                                                                </td>
-                                                                <td>MBA</td>
-                                                                <td>
-                                                                    <span className="list-enq-name">
-                                                                        Civil engineering
-                                                                    </span>
-                                                                    <span className="list-enq-city">
-                                                                        Illunois, United States
-                                                                    </span>
-                                                                </td>
-                                                                <td>10:00am</td>
-                                                                <td>01:00pm</td>
-                                                                <td>03:00Hrs</td>
-                                                                <td>
-                                                                    <Link to="../admin-exam" className="ad-st-view">
-                                                                        View
-                                                                    </Link>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        className="filled-in"
-                                                                        id="filled-in-box-2"
-                                                                    />
-                                                                    <label htmlFor="filled-in-box-2" />
-                                                                </td>
-                                                                <td>MBA</td>
-                                                                <td>
-                                                                    <span className="list-enq-name">
-                                                                        Google Business
-                                                                    </span>
-                                                                    <span className="list-enq-city">
-                                                                        Illunois, United States
-                                                                    </span>
-                                                                </td>
-                                                                <td>10:00am</td>
-                                                                <td>01:00pm</td>
-                                                                <td>03:00Hrs</td>
-                                                                <td>
-                                                                    <Link to="../admin-exam" className="ad-st-view">
-                                                                        View
-                                                                    </Link>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        className="filled-in"
-                                                                        id="filled-in-box-3"
-                                                                    />
-                                                                    <label htmlFor="filled-in-box-3" />
-                                                                </td>
-                                                                <td>MBA</td>
-                                                                <td>
-                                                                    <span className="list-enq-name">Statistics</span>
-                                                                    <span className="list-enq-city">
-                                                                        Illunois, United States
-                                                                    </span>
-                                                                </td>
-                                                                <td>10:00am</td>
-                                                                <td>01:00pm</td>
-                                                                <td>03:00Hrs</td>
-                                                                <td>
-                                                                    <Link to="../admin-exam" className="ad-st-view">
-                                                                        View
-                                                                    </Link>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        className="filled-in"
-                                                                        id="filled-in-box-4"
-                                                                    />
-                                                                    <label htmlFor="filled-in-box-4" />
-                                                                </td>
-                                                                <td>MBA</td>
-                                                                <td>
-                                                                    <span className="list-enq-name">
-                                                                        Business Management
-                                                                    </span>
-                                                                    <span className="list-enq-city">
-                                                                        Illunois, United States
-                                                                    </span>
-                                                                </td>
-                                                                <td>10:00am</td>
-                                                                <td>01:00pm</td>
-                                                                <td>03:00Hrs</td>
-                                                                <td>
-                                                                    <Link to="../admin-exam" className="ad-st-view">
-                                                                        View
-                                                                    </Link>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        className="filled-in"
-                                                                        id="filled-in-box-5"
-                                                                    />
-                                                                    <label htmlFor="filled-in-box-5" />
-                                                                </td>
-                                                                <td>MBA</td>
-                                                                <td>
-                                                                    <span className="list-enq-name">Art/Design</span>
-                                                                    <span className="list-enq-city">
-                                                                        Illunois, United States
-                                                                    </span>
-                                                                </td>
-                                                                <td>10:00am</td>
-                                                                <td>01:00pm</td>
-                                                                <td>03:00Hrs</td>
-                                                                <td>
-                                                                    <Link to="../admin-exam" className="ad-st-view">
-                                                                        View
-                                                                    </Link>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </div>

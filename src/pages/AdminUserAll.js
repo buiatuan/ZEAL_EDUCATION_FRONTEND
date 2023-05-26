@@ -24,7 +24,7 @@ async getScholar() {
     }
 }
 studentDashBoard() {
-    const result = this.state.AllScholar.map((e) => {
+    const result = this.state.AllScholar.map((e,index) => {
         const min = 1;
         const max = 90;
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -35,7 +35,7 @@ studentDashBoard() {
                 <span className="label label-danger">UnActive</span>
             );
         return (
-            <tr>
+            <tr key={index}>
                 <td>
                     <span className="list-img">
                         <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
@@ -54,7 +54,7 @@ studentDashBoard() {
                 <td>{new Date(e.dateOfbirth).toLocaleDateString()}</td>
                 <td>{status}</td>
                 <td>
-                    <Link to="../admin-student-details" className="ad-st-view">
+                    <Link to={`../AdminScholarView/${e.id}`} className="ad-st-view">
                         View
                     </Link>
                 </td>

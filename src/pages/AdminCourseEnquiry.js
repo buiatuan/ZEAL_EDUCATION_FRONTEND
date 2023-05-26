@@ -57,11 +57,11 @@ export class AdminCourseEnquiry extends Component{
                 {/*== breadcrumbs ==*/}
                 <div className="sb2-2-2">
                   <ul>
-                    <li><Link to="../index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
+                    <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><Link to="../#"> Booking Enquiry</Link>
+                    <li className="active-bre"><span>Course Enquiry</span>
                     </li>
-                    <li className="page-back"><Link to="../index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                    <li className="page-back"><Link to="../Admin"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
                   </ul>
                 </div>
@@ -71,7 +71,7 @@ export class AdminCourseEnquiry extends Component{
                     <div className="col-md-12">
                       <div className="box-inn-sp">
                         <div className="inn-title">
-                          <h4>Course Booking Enquiry</h4>
+                          <h4>Course Enquiry</h4>
                           <p>All about students like name, student id, phone, email, country, city and more</p>
                         </div>
                         <div className="tab-inn">
