@@ -7,6 +7,38 @@ export class HeaderAdmin extends Component{
       AccountAdmin:JSON.parse(localStorage.getItem('Account'))
     }
   }
+  async checkToken(){
+   
+    try {
+        var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    console.log(localStorage.getItem('Token'));
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    };
+    const response = await fetch(
+        'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+        requestOptions,
+    );
+    if(response.ok!==true){
+        localStorage.removeItem('Token');
+        localStorage.removeItem('Account');
+    }
+    else{
+        var data= await response.json();
+   
+        localStorage.setItem('Account', JSON.stringify(data));
+    }
+    } catch (error) {
+        window.location.href='../notfound'
+    }
+    
+   }
+  componentDidMount(){
+    this.checkToken();
+  }
     render(){
         return(
             <div>
