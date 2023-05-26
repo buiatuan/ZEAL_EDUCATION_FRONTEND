@@ -192,6 +192,7 @@ export class HeaderClient extends Component {
     }
     handleSearch(event) {
         event.preventDefault();
+
         const searchQuery = event.target.elements.search.value;
         window.location.href = `../search?q=${searchQuery}`;
     }
