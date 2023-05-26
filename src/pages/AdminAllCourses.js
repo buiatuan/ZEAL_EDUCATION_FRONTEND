@@ -23,33 +23,32 @@ export class AdminAllCourses extends Component {
         }
     }
     CourseDashnoard() {
-        const resultCourse = this.state.AllCouses.map((e) => {
+        console.log(this.state.AllCouses);
+        const resultCourse = this.state.AllCouses.map((e,index) => {
             const min = 1;
             const max = 90;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
             return (
-                <tr>
+                <tr key={index}>
                     <td>
                         <span className="list-img">
                             <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
                         </span>
                     </td>
                     <td>
-                        <Link to="../admin-student-details">
+                        <Link to={`../AdminViewCourse/${e.id}`}>
                             <span className="list-enq-name">{e.name}</span>
-                            <span className="list-enq-city">{e.courseType}</span>
                         </Link>
                     </td>
+                    <td>{e.courseType}</td>
                     <td>{e.courseCode}</td>
-                    <td>60 Days(420hrs)</td>
-                    <td>03 Jun 2023</td>
-                    <td>12 Aug 2023</td>
-                    <td>{e.tuitionFees}</td>
+                    <td>{e.scholarCourses.length}</td>
+                    <td>{e.tuitionFees}USD</td>
                     <td>
                         <span className="label label-success">Active</span>
                     </td>
                     <td>
-                        <Link to="../admin-student-details" className="ad-st-view">
+                        <Link to={`../AdminViewCourse/${e.id}`} className="ad-st-view">
                             View
                         </Link>
                     </td>
@@ -60,7 +59,6 @@ export class AdminAllCourses extends Component {
     }
     componentDidMount() {
         this.getCouses();
-       
     }
     render() {
         return (
@@ -77,15 +75,15 @@ export class AdminAllCourses extends Component {
                             <div className="sb2-2-2">
                                 <ul>
                                     <li>
-                                        <Link to="../index">
+                                        <Link to="../Admin">
                                             <i className="fa fa-home" aria-hidden="true" /> Home
                                         </Link>
                                     </li>
                                     <li className="active-bre">
-                                        <Link to="../#"> Dashboard</Link>
+                                        <span>Courses</span>
                                     </li>
                                     <li className="page-back">
-                                        <Link to="../index">
+                                        <Link to="../Admin">
                                             <i className="fa fa-backward" aria-hidden="true" /> Back
                                         </Link>
                                     </li>
@@ -97,11 +95,7 @@ export class AdminAllCourses extends Component {
                                     <div className="col-md-12">
                                         <div className="box-inn-sp">
                                             <div className="inn-title">
-                                                <h4>Course Details</h4>
-                                                <p>
-                                                    All about courses, program structure, fees, best course lists
-                                                    (ranking), syllabus, teaching techniques and other details.
-                                                </p>
+                                                <h4>List of Courses</h4>
                                             </div>
                                             <div className="tab-inn">
                                                 <div className="table-responsive table-desi">
@@ -111,10 +105,9 @@ export class AdminAllCourses extends Component {
                                                                 <th>Image</th>
                                                                 <th>Course Name</th>
                                                                 <th>Category</th>
-                                                                <th>Durations</th>
-                                                                <th>Start Date</th>
-                                                                <th>End Date</th>
-                                                                <th>Total Seats</th>
+                                                                <th>Course Code</th>
+                                                                <th>Enrollment</th>
+                                                                <th>Tuition Fees</th>
                                                                 <th>Status</th>
                                                                 <th>View</th>
                                                             </tr>

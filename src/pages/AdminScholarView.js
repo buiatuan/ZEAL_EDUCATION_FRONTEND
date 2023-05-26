@@ -51,11 +51,11 @@ const AdminScholarView = ()=>{
               {/*== breadcrumbs ==*/}
               <div className="sb2-2-2">
                 <ul>
-                  <li><Link to="../index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
+                  <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                   </li>
-                  <li className="active-bre"><Link to="../#"> Add New Event</Link>
+                  <li className="active-bre"><span>Scholar Detail</span>
                   </li>
-                  <li className="page-back"><Link to="../index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                  <li className="page-back"><Link to="../AdminUserAll"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                   </li>
                 </ul>
               </div>

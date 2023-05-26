@@ -24,7 +24,7 @@ async getTeacher() {
     }
 }
 teacherDashBoard() {
-    const result = this.state.AllTeacher.map((e) => {
+    const result = this.state.AllTeacher.map((e,index) => {
         const min = 1;
         const max = 90;
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -35,7 +35,7 @@ teacherDashBoard() {
                 <span className="label label-danger">UnActive</span>
             );
         return (
-            <tr>
+            <tr key={index}>
                 <td>
                     <span className="list-img">
                         <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
@@ -81,15 +81,15 @@ render() {
                         <div className="sb2-2-2">
                             <ul>
                                 <li>
-                                    <Link to="../index">
+                                    <Link to="../Admin">
                                         <i className="fa fa-home" aria-hidden="true" /> Home
                                     </Link>
                                 </li>
                                 <li className="active-bre">
-                                    <Link to="../#"> Users(Teachers)</Link>
+                                    <span>Teachers</span>
                                 </li>
                                 <li className="page-back">
-                                    <Link to="../index">
+                                    <Link to="../Admin">
                                         <i className="fa fa-backward" aria-hidden="true" /> Back
                                     </Link>
                                 </li>
@@ -101,7 +101,7 @@ render() {
                                 <div className="col-md-12">
                                     <div className="box-inn-sp">
                                         <div className="inn-title">
-                                            <h4>Teacher Details</h4>
+                                            <h4>Teachers List</h4>
                                             <p>
                                                 All about teachers like name, student id, phone, email, country,
                                                 city and more

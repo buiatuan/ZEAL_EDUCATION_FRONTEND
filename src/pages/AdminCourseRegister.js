@@ -42,7 +42,7 @@ const AdminCourseRegister = () => {
         PutData();
     };
     
-    const DisplayAllExam = ()=>{
+    const DisplayAllPending = ()=>{
         const result = data.map((e,index)=>{
                 return(  
                         <tr key={index}>
@@ -52,10 +52,10 @@ const AdminCourseRegister = () => {
                         <th>{e.course.name}</th>
                         <th>{e.tuitionFees}USD</th>
                         <th>
-                            <span onClick={ConfirmedOrRefused(e.id,1)} className="onclick label label-success">ACCEPTED</span>
+                            <button onClick={()=>ConfirmedOrRefused(e.id,1)} className="onclick label label-success">ACCEPTED</button>
                         </th>
                         <th>
-                            <span onClick={ConfirmedOrRefused(e.id,0)} className="onclick label label-danger">REJECTED</span>
+                            <button onClick={()=>ConfirmedOrRefused(e.id,0)} className="onclick label label-danger">REJECTED</button>
                         </th>
                         </tr>
                 )
@@ -114,7 +114,7 @@ const AdminCourseRegister = () => {
                                 </tr>
                               </thead>
                               <tbody>
-                              {DisplayAllExam()}
+                              {DisplayAllPending()}
                               </tbody>
                             </table>
                           </div>
