@@ -56,16 +56,19 @@ export class HeaderClient extends Component {
             .then((data) => {
                 console.log(data);
                 localStorage.setItem('Token', data.accessToken);
-                localStorage.setItem('RoleId', data.roleId);
-                if (data.roleId === 1 || data.roleId === 2) {
-                    if (window.confirm('Bạn có muốn  chuyển sang trang admin không?')) {
+                localStorage.setItem('RoleId',data.roleId);
+                if(data.roleId===1|| data.roleId===2){
+                    if (window.confirm("Bạn có muốn  chuyển sang trang admin không?")) {
                         // Thực hiện hành động nếu người dùng đồng ý
-                        window.location.href = 'http://localhost:3000/admin';
-                    } else {
+                        
+                        window.location.href=("http://localhost:3000/admin");
+                      } else {
                         // Thực hiện hành động nếu người dùng từ chối
-                        console.log('Người dùng đã từ chối');
-                    }
-                }
+                        console.log("Người dùng đã từ chối");
+                      }
+                   
+                   }
+               
             })
             .catch((err) => {
                 console.log(err);
@@ -129,15 +132,16 @@ export class HeaderClient extends Component {
                 );
                 var data = await response.json();
                 // cap nhat gia tri cho state
-                await this.setState(
+                 this.setState(
                     {
                         Scholar: data,
                     },
                     () => {
                         // set Account vao local storage
                         localStorage.setItem('Account', JSON.stringify(data));
-                        console.log(this.state.Scholar);
-                        this.displayLogin();
+                       this.displayLogin();
+                        // chuyen sang trang admin
+                      
                     },
                 );
             } catch (err) {

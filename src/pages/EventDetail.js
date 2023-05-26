@@ -23,7 +23,7 @@ const EventDetail = () => {
             setEventData(dataEvent);
         };
         fetchData();
-    });
+    },[]);
     const getEvent = async () => {
         var res = await fetch(`https://localhost:7156/api/ScholarEvent/GetDetail/${id}`, { method: 'get' });
         var data = await res.json();

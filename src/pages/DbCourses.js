@@ -187,24 +187,24 @@ export class DbCourses extends Component {
                                     <img src={require('../assets/images/user.jpg')} alt="user" />
                                 </div>
                                 <div className="pro-user-bio">
-                                    <ul>
+                                <ul>
                                         <li>
-                                            <h4>Emily Jessica</h4>
+                                            <h4>{this.state.Scholar.name}</h4>
                                         </li>
-                                        <li>Student Id: ST17241</li>
+                                        <li>Student Id: ST{this.state.Scholar.id}</li>
                                         <li>
                                             <Link to="../#!">
-                                                <i className="fa fa-facebook" /> Facebook: my sample
+                                                <i className="fa fa-facebook" /> Facebook: Facebook.com
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to="../#!">
-                                                <i className="fa fa-google-plus" /> Google: my sample
+                                                <i className="fa fa-google-plus" /> Google: Google.com
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to="../#!">
-                                                <i className="fa fa-twitter" /> Twitter: my sample
+                                                <i className="fa fa-twitter" /> Twitter: Twitter.com
                                             </Link>
                                         </li>
                                     </ul>
