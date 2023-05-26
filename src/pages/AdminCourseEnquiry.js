@@ -2,7 +2,46 @@ import React,{Component} from "react";
 import { Link } from 'react-router-dom';
 import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
-export class AdminCoursenEnquiry extends Component{
+export class AdminCourseEnquiry extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      courseFeedbacks: [],
+    };
+  }
+  
+  async GetListCourseFeedbacks() {
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    const response = await fetch("https://localhost:7156/api/AdminFeedBack/GetList", {
+      method: "GET",
+      headers: myHeaders,
+    });
+    const courseFeedbacks = await response.json();
+    this.setState({ courseFeedbacks: courseFeedbacks });
+  }
+  
+  DisplayCourseFeedbacks() {
+    const result = this.state.courseFeedbacks;
+    const arrayDisplay = result.map((courseFeedback,index) => {
+      return (
+        <tr key={index}>
+          <td>{courseFeedback.id}</td>
+          <td>{courseFeedback.name}</td>
+          <td>{courseFeedback.email}</td>
+          <td>{courseFeedback.phone}</td>
+          <td><Link to={`../AdminViewEnquiry/${courseFeedback.id}`} className="ad-st-view">View</Link></td>
+        </tr>
+      );
+    });
+    return arrayDisplay;
+  }
+  
+  componentDidMount() {
+    this.GetListCourseFeedbacks();
+  }
+  
     render() {
 
       return (
@@ -40,56 +79,15 @@ export class AdminCoursenEnquiry extends Component{
                             <table className="table table-hover">
                               <thead>
                                 <tr>
-                                  <th>#</th>
+                                  <th>ID</th>
                                   <th>Name</th>
-                                  <th>Email id</th>
+                                  <th>Email</th>
                                   <th>Phone</th>
                                   <th>View</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td>John smith</td>
-                                  <td>johm_smith@gmail.com</td>
-                                  <td>+10 8415 6352</td>
-                                  <td><Link to="../admin-view-enquiry" className="ad-st-view">View</Link></td>
-                                </tr>
+                                {this.DisplayCourseFeedbacks()}
                               </tbody>
                             </table>
                           </div>

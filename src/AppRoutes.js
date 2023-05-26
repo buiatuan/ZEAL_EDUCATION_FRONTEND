@@ -27,7 +27,7 @@ import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
 import { AdminEventEnquiry } from "./pages/AdminEventEnquiry";
 import { AdminAdmissionEnquiry } from "./pages/AdminAdmissionEnquiry";
 import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
-import { AdminCoursenEnquiry } from "./pages/AdminCourseEnquiry";
+import { AdminCourseEnquiry } from "./pages/AdminCourseEnquiry";
 // import event
 import { AdminEventAll } from "./pages/AdminEventAll";
 import AdminEventAdd from "./pages/AdminEventAdd";
@@ -48,6 +48,7 @@ import {AdminTeacherAll} from "./pages/AdminTeacherAll";
 import AdminTeacherAdd from "./pages/AdminTeacherAdd";
 import AdminExamEdit from "./pages/AdminExamEdit";
 import SearchClient from "./pages/SearchClient";
+import AdminTeacherView from "./pages/AdminTeacherView";
 const AppRoutes = [
   {
     index: true,
@@ -212,7 +213,7 @@ const AppRoutes = [
   },
   {
     path: "/AdminCourseEnquiry",
-    element: <AdminCoursenEnquiry />,
+    element: <AdminCourseEnquiry />,
   },
 
   {
@@ -235,6 +236,10 @@ const AppRoutes = [
   {
     path: "/AdminTeacherAdd",
     element: <AdminTeacherAdd />
+  },
+  {
+    path: "/AdminTeacherView/:id",
+    element: <AdminTeacherView />
   }
 ];
 
