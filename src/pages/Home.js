@@ -121,7 +121,7 @@ export class Home extends Component {
         const dataArray = this.state.Course;
         if (dataArray.length > 0) {
             const render1 = [];
-            for (let i = 0; i < dataArray.length; i++) {
+            for (let i = 0; i < 3; i++) {
                 render1.push(
                     <div className="home-top-cour" key={i}>
                         {/*POPULAR COURSES IMAGE*/}
@@ -155,7 +155,7 @@ export class Home extends Component {
                 );
             }
             const render2 = [];
-            for (let i = 3; i < dataArray.length; i++) {
+            for (let i = 3; i < 6; i++) {
                 render2.push(
                     <div className="home-top-cour" key={i}>
                         {/*POPULAR COURSES IMAGE*/}
