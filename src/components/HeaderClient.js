@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 export class HeaderClient extends Component {
     constructor(props) {
@@ -82,6 +82,7 @@ export class HeaderClient extends Component {
         localStorage.removeItem('Account');
         localStorage.removeItem('Token');
         this.dashboard_menu.current.style.display = 'none';
+        window.location.href = '../';
     }
     displayLogin() {
         this.social_Header.current.style.display = 'none';
