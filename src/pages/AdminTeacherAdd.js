@@ -100,7 +100,7 @@ const AdminTeacherAdd = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
-                            <input type="text" required className="form-control" id="password" name="password" placeholder="Enter password" onChange={e=>handleChange(e)}/>
+                            <input type="password" required className="form-control" id="password" name="password" placeholder="Enter password" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="age" className="form-label">Age</label>
@@ -135,9 +135,9 @@ const AdminTeacherAdd = ()=>{
                             <label htmlFor="gender" className="form-label">Gender</label>
                             <select className="form-select" required id="gender" name="gender" onChange={e=>handleChange(e)}>
                               <option>Choose gender</option>
-                              <option value="m">Male</option>
-                              <option value="f">Female</option>
-                              <option value="o">Others</option>
+                              <option value="M">Male</option>
+                              <option value="F">Female</option>
+                              <option value="O">Others</option>
                             </select>                          
                           </div>
                           <button type="submit" className="btn btn-primary">Submit</button>

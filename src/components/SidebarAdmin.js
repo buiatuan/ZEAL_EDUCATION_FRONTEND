@@ -38,7 +38,6 @@ export class SidebarAdmin extends Component {
                   <i className="fa fa-bar-chart" aria-hidden="true" /> Dashboard
                 </Link>
               </li>
-              
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header" >
                   <i className="fa fa-book" aria-hidden="true" /> All Courses
@@ -117,31 +116,17 @@ export class SidebarAdmin extends Component {
                     <li>
                       <Link to="../AdminUserAll">All Scholar</Link>
                     </li>
+                    <li>
+                      <Link to="../AdminCourseRegister">Course Register Management</Link>
+                    </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-commenting-o" aria-hidden="true" />{" "}
-                  Enquiry
+                <Link to="../AdminCourseEnquiry">
+                  <i className="fa fa-commenting-o" aria-hidden="true" />Course Feedback
                 </Link>
-                <div className="collapsible-body left-sub-menu">
-                  <ul>
-                    <li>
-                      <Link to="../AdminAllEnquiry">All Enquiry</Link>
-                    </li>
-                    <li>
-                      <Link to="../AdminCourseEnquiry">Course Enquiry</Link>
-                    </li>
-                 
-                    <li>
-                      <Link to="../AdminEventEnquiry">Event Enquiry</Link>
-                    </li>
-                   
-                  </ul>
-                </div>
               </li>
-           
             </ul>
           </div>
         </div>

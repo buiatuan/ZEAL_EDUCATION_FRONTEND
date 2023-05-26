@@ -49,6 +49,9 @@ import AdminTeacherAdd from "./pages/AdminTeacherAdd";
 import AdminExamEdit from "./pages/AdminExamEdit";
 import SearchClient from "./pages/SearchClient";
 import AdminTeacherView from "./pages/AdminTeacherView";
+import AdminScholarView from "./pages/AdminScholarView";
+import AdminCourseRegister from "./pages/AdminCourseRegister";
+
 const AppRoutes = [
   {
     index: true,
@@ -162,6 +165,14 @@ const AppRoutes = [
   {
     path: "/AdminUserAll",
     element: <AdminUserAll />,
+  },
+  {
+    path: "/AdminScholarView/:id",
+    element: <AdminScholarView />,
+  },
+  {
+    path: "/AdminCourseRegister",
+    element: <AdminCourseRegister />,
   },
   // event admin
   {
