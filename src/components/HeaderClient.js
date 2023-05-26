@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-export class HeaderClient extends Component {
+
+ export class HeaderClient extends Component {
     constructor(props) {
         super(props);
-
+      
         this.social_Header = React.createRef();
         this.loginHeader = React.createRef();
         this.pop_close = React.createRef();
@@ -222,7 +223,11 @@ export class HeaderClient extends Component {
             this.pop_close.current.click();
         }
     }
-
+    handleSearch(event) {
+        event.preventDefault();
+        const searchQuery = event.target.elements.search.value;
+        window.location.href=(`../search?q=${searchQuery}`);
+      };
     render() {
         return (
             <div>
@@ -988,12 +993,13 @@ export class HeaderClient extends Component {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="search-form">
-                                        <form>
+                                        <form onSubmit={e=>this.handleSearch(e)}>
                                             <div className="sf-type">
                                                 <div className="sf-input">
                                                     <input
                                                         type="text"
                                                         id="sf-box"
+                                                        name='search'
                                                         placeholder="Search course and discount courses"
                                                     />
                                                 </div>
@@ -1065,3 +1071,4 @@ export class HeaderClient extends Component {
         );
     }
 }
+

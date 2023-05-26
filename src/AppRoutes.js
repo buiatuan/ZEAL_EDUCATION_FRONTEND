@@ -47,6 +47,7 @@ import AdminEventEdit from "./pages/AdminEventEdit";
 import {AdminTeacherAll} from "./pages/AdminTeacherAll";
 import AdminTeacherAdd from "./pages/AdminTeacherAdd";
 import AdminExamEdit from "./pages/AdminExamEdit";
+import SearchClient from "./pages/SearchClient";
 const AppRoutes = [
   {
     index: true,
@@ -81,6 +82,10 @@ const AppRoutes = [
   {
     path: "/GalleryPhoto",
     element: <GalleryPhoto />,
+  },
+  {
+    path: '/search?:query',
+    element: <SearchClient/>
   },
   {
     path: "/Research",
