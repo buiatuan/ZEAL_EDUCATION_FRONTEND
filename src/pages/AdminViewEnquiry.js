@@ -27,16 +27,17 @@ const AdminViewEnquiry = () => {
     const result = data.map((e,index)=>{
             return(  
               <tr key={index}>
-                <td>{e.id}</td>
                 <td>{e.account.name}</td>
                 <td>{e.account.email}</td>
                 <td>{e.account.phoneNumber}</td>
+                <td>{new Date(e.createDate).toLocaleString()}</td>
                 <td>{e.message}</td>
               </tr>
             )
           });
     return result;
   } 
+  console.log(data);
   
   return (
     <div>
@@ -72,10 +73,10 @@ const AdminViewEnquiry = () => {
                         <table className="table table-hover">
                           <thead>
                             <tr>
-                              <th>ID</th>
-                              <th>Name</th>
+                              <th>Scholar</th>
                               <th>Email</th>
                               <th>Phone</th>
+                              <th>Feedback Date</th>
                               <th>Message</th>
                             </tr>
                           </thead>

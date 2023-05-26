@@ -24,14 +24,13 @@ export class AdminCourseEnquiry extends Component{
   
   DisplayCourseFeedbacks() {
     const result = this.state.courseFeedbacks;
-    const arrayDisplay = result.map((courseFeedback,index) => {
+    const arrayDisplay = result.map((e,index) => {
       return (
         <tr key={index}>
-          <td>{courseFeedback.id}</td>
-          <td>{courseFeedback.name}</td>
-          <td>{courseFeedback.email}</td>
-          <td>{courseFeedback.phone}</td>
-          <td><Link to={`../AdminViewEnquiry/${courseFeedback.id}`} className="ad-st-view">View</Link></td>
+          <td>{e.account.name}</td>
+          <td>{e.course.name}</td>
+          <td>{e.message}</td>
+          <td><Link to={`../AdminViewEnquiry/${e.id}`} className="ad-st-view">View</Link></td>
         </tr>
       );
     });
@@ -78,10 +77,9 @@ export class AdminCourseEnquiry extends Component{
                             <table className="table table-hover">
                               <thead>
                                 <tr>
-                                  <th>ID</th>
-                                  <th>Name</th>
-                                  <th>Email</th>
-                                  <th>Phone</th>
+                                  <th>Scholar Name</th>
+                                  <th>Course Name</th>
+                                  <th>Message</th>
                                   <th>View</th>
                                 </tr>
                               </thead>
