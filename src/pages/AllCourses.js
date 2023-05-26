@@ -66,7 +66,7 @@ export class AllCourses extends Component{
         );
       }
       const render2 = [];
-      for (let i = dataArray.length-1; i > dataArray.length/2; i--) {
+      for (let i = dataArray.length-1; i >= dataArray.length/2; i--) {
         render2.push
         (
           <div className="home-top-cour" key={i}>

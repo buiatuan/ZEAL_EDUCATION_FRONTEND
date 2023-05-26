@@ -1329,7 +1329,9 @@ label {
     bottom: 0;
     /* background: rgba(2, 41, 78, 0.73);
      */
-    background: linear-gradient(to top, rgba(3, 41, 79, 0.82), rgba(6, 53, 98, 0.62));
+    background: rgb(1 4 8 / 73%);
+    opacity: 74%;
+    background: linear-gradient(to top, rgb(1 4 8 / 73%));
 }
 .ho-ev-latest-bg-1 {
     background: url(../images/ev-bg1.jpg) no-repeat;

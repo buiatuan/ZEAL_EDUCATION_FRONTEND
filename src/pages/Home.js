@@ -7,8 +7,86 @@ export class Home extends Component {
         super(props);
         this.state = {
             Course: [],
-            logined: localStorage.getItem('Account') === null ? false : true,
+
+            AllEvent: [],
         };
+    }
+    async getListEvent() {
+        var res = await fetch('https://localhost:7156/api/ScholarEvent/GetListEvent');
+        var data = await res.json();
+        this.setState({
+            AllEvent: data,
+        });
+    }
+    showNewEvent(){
+        var listEvent = this.state.AllEvent === null ? [] : this.state.AllEvent;
+        var result =[];
+        if(listEvent.length>5)
+        for(var i=0;i<5;i++){
+            var e=listEvent[i];
+              var date= new Date(e.startDate);
+            result.push(
+            
+                    <div>
+    
+                        <li>
+                            <div className="ho-ev-date">
+                                <span>{date.getDate()}</span>
+                                <span>
+                                    {date.getMonth()}, {date.getFullYear()}{' '}
+                                </span>
+                            </div>
+                            <div className="ho-ev-link">
+                                <Link to={`../EventDetail/${e.id}`}>
+                                    <h4>{e.name}</h4>
+                                </Link>
+                                <p>Location: {e.location} </p>
+                                <span>
+                                    Start:{new Date(e.startDate).getHours()} h - End: {new Date(e.endTime).getHours()} h{' '}
+                                </span>
+                            </div>
+                            
+                        </li>
+                    </div>
+              
+            )
+        }
+        return result; 
+    }
+    showAllEvent() {
+        var listEvent = this.state.AllEvent === null ? [] : this.state.AllEvent;
+        var result =[];
+        if(listEvent.length>5)
+        for(var i=listEvent.length-1;i>listEvent.length-6;i--){
+            var e=listEvent[i];
+              var date= new Date(e.startDate);
+            result.push(
+            
+                    <div>
+    
+                        <li>
+                            <div className="ho-ev-date">
+                                <span>{date.getDate()}</span>
+                                <span>
+                                    {date.getMonth()}, {date.getFullYear()}{' '}
+                                </span>
+                            </div>
+                            <div className="ho-ev-link">
+                                <Link to={`../EventDetail/${e.id}`}>
+                                    <h4>{e.name}</h4>
+                                </Link>
+                                <p>Location: {e.location} </p>
+                                <span>
+                                    Start:{new Date(e.startDate).getHours()} h - End: {new Date(e.endTime).getHours()} h{' '}
+                                </span>
+                            </div>
+                            
+                        </li>
+                    </div>
+              
+            )
+        }
+        return result;
     }
     async GetListCourse() {
         try {
@@ -36,6 +114,7 @@ export class Home extends Component {
 
     componentDidMount() {
         this.GetListCourse();
+        this.getListEvent();
     }
     showTopCourse() {
         console.log(this.state.Course);
@@ -248,8 +327,7 @@ export class Home extends Component {
                                     Discover <span>More</span>
                                 </h2>
                                 <p>
-                                    Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque
-                                    maximus lacus, nec pharetra augue.
+                               Unleash Your Curiosity: Discover More Opportunities and Insights
                                 </p>
                             </div>
                         </div>
@@ -332,8 +410,7 @@ export class Home extends Component {
                                     New <span>Courses</span>
                                 </h2>
                                 <p>
-                                    Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque
-                                    maximus lacus, nec pharetra augue.
+                                Discover New Courses: Expand Your Knowledge and Skills
                                 </p>
                             </div>
                         </div>
@@ -351,63 +428,13 @@ export class Home extends Component {
                                 <div className="ho-ev-latest ho-ev-latest-bg-1">
                                     <div className="ho-lat-ev">
                                         <h4>Upcoming Event</h4>
-                                        <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
+                                        <p>Save the Date: Upcoming Event to Look Forward To</p>
                                     </div>
                                 </div>
                                 <div className="ho-event ho-event-mob-bot-sp">
                                     <ul>
-                                        <li>
-                                            <div className="ho-ev-date">
-                                                <span>07</span>
-                                                <span>jan,2023</span>
-                                            </div>
-                                            <div className="ho-ev-link">
-                                                <Link to="../events">
-                                                    <h4>Latinoo College Expo 2023</h4>
-                                                </Link>
-                                                <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                                <span>9:15 am – 5:00 pm</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="ho-ev-date">
-                                                <span>12</span>
-                                                <span>jan,2023</span>
-                                            </div>
-                                            <div className="ho-ev-link">
-                                                <Link to="../events">
-                                                    <h4>Training at Team Fabio Clemente</h4>
-                                                </Link>
-                                                <p>Nulla at velit convallis venenatis.</p>
-                                                <span>9:15 am – 5:00 pm</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="ho-ev-date">
-                                                <span>26</span>
-                                                <span>jan,2023</span>
-                                            </div>
-                                            <div className="ho-ev-link">
-                                                <Link to="../events">
-                                                    <h4>Nulla at velit convallis</h4>
-                                                </Link>
-                                                <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                                <span>9:15 am – 5:00 pm</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="ho-ev-date">
-                                                <span>18</span>
-                                                <span>jan,2023</span>
-                                            </div>
-                                            <div className="ho-ev-link">
-                                                <Link to="../events">
-                                                    <h4>Admissions Information Session and Tour</h4>
-                                                </Link>
-                                                <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
-                                                <span>9:15 am – 5:00 pm</span>
-                                            </div>
-                                        </li>
+                                        {this.showAllEvent()}
+                                   
                                     </ul>
                                 </div>
                             </div>
@@ -418,7 +445,7 @@ export class Home extends Component {
                                 <div className="ho-ev-latest ho-ev-latest-bg-2">
                                     <div className="ho-lat-ev">
                                         <h4>Job Vacants</h4>
-                                        <p>Nulla at velit convallis, venenatis lacus quis, efficitur lectus.</p>
+                                        <p>Job Vacancies: Explore Exciting Opportunities</p>
                                     </div>
                                 </div>
                                 <div className="ho-event ho-event-mob-bot-sp">
@@ -485,11 +512,10 @@ export class Home extends Component {
                         <div className="row">
                             <div className="con-title">
                                 <h2>
-                                    News and <span>Events</span>
+                                Events and <span>Orther</span>
                                 </h2>
                                 <p>
-                                    Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque
-                                    maximus lacus, nec pharetra augue.
+                                Stay Updated: News and Events in the Latest Updates
                                 </p>
                             </div>
                         </div>
@@ -622,67 +648,8 @@ export class Home extends Component {
                                     <h4>News &amp; Event</h4>
                                     <div className="ho-event">
                                         <ul>
-                                            <li>
-                                                <div className="ho-ev-date">
-                                                    <span>07</span>
-                                                    <span>jan,2023</span>
-                                                </div>
-                                                <div className="ho-ev-link">
-                                                    <Link to="../events">
-                                                        <h4>Latinoo College Expo 2023</h4>
-                                                    </Link>
-                                                    <p>
-                                                        Nulla at velit convallis, venenatis lacus quis, efficitur
-                                                        lectus.
-                                                    </p>
-                                                    <span>9:15 am – 5:00 pm</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="ho-ev-date">
-                                                    <span>12</span>
-                                                    <span>jan,2023</span>
-                                                </div>
-                                                <div className="ho-ev-link">
-                                                    <Link to="../events">
-                                                        <h4>Training at Team Fabio Clemente</h4>
-                                                    </Link>
-                                                    <p>Nulla at velit convallis venenatis.</p>
-                                                    <span>9:15 am – 5:00 pm</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="ho-ev-date">
-                                                    <span>26</span>
-                                                    <span>jan,2023</span>
-                                                </div>
-                                                <div className="ho-ev-link">
-                                                    <Link to="../events">
-                                                        <h4>Nulla at velit convallis</h4>
-                                                    </Link>
-                                                    <p>
-                                                        Nulla at velit convallis, venenatis lacus quis, efficitur
-                                                        lectus.
-                                                    </p>
-                                                    <span>9:15 am – 5:00 pm</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="ho-ev-date">
-                                                    <span>18</span>
-                                                    <span>jan,2023</span>
-                                                </div>
-                                                <div className="ho-ev-link">
-                                                    <Link to="../events">
-                                                        <h4>Admissions Information Session and Tour</h4>
-                                                    </Link>
-                                                    <p>
-                                                        Nulla at velit convallis, venenatis lacus quis, efficitur
-                                                        lectus.
-                                                    </p>
-                                                    <span>9:15 am – 5:00 pm</span>
-                                                </div>
-                                            </li>
+                                            {this.showNewEvent()}
+                                   
                                         </ul>
                                     </div>
                                 </div>
