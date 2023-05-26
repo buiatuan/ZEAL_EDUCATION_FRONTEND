@@ -81,11 +81,11 @@ const AdminExamAdd = ()=>{
             {/*== breadcrumbs ==*/}
             <div className="sb2-2-2">
               <ul>
-                <li><Link to="index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
+                <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                 </li>
-                <li className="active-bre"><Link to="../AdminExamAdd"> Add New Exam</Link>
+                <li className="active-bre"><span> Add New Exam</span>
                 </li>
-                <li className="page-back"><Link to="index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                <li className="page-back"><Link to="../AdminExamAll"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                 </li>
               </ul>
             </div>

@@ -76,35 +76,22 @@ const AdminAddCourses = () => {
                 <div className="box-inn-sp admin-form">
                   <div className="sb2-2-add-blog sb2-2-1">
                     <h2>Add New Course</h2>
-                    <p>The table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
-                    {/* <ul className="nav nav-tabs tab-list">
-                      <li className="active"><Link data-toggle="tab" to="../#home" aria-expanded="true"><i className="fa fa-info" aria-hidden="true" /> <span>Detail</span></Link>
-                      </li>
-                      <li className><Link data-toggle="tab" to="../#menu1" aria-expanded="false"><i className="fa fa-bed" aria-hidden="true" /> <span>Course Syllabus</span></Link>
-                      </li>
-                      <li className><Link data-toggle="tab" to="../#menu2" aria-expanded="false"><i className="fa fa-picture-o" aria-hidden="true" /> <span>Banner Image</span></Link>
-                      </li>
-                      <li className><Link data-toggle="tab" to="../#menu3" aria-expanded="false"><i className="fa fa-facebook" aria-hidden="true" /> <span>Time table</span></Link>
-                      </li>
-                      <li className><Link data-toggle="tab" to="../#menu4" aria-expanded="false"><i className="fa fa-phone" aria-hidden="true" /> <span>Contact Info</span></Link>
-                      </li>
-                    </ul> */}
                     <form onSubmit={e=>handleSubmit(e)}>
                       <div className="mb-3">
                         <label htmlFor="courseCode" className="form-label">Course Code:</label>
-                        <input type="text" className="form-control" id="courseCode" name="courseCode" placeholder="Enter course code" onChange={e=>handleChange(e)}/>
+                        <input type="text" className="form-control" required id="courseCode" name="courseCode" placeholder="Enter course code" onChange={e=>handleChange(e)}/>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name:</label>
-                        <input type="text" className="form-control" id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
+                        <input type="text" className="form-control" required id="name" name="name" placeholder="Enter name" onChange={e=>handleChange(e)}/>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="tuitionFees" className="form-label">Tuition Fees:</label>
-                        <input type="text" className="form-control" id="tuitionFees" name="tuitionFees" placeholder="Enter tuition fees" onChange={e=>handleChange(e)}/>
+                        <input type="text" className="form-control" required id="tuitionFees" name="tuitionFees" placeholder="Enter tuition fees" onChange={e=>handleChange(e)}/>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="courseType" className="form-label">Course Type:</label>
-                        <input type="text" className="form-control" id="courseType" name="courseType" placeholder="Enter course type" onChange={e=>handleChange(e)}/>
+                        <input type="text" className="form-control" required id="courseType" name="courseType" placeholder="Enter course type" onChange={e=>handleChange(e)}/>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="description" className="form-label">Description:</label>

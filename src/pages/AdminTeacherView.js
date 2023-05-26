@@ -49,11 +49,11 @@ const AdminTeacherView = ()=>{
               {/*== breadcrumbs ==*/}
               <div className="sb2-2-2">
                 <ul>
-                  <li><Link to="../index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
+                  <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                   </li>
-                  <li className="active-bre"><Link to="../#"> Add New Event</Link>
+                  <li className="active-bre"><span>Teacher Details</span>
                   </li>
-                  <li className="page-back"><Link to="../index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                  <li className="page-back"><Link to="../AdminTeacherAll"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                   </li>
                 </ul>
               </div>
@@ -63,8 +63,7 @@ const AdminTeacherView = ()=>{
                   <div className="col-md-12">
                     <div className="box-inn-sp admin-form">
                       <div className="inn-title">
-                        <h4>Add Teacher</h4>
-                        <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
+                        <h4>Teacher Details</h4>
                       </div>
                       <div className="tab-inn">
                           <form>

@@ -59,7 +59,7 @@ export class AdminCourseEnquiry extends Component{
                   <ul>
                     <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><span>Course Enquiry</span>
+                    <li className="active-bre"><span>Course Feedback</span>
                     </li>
                     <li className="page-back"><Link to="../Admin"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
@@ -71,8 +71,7 @@ export class AdminCourseEnquiry extends Component{
                     <div className="col-md-12">
                       <div className="box-inn-sp">
                         <div className="inn-title">
-                          <h4>Course Enquiry</h4>
-                          <p>All about students like name, student id, phone, email, country, city and more</p>
+                          <h4>Course Feedback</h4>
                         </div>
                         <div className="tab-inn">
                           <div className="table-responsive table-desi">

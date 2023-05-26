@@ -23,7 +23,7 @@ import { GalleryPhoto } from "./pages/GalleryPhoto";
 import { Research } from "./pages/Research";
 // adminn
 import { AdminAllEnquiry } from "./pages/AdminAllEnquiry";
-import { AdminViewEnquiry } from "./pages/AdminViewEnquiry";
+import AdminViewEnquiry from "./pages/AdminViewEnquiry";
 import { AdminEventEnquiry } from "./pages/AdminEventEnquiry";
 import { AdminAdmissionEnquiry } from "./pages/AdminAdmissionEnquiry";
 import { AdminCommonEnquiry } from "./pages/AdminCommonEnquir";
@@ -51,6 +51,7 @@ import SearchClient from "./pages/SearchClient";
 import AdminTeacherView from "./pages/AdminTeacherView";
 import AdminScholarView from "./pages/AdminScholarView";
 import AdminCourseRegister from "./pages/AdminCourseRegister";
+import AdminViewCourse from "./pages/AdminViewCourse";
 
 const AppRoutes = [
   {
@@ -174,6 +175,10 @@ const AppRoutes = [
     path: "/AdminCourseRegister",
     element: <AdminCourseRegister />,
   },
+  {
+    path: "/AdminViewCourse/:id",
+    element: <AdminViewCourse />,
+  },
   // event admin
   {
     path: "/AdminEventAll",
@@ -207,7 +212,7 @@ const AppRoutes = [
     element: <AdminAllEnquiry />,
   },
   {
-    path: "/AdminViewEnquiry",
+    path: "/AdminViewEnquiry/:id",
     element: <AdminViewEnquiry />,
   },
   {

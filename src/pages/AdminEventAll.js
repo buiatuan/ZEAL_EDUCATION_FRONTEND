@@ -59,11 +59,11 @@ export class AdminEventAll extends Component{
                 {/*== breadcrumbs ==*/}
                 <div className="sb2-2-2">
                   <ul>
-                    <li><Link to="../index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
+                    <li><Link to="../Admin"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                     </li>
-                    <li className="active-bre"><Link to="../#"> Events</Link>
+                    <li className="active-bre"><span> Events</span>
                     </li>
-                    <li className="page-back"><Link to="../index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                    <li className="page-back"><Link to="../Admin"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                     </li>
                   </ul>
                 </div>
