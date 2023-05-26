@@ -56,6 +56,7 @@ export class HeaderClient extends Component {
             .then((data) => {
                 console.log(data)
                 localStorage.setItem('Token', data.accessToken);
+                localStorage.setItem('RoleId',data.roleId)
                if(data.roleId===1|| data.roleId===2){
                 if (window.confirm("Bạn có muốn  chuyển sang trang admin không?")) {
                     // Thực hiện hành động nếu người dùng đồng ý
