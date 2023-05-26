@@ -267,7 +267,7 @@ const CourseDetails = () => {
                                                             <input
                                                                 type="text"
                                                                 className="validate"
-                                                                value={Account.name}
+                                                                value={Account.Name}
                                                                 placeholder="Full Name"
                                                             />
                                                         </div>
