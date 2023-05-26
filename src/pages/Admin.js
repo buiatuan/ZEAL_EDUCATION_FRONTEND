@@ -8,7 +8,8 @@ export class Admin extends Component {
         this.state = {
             AllCouses: [],
             AllScholar: [],
-     
+            AllCourseRegister: [],
+            AllFeedback: [],
         };
     }
     async getCouses() {
@@ -37,6 +38,33 @@ export class Admin extends Component {
             console.log(err);
         }
     }
+    async getRegisterPending(){
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourseRegister',{ method: 'get',headers:myHeaders });
+            var data = await res.json();
+            this.setState({
+                AllCourseRegister: data,
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    async getFeedback(){
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+            var res = await fetch('https://localhost:7156/api/AdminFeedBack/GetList',{ method: 'get',headers:myHeaders });
+            var data = await res.json();
+            this.setState({
+                AllFeedback: data,
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    
     studentDashBoard() {
         const result = this.state.AllScholar.map((e,index) => {
             const min = 1;
@@ -147,23 +175,19 @@ export class Admin extends Component {
                             {/*== DASHBOARD INFO ==*/}
                             <div className="sb2-2-1">
                                 <h2>Admin Dashboard</h2>
-                                <p>
-                                    The .table class adds basic styling (light padding and only horizontal dividers) to
-                                    a table:
-                                </p>
                                 <div className="db-2">
                                     <ul>
                                         <li>
                                             <div className="dash-book dash-b-1">
                                                 <h5>All Courses</h5>
                                                 <h4>{this.state.AllCouses.length} </h4>
-                                                <Link to="../AdminAllCourse">View more</Link>
+                                                <Link to="../AdminAllCourses">View more</Link>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="dash-book dash-b-2">
                                                 <h5>Register</h5>
-                                                <h4>672</h4>
+                                                <h4>{parseInt(this.state.AllScholar.length)+parseInt(this.state.AllCourseRegister.length)}</h4>
                                                 <Link to="../AdminCourseRegister">View more</Link>
                                             </div>
                                         </li>
@@ -176,9 +200,9 @@ export class Admin extends Component {
                                         </li>
                                         <li>
                                             <div className="dash-book dash-b-4">
-                                                <h5>Feedback</h5>
-                                                <h4>24</h4>
-                                                <Link to="../AdminAllEnquiry">View more</Link>
+                                                <h5>Feedbacks</h5>
+                                                <h4>{this.state.AllFeedback.length}</h4>
+                                                <Link to="../AdminCourseEnquiry">View more</Link>
                                             </div>
                                         </li>
                                     </ul>
