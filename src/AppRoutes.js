@@ -46,6 +46,7 @@ import NotFound from "./pages/NotFound";
 import AdminEventEdit from "./pages/AdminEventEdit";
 import {AdminTeacherAll} from "./pages/AdminTeacherAll";
 import AdminTeacherAdd from "./pages/AdminTeacherAdd";
+import AdminExamEdit from "./pages/AdminExamEdit";
 const AppRoutes = [
   {
     index: true,
@@ -166,7 +167,7 @@ const AppRoutes = [
     element: <AdminEventAdd />,
   },
   {
-    path: "/AdminEventEdit",
+    path: "/AdminEventEdit/:id",
     element: <AdminEventEdit />,
   },
   // Exam Admin
@@ -177,6 +178,10 @@ const AppRoutes = [
   {
     path: "/AdminExamAdd",
     element: <AdminExamAdd />,
+  },
+  {
+    path: "/AdminExamEdit/:id",
+    element: <AdminExamEdit />,
   },
 
   // old script

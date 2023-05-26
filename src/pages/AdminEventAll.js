@@ -19,10 +19,10 @@ export class AdminEventAll extends Component{
     })
   }
   displayEvent(){
-    const result=this.state.AllEvent.map(e=>{
+    const result=this.state.AllEvent.map((e,index)=>{
       const status= e.status===1? (<span className="label label-success">Active</span> ) : (<span className="label label-danger">UnActive</span>);
       return(
-        <tr>
+      <tr key={index}>
         <td>{e.id}</td>
         <td><span className="list-img"><img src={require('../assets/images/course/sm-1.jpg')} alt="" /></span></td>
         <td>{e.name}</td>
@@ -32,7 +32,7 @@ export class AdminEventAll extends Component{
         <td>
           {status}
         </td>
-        <td><Link to="../adminEventEdit" className="ad-st-view">Edit</Link></td>
+        <td><Link to={`../AdminEventEdit/${e.id}`} className="ad-st-view">Edit</Link></td>
       </tr>
       )
     });
