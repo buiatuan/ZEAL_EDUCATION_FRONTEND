@@ -4,10 +4,11 @@ import { HeaderAdmin } from "../components/HeaderAdmin";
 import { SidebarAdmin } from "../components/SidebarAdmin";
 
 const AdminEventEdit = ()=>{
+  const id = useParams().id;
+  
   var myHeaders = new Headers();
   myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-  
-  const {id} = useParams();
+  myHeaders.append('Content-Type', 'application/json');
     
   const [formData, setFormData] = useState({
     name: '',
@@ -19,12 +20,13 @@ const AdminEventEdit = ()=>{
   });
   
   useEffect(()=>{
-    const fetchData = ()=>{
+    const fetchData = async ()=>{
         try{
-            const response = fetch(`https://localhost:7156/api/AdminEvent/GetDetail/${id}`);
+            const response = await fetch(`https://localhost:7156/api/AdminEvent/Detail/${id}`,
+            {method: 'GET',headers:myHeaders});
             if(response.ok)
             {
-              const jsonData = response.json();
+              const jsonData = await response.json();
               setFormData(jsonData);
             }else{
               console.log('Error occurred:', response.status);
@@ -34,7 +36,7 @@ const AdminEventEdit = ()=>{
           }
     };
     fetchData();
-  },formData)
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -55,8 +57,8 @@ const AdminEventEdit = ()=>{
     console.log(requestBody);
     
     // Send the data to the API
-    fetch('https://localhost:7156/api/AdminEvent/Edit', {
-      method: 'POST',
+    fetch(`https://localhost:7156/api/AdminEvent/Edit/${id}`, {
+      method: 'PUT',
       headers:myHeaders,
       body: JSON.stringify(requestBody),
     })
@@ -82,9 +84,9 @@ const AdminEventEdit = ()=>{
               <ul>
                 <li><Link to="../index"><i className="fa fa-home" aria-hidden="true" /> Home</Link>
                 </li>
-                <li className="active-bre"><Link to="../#"> Add New Event</Link>
+                <li className="active-bre"><Link to="../AdminEventAdd"> Add New Event</Link>
                 </li>
-                <li className="page-back"><Link to="../index"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
+                <li className="page-back"><Link to="../AdminEventAll"><i className="fa fa-backward" aria-hidden="true" /> Back</Link>
                 </li>
               </ul>
             </div>
@@ -105,19 +107,19 @@ const AdminEventEdit = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="startDate" className="form-label">Start Date</label>
-                            <input type="datetime-local" required value={new Date(formData.startDate).toLocaleString()} className="form-control" name="startDate" id="startDate" onChange={e=>handleChange(e)}/>
+                            <input type="datetime-local" name="startDate" value={formData.startDate} required className="form-control" id="startDate" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="endTime" className="form-label">End Date</label>
-                            <input type="datetime-local" required value={new Date(formData.endTime).toLocaleString()} className="form-control" name="endTime" id="endTime" onChange={e=>handleChange(e)}/>
+                            <input type="datetime-local" name="endTime" value={formData.endTime} required className="form-control" id="endTime" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="location" className="form-label">Location</label>
-                            <input type="text" required value={formData.location} className="form-control" id="location" name="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
+                            <input type="text" name="location" value={formData.location} required className="form-control" id="location" placeholder="Enter location" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
-                            <select className="form-select" id="status" required name="status" value={formData.status} onChange={e=>handleChange(e)}>
+                            <select className="form-select form-select-lg" name="status" value={formData.status} id="status" required  onChange={e=>handleChange(e)}>
                               <option>Choose status</option>
                               <option value="1">Active</option>
                               <option value="0">Inactive</option>
@@ -126,9 +128,11 @@ const AdminEventEdit = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="description" className="form-label">Description</label>
-                            <textarea className="form-control" id="description" name="description" rows="3" placeholder="Enter description" onChange={e=>handleChange(e)}></textarea>
+                            <textarea className="form-control" name="description" value={formData.description} id="description" rows="3" placeholder="Enter description" onChange={e=>handleChange(e)}></textarea>
                           </div>
-                          <button type="submit" className="btn btn-primary">Submit</button>
+                          <div className="mb-3">
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                          </div>
                         </form>
                     </div>
                   </div>

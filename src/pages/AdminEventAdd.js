@@ -96,7 +96,7 @@ const AdminEventAdd = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
-                            <select className="form-select" required id="status" name="status" onChange={e=>handleChange(e)}>
+                            <select className="form-select form-select-lg" required id="status" name="status" onChange={e=>handleChange(e)}>
                               <option>Choose status</option>
                               <option value="1">Active</option>
                               <option value="0">Inactive</option>

@@ -46,7 +46,11 @@ const AdminTeacherAdd = ()=>{
       body: JSON.stringify(requestBody),
     })
       .then(response => {
-        if(response.ok) alert("ADD SUCCESS!");
+        if(response.ok){
+          alert("ADD SUCCESS!");
+        }else{
+          alert("ADD FAILED!");
+        }
       })
       .catch(error => {
         console.error('Error sending form data:', error);
@@ -102,7 +106,7 @@ const AdminTeacherAdd = ()=>{
                           </div>
                           <div className="mb-3">
                             <label htmlFor="status" className="form-label">Status</label>
-                            <select className="form-select" required id="status" name="status" onChange={e=>handleChange(e)}>
+                            <select className="form-select form-select-lg" required id="status" name="status" onChange={e=>handleChange(e)}>
                               <option>Choose status</option>
                               <option value="1">Active</option>
                               <option value="0">Inactive</option>

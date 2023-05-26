@@ -117,9 +117,6 @@ export class SidebarAdmin extends Component {
                     <li>
                       <Link to="../AdminUserAll">All Scholar</Link>
                     </li>
-                    <li>
-                      <Link to="../AdminUserAdd">Add New Scholar</Link>
-                    </li>
                   </ul>
                 </div>
               </li>
