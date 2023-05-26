@@ -4,7 +4,9 @@ export class HeaderAdmin extends Component{
   constructor(){
     super();
     this.state={
-      AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account'))
+      Token:localStorage.getItem('Token'),
+      AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account')),
+      RoleId: localStorage.getItem('RoleId')
     }
   }
   async checkToken(){
@@ -28,10 +30,13 @@ export class HeaderAdmin extends Component{
     }
     else{
         var data= await response.json();
-   
+        this.setState({
+          AccountAdmin:data
+        })
         localStorage.setItem('Account', JSON.stringify(data));
     }
     } catch (error) {
+      console.log(error);
         window.location.href='../notfound'
     }
     
@@ -39,6 +44,9 @@ export class HeaderAdmin extends Component{
    
   componentDidMount(){
      this.checkToken();
+     if(parseInt(this.state.RoleId)===3){
+      window.location.href='../notfound'
+     }
   }
     render(){
         return(
