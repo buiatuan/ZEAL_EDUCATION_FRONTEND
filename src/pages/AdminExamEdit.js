@@ -25,7 +25,7 @@ const AdminExamEdit = ()=>{
       }
     };
     fetchListCourse();
-  },[])
+  })
   
   const [formData, setFormData] = useState({
     examCode: '',
@@ -46,7 +46,7 @@ const AdminExamEdit = ()=>{
           }
     };
     fetchCourseDetail();
-  }, [])
+  })
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -4,7 +4,7 @@ export class HeaderAdmin extends Component{
   constructor(){
     super();
     this.state={
-      AccountAdmin:JSON.parse(localStorage.getItem('Account'))
+      AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account'))
     }
   }
   async checkToken(){
@@ -36,8 +36,9 @@ export class HeaderAdmin extends Component{
     }
     
    }
+   
   componentDidMount(){
-    this.checkToken();
+     this.checkToken();
   }
     render(){
         return(
