@@ -108,6 +108,7 @@ export class HeaderClient extends Component {
         this.noneLogin.current.style.display = 'block';
         this.loginSuccess.current.style.display = 'none';
         localStorage.removeItem('Account');
+        localStorage.removeItem('Token');
         this.dashboard_menu.current.style.display = 'none';
     }
     displayLogin() {
