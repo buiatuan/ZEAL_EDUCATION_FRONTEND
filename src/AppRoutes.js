@@ -84,7 +84,7 @@ const AppRoutes = [
     element: <GalleryPhoto />,
   },
   {
-    path: '/search?:query',
+    path: '/search',
     element: <SearchClient/>
   },
   {

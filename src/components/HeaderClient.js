@@ -75,35 +75,7 @@ import { Link } from 'react-router-dom';
                 
             });
     }
-   async checkToken(){
-   
-    try {
-        var myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-    console.log(localStorage.getItem('Token'));
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow',
-    };
-    const response = await fetch(
-        'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
-        requestOptions,
-    );
-    if(response.ok!==true){
-        localStorage.removeItem('Token');
-        localStorage.removeItem('Account');
-    }
-    else{
-        var data= await response.json();
-   
-        localStorage.setItem('Account', JSON.stringify(data));
-    }
-    } catch (error) {
-        window.location.href='../notfound'
-    }
-    
-   }
+
     logOut(e) {
         e.preventDefault();
         this.social_Header.current.style.display = 'block';
@@ -123,7 +95,7 @@ import { Link } from 'react-router-dom';
         this.dashboard_menu.current.style.display = 'block';
     }
     componentDidMount() {
-        this.checkToken();
+   
         if (this.state.Scholar !== null) {
             this.displayLogin();
         }
@@ -225,8 +197,9 @@ import { Link } from 'react-router-dom';
     }
     handleSearch(event) {
         event.preventDefault();
+
         const searchQuery = event.target.elements.search.value;
-        window.location.href=(`../search?q=${searchQuery}`);
+        window.location.href=`../search?key=${searchQuery}`
       };
     render() {
         return (

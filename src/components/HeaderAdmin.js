@@ -4,46 +4,14 @@ export class HeaderAdmin extends Component{
   constructor(){
     super();
     this.state={
-      Token:localStorage.getItem('Token'),
+  
       AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account')),
       RoleId: localStorage.getItem('RoleId')
     }
   }
-  async checkToken(){
-   
-    try {
-        var myHeaders = new Headers();
-    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-    console.log(localStorage.getItem('Token'));
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow',
-    };
-    const response = await fetch(
-        'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
-        requestOptions,
-    );
-    if(response.ok!==true){
-        localStorage.removeItem('Token');
-        localStorage.removeItem('Account');
-    }
-    else{
-        var data= await response.json();
-        this.setState({
-          AccountAdmin:data
-        })
-        localStorage.setItem('Account', JSON.stringify(data));
-    }
-    } catch (error) {
-      console.log(error);
-        window.location.href='../notfound'
-    }
-    
-   }
-   
+
   componentDidMount(){
-     this.checkToken();
+   
      if(parseInt(this.state.RoleId)===3){
       window.location.href='../notfound'
      }
