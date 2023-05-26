@@ -1,49 +1,48 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
- export class HeaderClient extends Component {
+export class HeaderClient extends Component {
     constructor(props) {
         super(props);
-      
+
         this.social_Header = React.createRef();
         this.loginHeader = React.createRef();
         this.pop_close = React.createRef();
         this.loginSuccess = React.createRef();
         this.loginSuccess_AccountName = React.createRef();
         this.noneLogin = React.createRef();
-        this.userName=React.createRef();
-        this.userPass=React.createRef();
+        this.userName = React.createRef();
+        this.userPass = React.createRef();
         this.dashboard_menu = React.createRef();
         this.loginFail = React.createRef();
         this.state = {
             Scholar: JSON.parse(localStorage.getItem('Account')),
-            Login:{
-                username:"",
-                passwork:"",
-                RoleId:-1
+            Login: {
+                username: '',
+                passwork: '',
+                RoleId: -1,
             },
-            CreateAccount:{
-           
-            username: '',
-            password: '',
-            email: "",
-            phoneNumber: null,
-            name: '',
-            age: 0,
-            gender: 'M',
-            address: '',
-            descreption: '',
-            
-            dateOfbirth: '',
-            }
+            CreateAccount: {
+                username: '',
+                password: '',
+                email: '',
+                phoneNumber: null,
+                name: '',
+                age: 0,
+                gender: 'M',
+                address: '',
+                descreption: '',
+
+                dateOfbirth: '',
+            },
         };
     }
     async getToken(e) {
         e.preventDefault();
         var datasend = {
-            "username": this.state.Login.username,
-            "password": this.state.Login.passwork
-          }
+            username: this.state.Login.username,
+            password: this.state.Login.passwork,
+        };
         console.log(this.state.Login);
 
         await fetch('https://localhost:7156/api/Auth/Login', {
@@ -55,24 +54,22 @@ import { Link } from 'react-router-dom';
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                console.log(data);
                 localStorage.setItem('Token', data.accessToken);
-                localStorage.setItem('RoleId',data.roleId)
-               if(data.roleId===1|| data.roleId===2){
-                if (window.confirm("Bạn có muốn  chuyển sang trang admin không?")) {
-                    // Thực hiện hành động nếu người dùng đồng ý
-                    window.location.href=("http://localhost:3000/admin");
-                  } else {
-                    // Thực hiện hành động nếu người dùng từ chối
-                    console.log("Người dùng đã từ chối");
-                  }
-               
-               }
+                localStorage.setItem('RoleId', data.roleId);
+                if (data.roleId === 1 || data.roleId === 2) {
+                    if (window.confirm('Bạn có muốn  chuyển sang trang admin không?')) {
+                        // Thực hiện hành động nếu người dùng đồng ý
+                        window.location.href = 'http://localhost:3000/admin';
+                    } else {
+                        // Thực hiện hành động nếu người dùng từ chối
+                        console.log('Người dùng đã từ chối');
+                    }
+                }
             })
             .catch((err) => {
                 console.log(err);
                 localStorage.setItem('Token', '');
-                
             });
     }
 
@@ -95,7 +92,6 @@ import { Link } from 'react-router-dom';
         this.dashboard_menu.current.style.display = 'block';
     }
     componentDidMount() {
-   
         if (this.state.Scholar !== null) {
             this.displayLogin();
         }
@@ -104,13 +100,13 @@ import { Link } from 'react-router-dom';
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             Login: {
-              ...prevState.Login,
-              [name]: value
-            }
-          }));
-      }
+                ...prevState.Login,
+                [name]: value,
+            },
+        }));
+    }
     async handleLogin(e) {
         e.preventDefault();
         await this.getToken(e);
@@ -154,43 +150,42 @@ import { Link } from 'react-router-dom';
             this.loginFail.current.style.display = 'block';
         }
     }
-    handleOnchangeCreateAccount(event){
+    handleOnchangeCreateAccount(event) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             CreateAccount: {
-              ...prevState.CreateAccount,
-              [name]: value
-            }
-          }));
+                ...prevState.CreateAccount,
+                [name]: value,
+            },
+        }));
     }
     async handleCreateAccount(e) {
         e.preventDefault();
         var datasent = {
-          
             username: this.state.CreateAccount.username,
-            password:this.state.CreateAccount.password,
+            password: this.state.CreateAccount.password,
             name: this.state.CreateAccount.name,
-            email:this.state.CreateAccount.email,
+            email: this.state.CreateAccount.email,
             phoneNumber: String(this.state.CreateAccount.phoneNumber),
             age: parseInt(this.state.CreateAccount.age),
             gender: this.state.CreateAccount.gender,
             address: this.state.CreateAccount.address,
             descreption: this.state.CreateAccount.descreption,
-             
+
             dateOfbirth: this.state.CreateAccount.dateOfbirth,
         };
         console.log(datasent);
-         var res= await fetch('https://localhost:7156/api/ScholarRegister/Create',{
-         method:'POST'  , 
-         headers:{
-           'Content-Type':'application/json' 
-         },
-         body:JSON.stringify(datasent)
+        var res = await fetch('https://localhost:7156/api/ScholarRegister/Create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(datasent),
         });
-        if(res.ok){
-            var data= await res.text();
+        if (res.ok) {
+            var data = await res.text();
             alert(data);
             this.pop_close.current.click();
         }
@@ -199,8 +194,8 @@ import { Link } from 'react-router-dom';
         event.preventDefault();
 
         const searchQuery = event.target.elements.search.value;
-        window.location.href=`../search?key=${searchQuery}`
-      };
+        window.location.href = `../search?q=${searchQuery}`;
+    }
     render() {
         return (
             <div>
@@ -256,21 +251,24 @@ import { Link } from 'react-router-dom';
                                                 type="text"
                                                 data-ng-model="name"
                                                 className="validate"
-                                                name='username'
+                                                name="username"
                                                 ref={this.userName}
                                                 value={this.state.Login.username}
-                                                onChange={(e)=>this.handleChangeLogin(e)}
+                                                onChange={(e) => this.handleChangeLogin(e)}
                                             />
                                             <label>User name</label>
                                         </div>
                                     </div>
                                     <div>
                                         <div className="input-field s12">
-                                            <input type="password" className="validate" 
-                                             value={this.state.Login.passwork}
-                                             name='passwork'
-                                             ref={this.userPass}
-                                             onChange={(e)=>this.handleChangeLogin(e)}/>
+                                            <input
+                                                type="password"
+                                                className="validate"
+                                                value={this.state.Login.passwork}
+                                                name="passwork"
+                                                ref={this.userPass}
+                                                onChange={(e) => this.handleChangeLogin(e)}
+                                            />
                                             <label>Password</label>
                                         </div>
                                     </div>
@@ -357,52 +355,86 @@ import { Link } from 'react-router-dom';
                                 <form onSubmit={(e) => this.handleCreateAccount(e)} className="s12">
                                     <div className="form-group">
                                         <label htmlFor="username">Username:</label>
-                                        <input type="text" className="form-control" id="username" name="username" required
-                                         value={this.state.CreateAccount.username}
-                                         onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                         />
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="username"
+                                            name="username"
+                                            required
+                                            value={this.state.CreateAccount.username}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="password">Password:</label>
-                                        <input type="password" className="form-control" id="password" name="password"
-                                          value={this.state.CreateAccount.password}
-                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        required/>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            id="password"
+                                            name="password"
+                                            value={this.state.CreateAccount.password}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="name">Name:</label>
-                                        <input type="text" 
-                                          value={this.state.CreateAccount.name}
-                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        className="form-control" id="name" name="name" required/>
+                                        <input
+                                            type="text"
+                                            value={this.state.CreateAccount.name}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            className="form-control"
+                                            id="name"
+                                            name="name"
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="email">Email:</label>
-                                        <input type="email" 
-                                          value={this.state.CreateAccount.email}
-                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        className="form-control" id="email" name="email" required/>
+                                        <input
+                                            type="email"
+                                            value={this.state.CreateAccount.email}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            className="form-control"
+                                            id="email"
+                                            name="email"
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="phoneNumber">Phone Number:</label>
-                                        <input type="number" 
-                                          value={this.state.CreateAccount.phoneNumber}
-                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        className="form-control" id="phoneNumber" name="phoneNumber" required/>
+                                        <input
+                                            type="number"
+                                            value={this.state.CreateAccount.phoneNumber}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            className="form-control"
+                                            id="phoneNumber"
+                                            name="phoneNumber"
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="age">Age:</label>
-                                        <input type="number"
-                                          value={this.state.CreateAccount.Age}
-                                          onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        className="form-control" id="age" name="age" required/>
+                                        <input
+                                            type="number"
+                                            value={this.state.CreateAccount.Age}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            className="form-control"
+                                            id="age"
+                                            name="age"
+                                            required
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="gender">Gender:</label>
-                                        <select className="form-control" id="gender" name="gender"
-                                               value={this.state.CreateAccount.gender}
-                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        required>
+                                        <select
+                                            className="form-control"
+                                            id="gender"
+                                            name="gender"
+                                            value={this.state.CreateAccount.gender}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            required
+                                        >
                                             <option value="">--Select--</option>
                                             <option value="M">Male</option>
                                             <option value="F">Female</option>
@@ -411,27 +443,31 @@ import { Link } from 'react-router-dom';
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="address">Address:</label>
-                                        <textarea className="form-control" id="address"
-                                               value={this.state.CreateAccount.address}
-                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
-                                        name="address" required></textarea>
+                                        <textarea
+                                            className="form-control"
+                                            id="address"
+                                            value={this.state.CreateAccount.address}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
+                                            name="address"
+                                            required
+                                        ></textarea>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="descreption">Description:</label>
                                         <textarea
-                                               value={this.state.CreateAccount.descreption}
-                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                            value={this.state.CreateAccount.descreption}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
                                             className="form-control"
                                             id="descreption"
                                             name="descreption"
                                         ></textarea>
                                     </div>
-                              
+
                                     <div className="form-group">
                                         <label htmlFor="dateOfbirth">Date of Birth:</label>
                                         <input
-                                               value={this.state.CreateAccount.dateOfbirth}
-                                               onChange={(e)=>this.handleOnchangeCreateAccount(e)}
+                                            value={this.state.CreateAccount.dateOfbirth}
+                                            onChange={(e) => this.handleOnchangeCreateAccount(e)}
                                             type="datetime-local"
                                             className="form-control"
                                             id="dateOfbirth"
@@ -439,7 +475,7 @@ import { Link } from 'react-router-dom';
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                      Create
+                                        Create
                                     </button>
                                 </form>
                             </div>
@@ -854,9 +890,8 @@ import { Link } from 'react-router-dom';
                                                             </div>
                                                             <div className="mm1-com mm1-s3">
                                                                 <ul>
-                                                                   
                                                                     <li>
-                                                                        <Link to="../dashboard" >Dashboard </Link>
+                                                                        <Link to="../dashboard">Dashboard </Link>
                                                                     </li>
                                                                     <li>
                                                                         <Link to="../dbprofile">Student profile</Link>
@@ -867,8 +902,6 @@ import { Link } from 'react-router-dom';
                                                                     <li>
                                                                         <Link to="../dbexams">Dashboard exams</Link>
                                                                     </li>
-                                                                
-                                                                   
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -966,13 +999,13 @@ import { Link } from 'react-router-dom';
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="search-form">
-                                        <form onSubmit={e=>this.handleSearch(e)}>
+                                        <form onSubmit={(e) => this.handleSearch(e)}>
                                             <div className="sf-type">
                                                 <div className="sf-input">
                                                     <input
                                                         type="text"
                                                         id="sf-box"
-                                                        name='search'
+                                                        name="search"
                                                         placeholder="Search course and discount courses"
                                                     />
                                                 </div>
@@ -1044,4 +1077,3 @@ import { Link } from 'react-router-dom';
         );
     }
 }
-
