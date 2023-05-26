@@ -9,6 +9,41 @@ export class DbCourses extends Component {
             Scholar: JSON.parse(localStorage.getItem('Account')),
         };
     }
+    async getCourse(){
+   
+        try {
+            var myHeaders = new Headers();
+        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+        console.log(localStorage.getItem('Token'));
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+        };
+        const response = await fetch(
+            'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+            requestOptions,
+        );
+        if(response.ok){
+            var account= await response.json();
+
+            this.setState({
+                Scholar:account
+            })
+
+        }
+        
+        } catch (error) {
+            window.location.href='../notfound'
+        }
+        
+       }
+       componentDidUpdate(){
+        this.getCourse();
+       }
+       componentDidMount(){
+        this.getCourse();
+       }
     showRegisterCourse() {
         var list = this.state.Scholar.courseList === null ? [] : this.state.Scholar.courseList;
         const result = list.map((e) => {
