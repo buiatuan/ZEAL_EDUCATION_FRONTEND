@@ -1,62 +1,57 @@
-import React, {Component} from "react";
-import {Link } from "react-router-dom";
-export class HeaderAdmin extends Component{
-  constructor(){
-    super();
-    this.state={
-  
-      AccountAdmin:JSON.parse(localStorage.getItem('Account'))===null? {name:"Admin"}: JSON.parse(localStorage.getItem('Account')),
-      RoleId: localStorage.getItem('RoleId')
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+export class HeaderAdmin extends Component {
+    constructor() {
+        super();
+        this.state = {
+            AccountAdmin:
+                JSON.parse(localStorage.getItem('Account')) === null
+                    ? { name: 'Admin' }
+                    : JSON.parse(localStorage.getItem('Account')),
+            RoleId: localStorage.getItem('RoleId'),
+        };
     }
-  }
-  async getAccount(){
-   
-      
-            // var id = await this.getIdAccount();
-            try {
-                var myHeaders = new Headers();
-                myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-         
-                var requestOptions = {
-                    method: 'GET',
-                    headers: myHeaders,
-                    redirect: 'follow',
-                };
-                const response = await fetch(
-                    'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
-                    requestOptions,
-                );
-                var data = await response.json();
-                // cap nhat gia tri cho state
-                 this.setState(
-                    {
-                        AccountAdmin: data,
-                    },
-                    () => {
-                        // set Account vao local storage
-                        localStorage.setItem('Account', JSON.stringify(data));
-                    
-                        // chuyen sang trang admin
-                      
-                    },
-                );
-            } catch (err) {
-                console.log(err);
-            }
-            // edit header
-        
-   }
-  componentDidMount(){
-   
-     if(parseInt(this.state.RoleId)===3){
-      window.location.href='../notfound'
-     }
-     this.getAccount()
-     
-     
-  }
-    render(){
-        return(
+    async getAccount() {
+        // var id = await this.getIdAccount();
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow',
+            };
+            const response = await fetch(
+                'https://localhost:7156/api/ScholarDetail/GetDeailScholarLogin',
+                requestOptions,
+            );
+            var data = await response.json();
+            // cap nhat gia tri cho state
+            this.setState(
+                {
+                    AccountAdmin: data,
+                },
+                () => {
+                    // set Account vao local storage
+                    localStorage.setItem('Account', JSON.stringify(data));
+
+                    // chuyen sang trang admin
+                },
+            );
+        } catch (err) {
+            console.log(err);
+        }
+        // edit header
+    }
+    componentDidMount() {
+        if (parseInt(this.state.RoleId) === 3) {
+            window.location.href = '../notfound';
+        }
+        this.getAccount();
+    }
+    render() {
+        return (
             <div>
                 <div className="container-fluid sb1">
                     <div className="row">
@@ -74,12 +69,12 @@ export class HeaderAdmin extends Component{
                         </div>
                         {/*== SEARCH ==*/}
                         <div className="col-md-6 col-sm-6 mob-hide">
-                            <form className="app-search">
+                            {/* <form className="app-search">
                                 <input type="text" placeholder="Search..." className="form-control" />
                                 <Link to="../#">
                                     <i className="fa fa-search" />
                                 </Link>
-                            </form>
+                            </form> */}
                         </div>
                         {/*== NOTIFICATION ==*/}
                         <div className="col-md-2 tab-hide">
