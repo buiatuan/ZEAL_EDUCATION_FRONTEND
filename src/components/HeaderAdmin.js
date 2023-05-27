@@ -73,6 +73,14 @@ export class HeaderAdmin extends Component{
                             </Link>
                         </div>
                         {/*== SEARCH ==*/}
+                        <div className="col-md-6 col-sm-6 mob-hide">
+                            {/* <form className="app-search">
+                                <input type="text" placeholder="Search..." className="form-control" />
+                                <Link to="../#">
+                                    <i className="fa fa-search" />
+                                </Link>
+                            </form> */}
+                        </div>
                         {/*== NOTIFICATION ==*/}
                         <div className="col-md-2 tab-hide">
                             <div className="top-not-cen">
@@ -111,7 +119,7 @@ export class HeaderAdmin extends Component{
                                 data-activates="top-menu"
                             >
                                 <img src={'https://randomuser.me/api/portraits/men/1.jpg'} alt="" />
-                                {this.state.AccountAdmin.name} <i className="fa fa-angle-down" aria-hidden="true" />
+                                {this.state.AccountAdmin.name}
                             </Link>
                             {/* Dropdown Structure */}
                             <ul id="top-menu" className="dropdown-content top-menu-sty">

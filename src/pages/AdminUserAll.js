@@ -54,7 +54,7 @@ studentDashBoard() {
                 <td>{new Date(e.dateOfbirth).toLocaleDateString()}</td>
                 <td>{status}</td>
                 <td>
-                    <Link to={`../AdminScholarView/${e.id}`} className="ad-st-view">
+                    <Link to={`../AdminScholarView/${e.id}`} className="label label-info text-white">
                         View
                     </Link>
                 </td>

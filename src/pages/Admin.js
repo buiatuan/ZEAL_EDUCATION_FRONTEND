@@ -94,7 +94,7 @@ export class Admin extends Component {
                        {status}
                     </td>
                     <td>
-                        <Link to="../admin-student-details" className="ad-st-view">
+                        <Link to="../admin-student-details" className="label label-info text-white">
                             View
                         </Link>
                     </td>
@@ -131,7 +131,7 @@ export class Admin extends Component {
                         <span className="label label-success">Active</span>
                     </td>
                     <td>
-                        <Link to="../admin-student-details" className="ad-st-view">
+                        <Link to="../admin-student-details" className="label label-info text-white">
                             View
                         </Link>
                     </td>
@@ -191,7 +191,7 @@ export class Admin extends Component {
                                         <li>
                                             <div className="dash-book dash-b-2">
                                                 <h5>Register</h5>
-                                                <h4>{parseInt(this.state.AllScholar.length)+parseInt(this.state.AllCourseRegister.length)}</h4>
+                                                <h4>{this.state.AllCourseRegister.length}</h4>
                                                 <Link to="../AdminCourseRegister">View more</Link>
                                             </div>
                                         </li>

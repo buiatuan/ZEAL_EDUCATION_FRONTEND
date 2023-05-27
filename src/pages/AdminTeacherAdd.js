@@ -49,7 +49,8 @@ const AdminTeacherAdd = ()=>{
     })
       .then(response => {
         if(response.ok){
-          alert("ADD SUCCESS!");
+          let navigate = window.confirm("ADD SUCCESS!")
+          if(navigate===true){window.location.href="/AdminTeacherAll"};
         }else{
           alert("ADD FAILED!");
         }
@@ -58,6 +59,7 @@ const AdminTeacherAdd = ()=>{
         console.error('Error sending form data:', error);
       });
   };
+  
   return (
     <div>
       <HeaderAdmin/>

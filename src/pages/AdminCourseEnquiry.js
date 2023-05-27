@@ -11,6 +11,22 @@ export class AdminCourseEnquiry extends Component{
     };
   }
   
+  async DeleteCourseFeedback(id) {
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+    myHeaders.append('Content-Type', 'application/json');
+    const response = await fetch(`https://localhost:7156/api/AdminFeedBack/Delete/${id}`, {
+      method: "DELETE",
+      headers: myHeaders
+    });
+    if(response.ok){
+      let navigate = window.confirm("SUCCESS!")
+      if(navigate===true){window.location.href="/AdminCourseEnquiry"};
+    }else{
+        alert("FAILED!");
+    }
+  };
+  
   async GetListCourseFeedbacks() {
     var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
@@ -27,10 +43,11 @@ export class AdminCourseEnquiry extends Component{
     const arrayDisplay = result.map((e,index) => {
       return (
         <tr key={index}>
-          <td>{e.account.name}</td>
-          <td>{e.course.name}</td>
-          <td>{e.message}</td>
-          <td><Link to={`../AdminViewEnquiry/${e.id}`} className="ad-st-view">View</Link></td>
+          <td className="align-middle">{e.account.name}</td>
+          <td className="align-middle">{e.course.name}</td>
+          <td className="align-middle">{e.message}</td>
+          <td className="align-middle text-center"><button className="btn btn-success btn-sm text-capitalize" onClick={()=>window.location.href=`/AdminViewEnquiry/${e.id}`}>View</button></td>
+          <td className="align-middle text-center"><button className="btn btn-danger btn-sm text-capitalize" onClick={()=>this.DeleteCourseFeedback(e.id)}>Delete</button></td>
         </tr>
       );
     });
@@ -77,10 +94,11 @@ export class AdminCourseEnquiry extends Component{
                             <table className="table table-hover">
                               <thead>
                                 <tr>
-                                  <th>Scholar Name</th>
-                                  <th>Course Name</th>
+                                  <th>Scholar</th>
+                                  <th>Course</th>
                                   <th>Message</th>
-                                  <th>View</th>
+                                  <th className="text-center">View</th>
+                                  <th className="text-center">Delete</th>
                                 </tr>
                               </thead>
                               <tbody>

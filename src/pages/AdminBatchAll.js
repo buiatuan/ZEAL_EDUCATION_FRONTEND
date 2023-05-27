@@ -2,75 +2,67 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderAdmin } from '../components/HeaderAdmin';
 import { SidebarAdmin } from '../components/SidebarAdmin';
-export class AdminAllCourses extends Component {
+
+export class AdminBatchAll extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            AllCouses: [],
+            AllBatch: [],
         };
     }
-    async getCouses() {
+    async getBatch() {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', { method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminBatch/GetListBatch', 
+            { method: 'get',headers:myHeaders });
             var data = await res.json();
             this.setState({
-                AllCouses: data,
+                AllBatch: data,
             });
         } catch (err) {
             console.log(err);
         }
     }
-    CourseDashnoard() {
-        console.log(this.state.AllCouses);
-        const resultCourse = this.state.AllCouses.map((e,index) => {
-            const min = 1;
-            const max = 90;
-            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    BatchDashnoard() {
+        console.log(this.state.AllBatch);
+        const resultBatch = this.state.AllBatch.map((e,index) => {
             
             const status = ()=>{
-                if(e.status===1){
-                return(
-                    <span className="label label-success">Active</span>
-                )}else{
-                    return(
-                        <span className="label label-danger">Inactive</span>
-                    )
+                if(new Date(e.toDate).toLocaleDateString() < new Date().toLocaleDateString())
+                {
+                    return(<span className="label label-success">Finished</span>)
+                }else{
+                    return(<span className="label label-info">Unfinished</span>)
                 }
             }
-            
             return (
                 <tr key={index}>
                     <td>
-                        <span className="list-img">
-                            <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
-                        </span>
-                    </td>
-                    <td>
-                        <Link to={`../AdminViewCourse/${e.id}`}>
+                        <Link to={`../AdminViewBatch/${e.id}`}>
                             <span className="list-enq-name">{e.name}</span>
                         </Link>
                     </td>
-                    <td>{e.courseType}</td>
-                    <td>{e.courseCode}</td>
-                    <td>{e.scholarCourses.length}</td>
-                    <td>{e.tuitionFees}USD</td>
+                    <td>{e.batchCode}</td>
+                    <td>{new Date(e.fromDate).toLocaleDateString()}</td>
+                    <td>{new Date(e.toDate).toLocaleDateString()}</td>
+                    <td>{e.scholars.length}</td>
                     <td>
                         {status()}
                     </td>
                     <td>
-                        <Link to={`../AdminViewCourse/${e.id}`} className="label label-info text-white">
-                            View
+                        <Link to={`../AdminEditBatch/${e.id}`} className="label label-warning text-white">
+                            Edit
                         </Link>
                     </td>
                 </tr>
             );
         });
-        return resultCourse;
+        return resultBatch;
     }
     componentDidMount() {
-        this.getCouses();
+        this.getBatch();
     }
     render() {
         return (
@@ -92,7 +84,7 @@ export class AdminAllCourses extends Component {
                                         </Link>
                                     </li>
                                     <li className="active-bre">
-                                        <span>Courses</span>
+                                        <span>Batch</span>
                                     </li>
                                     <li className="page-back">
                                         <Link to="../Admin">
@@ -107,24 +99,23 @@ export class AdminAllCourses extends Component {
                                     <div className="col-md-12">
                                         <div className="box-inn-sp">
                                             <div className="inn-title">
-                                                <h4>List of Courses</h4>
+                                                <h4>List of Batches</h4>
                                             </div>
                                             <div className="tab-inn">
                                                 <div className="table-responsive table-desi">
                                                     <table className="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Image</th>
-                                                                <th>Course Name</th>
-                                                                <th>Category</th>
-                                                                <th>Course Code</th>
+                                                                <th>Batch Name</th>
+                                                                <th>Batch Code</th>
+                                                                <th>Start from</th>
+                                                                <th>End at</th>
                                                                 <th>Enrollment</th>
-                                                                <th>Tuition Fees</th>
                                                                 <th>Status</th>
-                                                                <th>View</th>
+                                                                <th>Edit</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>{this.CourseDashnoard()}</tbody>
+                                                        <tbody>{this.BatchDashnoard()}</tbody>
                                                     </table>
                                                 </div>
                                             </div>

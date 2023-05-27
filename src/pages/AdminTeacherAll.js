@@ -50,11 +50,11 @@ teacherDashBoard() {
                 <td>{e.phoneNumber}</td>
                 <td>{e.email}</td>
                 <td>{e.address}</td>
-                <td>{parseInt(new Date(Date.now).getFullYear())-parseInt(new Date(e.dateOfbirth).getFullYear())}</td>
+                <td>{e.age}</td>
                 <td>{new Date(e.dateOfbirth).toLocaleString()}</td>
                 <td>{status}</td>
                 <td>
-                    <Link to={`../AdminTeacherView/${e.id}`} className="ad-st-view">
+                    <Link to={`../AdminTeacherView/${e.id}`} className="label label-info text-white">
                         View
                     </Link>
                 </td>
