@@ -53,6 +53,17 @@ import AdminScholarView from "./pages/AdminScholarView";
 import AdminCourseRegister from "./pages/AdminCourseRegister";
 import AdminViewCourse from "./pages/AdminViewCourse";
 
+//import faculty
+import { AdminFacultyAll } from "./pages/AdminFacultyAll";
+import AdminAddFaculty from "./pages/AdminAddFaculty";
+import AdminViewFaculty from "./pages/AdminViewFaculty";
+import AdminEditFaculty from "./pages/AdminEditFaculty";
+
+//import batch
+import { AdminBatchAll } from "./pages/AdminBatchAll";
+import AdminAddBatch from "./pages/AdminAddBatch";
+import AdminEditBatch from "./pages/AdminEditBatch";
+
 const AppRoutes = [
   {
     index: true,
@@ -256,6 +267,36 @@ const AppRoutes = [
   {
     path: "/AdminTeacherView/:id",
     element: <AdminTeacherView />
+  },
+  //admin faculty
+  {
+    path: "/AdminFacultyAll",
+    element: <AdminFacultyAll />,
+  },
+  {
+    path: "/AdminFacultyAdd",
+    element: <AdminAddFaculty />,
+  },
+  {
+    path: "/AdminViewFaculty/:id",
+    element: <AdminViewFaculty />,
+  },
+  {
+    path: "/AdminEditFaculty/:id",
+    element: <AdminEditFaculty />,
+  },
+  //admin batch
+  {
+    path: "/AdminBatchAll",
+    element: <AdminBatchAll />,
+  },
+  {
+    path: "/AdminAddBatch",
+    element: <AdminAddBatch />,
+  },
+  {
+    path: "/AdminEditBatch/:id",
+    element: <AdminEditBatch />,
   }
 ];
 

@@ -2,33 +2,32 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderAdmin } from '../components/HeaderAdmin';
 import { SidebarAdmin } from '../components/SidebarAdmin';
-export class AdminAllCourses extends Component {
+
+export class AdminFacultyAll extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            AllCouses: [],
+            AllFaculty: [],
         };
     }
-    async getCouses() {
+    async getFaculty() {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', { method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminFaculty/GetListFaculty', 
+            { method: 'get',headers:myHeaders });
             var data = await res.json();
             this.setState({
-                AllCouses: data,
+                AllFaculty: data,
             });
         } catch (err) {
             console.log(err);
         }
     }
-    CourseDashnoard() {
-        console.log(this.state.AllCouses);
-        const resultCourse = this.state.AllCouses.map((e,index) => {
-            const min = 1;
-            const max = 90;
-            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-            
+    
+    FacultyDashnoard() {
+        console.log(this.state.AllFaculty);
+        const resultFaculty = this.state.AllFaculty.map((e,index) => {
             const status = ()=>{
                 if(e.status===1){
                 return(
@@ -39,38 +38,36 @@ export class AdminAllCourses extends Component {
                     )
                 }
             }
-            
             return (
                 <tr key={index}>
                     <td>
-                        <span className="list-img">
-                            <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
-                        </span>
-                    </td>
-                    <td>
-                        <Link to={`../AdminViewCourse/${e.id}`}>
+                        <Link to={`../AdminViewFaculty/${e.id}`}>
                             <span className="list-enq-name">{e.name}</span>
                         </Link>
                     </td>
-                    <td>{e.courseType}</td>
-                    <td>{e.courseCode}</td>
-                    <td>{e.scholarCourses.length}</td>
-                    <td>{e.tuitionFees}USD</td>
+                    <td>{e.facultyCode}</td>
+                    <td>{new Date(e.createDate).toLocaleDateString()}</td>
+                    <td>{e.scholars.length}</td>
                     <td>
                         {status()}
                     </td>
                     <td>
-                        <Link to={`../AdminViewCourse/${e.id}`} className="label label-info text-white">
+                        <Link to={`../AdminViewFaculty/${e.id}`} className="label label-info text-white">
                             View
+                        </Link>
+                    </td>
+                    <td>
+                        <Link to={`../AdminEditFaculty/${e.id}`} className="label label-warning text-white">
+                            Edit
                         </Link>
                     </td>
                 </tr>
             );
         });
-        return resultCourse;
+        return resultFaculty;
     }
     componentDidMount() {
-        this.getCouses();
+        this.getFaculty();
     }
     render() {
         return (
@@ -92,7 +89,7 @@ export class AdminAllCourses extends Component {
                                         </Link>
                                     </li>
                                     <li className="active-bre">
-                                        <span>Courses</span>
+                                        <span>Faculty</span>
                                     </li>
                                     <li className="page-back">
                                         <Link to="../Admin">
@@ -107,24 +104,23 @@ export class AdminAllCourses extends Component {
                                     <div className="col-md-12">
                                         <div className="box-inn-sp">
                                             <div className="inn-title">
-                                                <h4>List of Courses</h4>
+                                                <h4>List of Faculties</h4>
                                             </div>
                                             <div className="tab-inn">
                                                 <div className="table-responsive table-desi">
                                                     <table className="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Image</th>
-                                                                <th>Course Name</th>
-                                                                <th>Category</th>
-                                                                <th>Course Code</th>
+                                                                <th>Faculty Name</th>
+                                                                <th>Faculty Code</th>
+                                                                <th>Establishment Date</th>
                                                                 <th>Enrollment</th>
-                                                                <th>Tuition Fees</th>
                                                                 <th>Status</th>
                                                                 <th>View</th>
+                                                                <th>Edit</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>{this.CourseDashnoard()}</tbody>
+                                                        <tbody>{this.FacultyDashnoard()}</tbody>
                                                     </table>
                                                 </div>
                                             </div>

@@ -32,7 +32,7 @@ export class AdminEventAll extends Component{
         <td>
           {status}
         </td>
-        <td><Link to={`../AdminEventEdit/${e.id}`} className="ad-st-view">Edit</Link></td>
+        <td><Link to={`../AdminEventEdit/${e.id}`} className="label label-warning text-white">Edit</Link></td>
       </tr>
       )
     });

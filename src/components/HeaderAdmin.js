@@ -114,7 +114,7 @@ export class HeaderAdmin extends Component {
                                 data-activates="top-menu"
                             >
                                 <img src={'https://randomuser.me/api/portraits/men/1.jpg'} alt="" />
-                                {this.state.AccountAdmin.name} <i className="fa fa-angle-down" aria-hidden="true" />
+                                {this.state.AccountAdmin.name}
                             </Link>
                             {/* Dropdown Structure */}
                             <ul id="top-menu" className="dropdown-content top-menu-sty">

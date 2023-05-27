@@ -53,7 +53,7 @@ const AdminExamAll = () => {
               <th>{new Date(e.startDate).toLocaleString()}</th>
               <th>{new Date(e.endDate).toLocaleString()}</th>
               <th>
-                <Link to={`../AdminExamEdit/${e.id}`} className="ad-st-view">EDIT</Link>
+                <Link to={`../AdminExamEdit/${e.id}`} className="label label-warning text-white">EDIT</Link>
               </th>
             </tr>
             )

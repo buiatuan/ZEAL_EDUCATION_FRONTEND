@@ -52,7 +52,8 @@ const AdminExamAdd = ()=>{
     })
       .then(response => {
         if(response.ok){
-          alert("ADD SUCCESS!");
+          let navigate = window.confirm("ADD SUCCESS!")
+          if(navigate===true){window.location.href="/AdminExamAll"};
         }else{
           alert("ADD FAILED!");
       }

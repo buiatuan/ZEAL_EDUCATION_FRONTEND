@@ -48,12 +48,42 @@ export class SidebarAdmin extends Component {
               </li>
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header" >
-                  <i className="fa fa-book" aria-hidden="true" /> All Courses
+                  <i className="fa fa-book" aria-hidden="true" /> Faculty
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>
                     <li>
-                      <Link to="../AdminAllCourses">All Course</Link>
+                      <Link to="../AdminFacultyAll">All Faculties</Link>
+                    </li>
+                    <li>
+                      <Link to="../AdminAddFaculty">Add New Faculty</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header" >
+                  <i className="fa fa-book" aria-hidden="true" /> Batch
+                </Link>
+                <div className="collapsible-body left-sub-menu">
+                  <ul>
+                    <li>
+                      <Link to="../AdminBatchAll">All Batches</Link>
+                    </li>
+                    <li>
+                      <Link to="../AdminAddBatch">Add New Batch</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <Link onClick={(e)=>e.preventDefault()} className="collapsible-header" >
+                  <i className="fa fa-book" aria-hidden="true" /> Course
+                </Link>
+                <div className="collapsible-body left-sub-menu">
+                  <ul>
+                    <li>
+                      <Link to="../AdminAllCourses">All Courses</Link>
                     </li>
                     <li>
                       <Link to="../AdminAddCourses">Add New Course</Link>
@@ -64,7 +94,7 @@ export class SidebarAdmin extends Component {
               </li>
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-user" aria-hidden="true" /> Teachers
+                  <i className="fa fa-user" aria-hidden="true" /> Teacher
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>
@@ -83,7 +113,7 @@ export class SidebarAdmin extends Component {
             
               <li>
                 <Link onClick={(e)=>e.preventDefault()} className="collapsible-header">
-                  <i className="fa fa-calendar" aria-hidden="true" /> Events
+                  <i className="fa fa-calendar" aria-hidden="true" /> Event
                 </Link>
                 <div className="collapsible-body left-sub-menu">
                   <ul>

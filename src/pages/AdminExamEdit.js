@@ -72,9 +72,10 @@ const AdminExamEdit = ()=>{
     })
       .then(response => {
         if(response.ok){
-            alert("EDIT SUCCESS!");
+          let navigate = window.confirm("EDIT SUCCESS!")
+          if(navigate===true){window.location.href="/AdminExamAll"};
         }else{
-            alert("EDIT FAILED!");
+          alert("EDIT FAILED!");
         }
       })
       .catch(error => {

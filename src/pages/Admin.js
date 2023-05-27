@@ -108,7 +108,7 @@ export class Admin extends Component {
                     <td>16 Feb 1987</td>
                     <td>{status}</td>
                     <td>
-                        <Link to="../admin-student-details" className="ad-st-view">
+                        <Link to="../admin-student-details" className="label label-info text-white">
                             View
                         </Link>
                     </td>
@@ -144,7 +144,7 @@ export class Admin extends Component {
                         <span className="label label-success">Active</span>
                     </td>
                     <td>
-                        <Link to="../admin-student-details" className="ad-st-view">
+                        <Link to="../admin-student-details" className="label label-info text-white">
                             View
                         </Link>
                     </td>
@@ -163,6 +163,8 @@ export class Admin extends Component {
     componentDidUpdate() {
         console.log(this.state.AllCouses);
         console.log(this.state.AllScholar);
+        console.log(this.state.AllFeedback);
+        console.log(this.state.AllCourseRegister);
     }
     render() {
         return (

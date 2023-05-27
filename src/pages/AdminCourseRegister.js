@@ -30,7 +30,8 @@ const AdminCourseRegister = () => {
             
             .then(response => {
                 if(response.ok){
-                    alert("SUCCESS!");
+                  let navigate = window.confirm("SUCCESS!")
+                  if(navigate===true){window.location.href="/AdminCourseRegister"};
                 }else{
                     alert("FAILED!");
                 }

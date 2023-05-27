@@ -63,7 +63,13 @@ const AdminEventEdit = ()=>{
       body: JSON.stringify(requestBody),
     })
       .then(response => {
-        if(response.ok) alert("EDIT SUCCESS!");
+        if(response.ok)
+        {
+          let navigate = window.confirm("EDIT SUCCESS!")
+          if(navigate===true){window.location.href="/AdminEventAll"};
+        }else{
+          alert("EDIT FAILED!");
+        }
       })
       .catch(error => {
         console.error('Error sending form data:', error);

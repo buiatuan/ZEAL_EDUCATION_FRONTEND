@@ -40,7 +40,12 @@ const AdminEventAdd = ()=>{
       body: JSON.stringify(requestBody),
     })
       .then(response => {
-        if(response.ok) alert("ADD SUCCESS!");
+        if(response.ok)
+          {let navigate = window.confirm("ADD SUCCESS!")
+          if(navigate===true){window.location.href="/AdminEventAll"};
+        }else{
+          alert("ADD FAILED!");
+        }
       })
       .catch(error => {
         console.error('Error sending form data:', error);
