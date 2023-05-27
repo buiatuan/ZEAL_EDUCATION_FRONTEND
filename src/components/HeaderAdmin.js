@@ -73,14 +73,6 @@ export class HeaderAdmin extends Component{
                             </Link>
                         </div>
                         {/*== SEARCH ==*/}
-                        <div className="col-md-6 col-sm-6 mob-hide">
-                            <form className="app-search">
-                                <input type="text" placeholder="Search..." className="form-control" />
-                                <Link to="../#">
-                                    <i className="fa fa-search" />
-                                </Link>
-                            </form>
-                        </div>
                         {/*== NOTIFICATION ==*/}
                         <div className="col-md-2 tab-hide">
                             <div className="top-not-cen">

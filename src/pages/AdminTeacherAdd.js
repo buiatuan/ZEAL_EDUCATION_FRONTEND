@@ -128,12 +128,12 @@ const AdminTeacherAdd = ()=>{
                             <input className="form-control" type="text" required id="address" name="address" rows="3" placeholder="Enter address" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
-                            <label htmlFor="dateOfbirth" className="form-label">Address</label>
+                            <label htmlFor="dateOfbirth" className="form-label">Date Of Birth</label>
                             <input className="form-control" type="datetime-local" required id="dateOfbirth" name="dateOfbirth" rows="3" placeholder="Enter date of birth" onChange={e=>handleChange(e)}/>
                           </div>
                           <div className="mb-3">
                             <label htmlFor="gender" className="form-label">Gender</label>
-                            <select className="form-select" required id="gender" name="gender" onChange={e=>handleChange(e)}>
+                            <select className="form-select form-select-lg" required id="gender" name="gender" onChange={e=>handleChange(e)}>
                               <option>Choose gender</option>
                               <option value="M">Male</option>
                               <option value="F">Female</option>

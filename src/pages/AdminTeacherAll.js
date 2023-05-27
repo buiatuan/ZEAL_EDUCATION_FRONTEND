@@ -50,8 +50,8 @@ teacherDashBoard() {
                 <td>{e.phoneNumber}</td>
                 <td>{e.email}</td>
                 <td>{e.address}</td>
-                <td>{e.id}</td>
-                <td>{e.dateOfbirth}</td>
+                <td>{parseInt(new Date(Date.now).getFullYear())-parseInt(new Date(e.dateOfbirth).getFullYear())}</td>
+                <td>{new Date(e.dateOfbirth).toLocaleString()}</td>
                 <td>{status}</td>
                 <td>
                     <Link to={`../AdminTeacherView/${e.id}`} className="ad-st-view">
@@ -117,7 +117,7 @@ render() {
                                                             <th>Phone</th>
                                                             <th>Email</th>
                                                             <th>Country</th>
-                                                            <th>Id</th>
+                                                            <th>Age</th>
                                                             <th>Date of birth</th>
                                                             <th>Status</th>
                                                             <th>View</th>

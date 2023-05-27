@@ -144,10 +144,14 @@ export class Admin extends Component {
     componentDidMount() {
         this.getCouses();
         this.getScholar();
+        this.getRegisterPending();
+        this.getFeedback();
     }
     componentDidUpdate() {
         console.log(this.state.AllCouses);
         console.log(this.state.AllScholar);
+        console.log(this.state.AllFeedback);
+        console.log(this.state.AllCourseRegister);
     }
     render() {
         return (
