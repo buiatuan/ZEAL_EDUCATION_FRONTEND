@@ -1,39 +1,74 @@
-import React,{Component} from "react";
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderAdmin } from "../components/HeaderAdmin";
-import { SidebarAdmin } from "../components/SidebarAdmin";
-export class AdminTeacherAll extends Component{
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-        AllTeacher: [],
-    };
-}
-async getTeacher() {
-    try {
-        var myHeaders = new Headers();
-        myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-        var res = await fetch('https://localhost:7156/api/AdminTeacher/GetListTeacher', { method: 'get',headers:myHeaders });
-        var data = await res.json();
-        this.setState({
-            AllTeacher: data,
-        });
-    } catch (err) {
-        console.log(err);
+import { HeaderAdmin } from '../components/HeaderAdmin';
+import { SidebarAdmin } from '../components/SidebarAdmin';
+export class AdminTeacherAll extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            AllTeacher: [],
+        };
     }
-}
-teacherDashBoard() {
-    const result = this.state.AllTeacher.map((e,index) => {
-        const min = 1;
-        const max = 90;
-        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        const status =
-            e.status === 1 ? (
-                <span className="label label-success">Active</span>
-            ) : (
-                <span className="label label-danger">UnActive</span>
+    async getTeacher() {
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
+            var res = await fetch('https://localhost:7156/api/AdminTeacher/GetListTeacher', {
+                method: 'get',
+                headers: myHeaders,
+            });
+            var data = await res.json();
+            this.setState({
+                AllTeacher: data,
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    teacherDashBoard() {
+        const result = this.state.AllTeacher.map((e, index) => {
+            const min = 1;
+            const max = 90;
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            const status =
+                e.status === 1 ? (
+                    <span className="label label-success">Active</span>
+                ) : (
+                    <span className="label label-danger">UnActive</span>
+                );
+            return (
+                <tr key={index}>
+                    <td>
+                        <span className="list-img">
+                            <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
+                        </span>
+                    </td>
+                    <td>
+                        <Link to="../#">
+                            <span className="list-enq-name">{e.name}</span>
+                            <span className="list-enq-city">{e.address}</span>
+                        </Link>
+                    </td>
+                    <td>{e.phoneNumber}</td>
+                    <td>{e.email}</td>
+                    <td>{e.address}</td>
+                    <td>{e.age}</td>
+                    <td>{e.dateOfbirth}</td>
+                    <td>{status}</td>
+                    <td>
+                        <Link to={`../AdminTeacherView/${e.id}`} className="ad-st-view">
+                            View
+                        </Link>
+                    </td>
+                </tr>
             );
+        });
+        return result;
+    }
+    componentDidMount() {
+        this.getTeacher();
+    }
+    render() {
         return (
             <tr key={index}>
                 <td>
@@ -133,9 +168,8 @@ render() {
                         </div>
                     </div>
                 </div>
+                {/*Import jQuery before materialize.js*/}
             </div>
-            {/*Import jQuery before materialize.js*/}
-        </div>
-    );
+        );
+    }
 }
-  };

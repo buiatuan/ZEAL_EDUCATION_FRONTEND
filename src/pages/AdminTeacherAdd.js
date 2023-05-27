@@ -1,43 +1,43 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderAdmin } from "../components/HeaderAdmin";
-import { SidebarAdmin } from "../components/SidebarAdmin";
+import { HeaderAdmin } from '../components/HeaderAdmin';
+import { SidebarAdmin } from '../components/SidebarAdmin';
 
-const AdminTeacherAdd = ()=>{
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    name: '',
-    age: '',
-    gender: '',
-    email: '',
-    phoneNumber: '',
-    address: '',
-    dateOfbirth: '',
-    status: '',
-  });
+const AdminTeacherAdd = () => {
+    const [formData, setFormData] = useState({
+        username: '',
+        password: '',
+        name: '',
+        age: '',
+        gender: '',
+        email: '',
+        phoneNumber: '',
+        address: '',
+        dateOfbirth: '',
+        status: '',
+    });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Prepare the request body
-    const requestBody = {
-        username: formData.username,
-        password: formData.password,
-        name: formData.name,
-        age: formData.age,
-        gender: formData.gender,
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        address: formData.address,
-        dateOfbirth: formData.dateOfbirth,
-        status: formData.status
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-    
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Prepare the request body
+        const requestBody = {
+            username: formData.username,
+            password: formData.password,
+            name: formData.name,
+            age: formData.age,
+            gender: formData.gender,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
+            address: formData.address,
+            dateOfbirth: formData.dateOfbirth,
+            status: formData.status,
+        };
+
     var myHeaders = new Headers();
     myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
     myHeaders.append('Content-Type', 'application/json');
@@ -145,16 +145,11 @@ const AdminTeacherAdd = ()=>{
                           <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+            {/*Import jQuery before materialize.js*/}
         </div>
-      </div>
-      {/*Import jQuery before materialize.js*/}
-    </div>
-  );
-}
+    );
+};
 
 export default AdminTeacherAdd;

@@ -82,6 +82,7 @@ export class HeaderClient extends Component {
         localStorage.removeItem('Account');
         localStorage.removeItem('Token');
         this.dashboard_menu.current.style.display = 'none';
+        window.location.href = '../';
     }
     displayLogin() {
         this.social_Header.current.style.display = 'none';

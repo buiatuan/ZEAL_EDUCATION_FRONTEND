@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 const CourseDetails = () => {
     const { id } = useParams();
-    const [feedback,setFeedback]=useState();
+    const [feedback, setFeedback] = useState();
     const [course, setcourse] = useState({
         courseCode: 'MH-JAVA_2',
         name: 'Java 2',
@@ -15,78 +15,75 @@ const CourseDetails = () => {
         image: 'project/image/anh_1.jpg',
         quantity: 0,
     });
-    const [AllFeedBack,setAllFeedBack]=useState(
-        [
-            {
-              "id": 1,
-              "title": "string                                                                                                                                                ",
-              "message": "dddd",
-              "createBy": 6,
-              "createDate": "2023-05-26T20:23:09.04",
-              "account": {
-                "id": 6,
-                "username": "hoat",
-                "password": "efa71fcbb38a789a4f0c340b051796c75059dc7b75cfe4127edcba53b9a61d71",
-                "name": "Mai Huy Hoat",
-                "age": 23,
-                "gender": "M",
-                "address": "việt nam",
-                "salt": "153821c2-8aa8-4dc8-9149-42490a831f5c",
-                "status": 1,
-                "descreption": "Admin",
-                "roleId": 1,
-                "createdDate": null,
-                "createdBy": null,
-                "updatedDate": null,
-                "updatedBy": null,
-                "dateOfbirth": "2023-05-23T08:42:14.123",
-                "avatar": null,
-                "email": null,
-                "phoneNumber": null,
-                "role": null,
-                "scholars": []
-              }
-            }
-          ]
-    )
-  const handleChangeFeedback=(event)=> {
+    const [AllFeedBack, setAllFeedBack] = useState([
+        {
+            id: 1,
+            title: 'string                                                                                                                                                ',
+            message: 'dddd',
+            createBy: 6,
+            createDate: '2023-05-26T20:23:09.04',
+            account: {
+                id: 6,
+                username: 'hoat',
+                password: 'efa71fcbb38a789a4f0c340b051796c75059dc7b75cfe4127edcba53b9a61d71',
+                name: 'Mai Huy Hoat',
+                age: 23,
+                gender: 'M',
+                address: 'việt nam',
+                salt: '153821c2-8aa8-4dc8-9149-42490a831f5c',
+                status: 1,
+                descreption: 'Admin',
+                roleId: 1,
+                createdDate: null,
+                createdBy: null,
+                updatedDate: null,
+                updatedBy: null,
+                dateOfbirth: '2023-05-23T08:42:14.123',
+                avatar: null,
+                email: null,
+                phoneNumber: null,
+                role: null,
+                scholars: [],
+            },
+        },
+    ]);
+    const handleChangeFeedback = (event) => {
         const target = event.target;
         const value = target.value;
-        
-       setFeedback(value);
-      }
-      const sendFeedback=async(e)=>{
-        e.preventDefault()
+
+        setFeedback(value);
+    };
+    const sendFeedback = async (e) => {
+        e.preventDefault();
         try {
-            var sendData={
-                title: "string",
+            var sendData = {
+                title: 'string',
                 message: feedback,
-                courseId: id
-              }
+                courseId: id,
+            };
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            myHeaders.append('Content-Type','application/json')
+            myHeaders.append('Content-Type', 'application/json');
             const response = await fetch(`https://localhost:7156/api/ScholarFeedBack/SendFeedback`, {
-                method:'post',
+                method: 'post',
                 headers: myHeaders,
-                body:JSON.stringify(sendData)
+                body: JSON.stringify(sendData),
             });
             if (response.ok) {
-               window.alert("Send Feeback Success");
-               window.location.reload();
+                window.alert('Send Feeback Success');
+                window.location.reload();
             } else {
                 console.log('Error occurred:', response.status);
             }
         } catch (error) {
             console.log('Error occurred:', error.message);
         }
-      }
+    };
     const Account = {
         Name: localStorage.getItem('Account') ? JSON.parse(localStorage.getItem('Account')).name : '',
         Phone: localStorage.getItem('Account') ? JSON.parse(localStorage.getItem('Account')).phoneNumber : '',
         Email: localStorage.getItem('Account') ? JSON.parse(localStorage.getItem('Account')).email : '',
     };
-    
 
     const [eventData, setEventData] = useState([]);
 
@@ -94,14 +91,14 @@ const CourseDetails = () => {
         const fetchData = async () => {
             const course = await getCouses();
             const allEvent = await getAllEvent();
-            const allFeedbach= await getAllFeedback();
-            
+            const allFeedbach = await getAllFeedback();
+
             setcourse(course);
             setEventData(allEvent);
             setAllFeedBack(allFeedbach);
         };
         fetchData();
-    },[]);
+    }, []);
     const getCouses = async () => {
         try {
             var myHeaders = new Headers();
@@ -171,7 +168,7 @@ const CourseDetails = () => {
 
         return eventRender;
     };
-    const getAllFeedback=async ()=>{
+    const getAllFeedback = async () => {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
@@ -187,42 +184,45 @@ const CourseDetails = () => {
         } catch (error) {
             console.log('Error occurred:', error.message);
         }
-    }
-    var displayFeedbach=()=>{
-        var result=[];
-    if(AllFeedBack.length>0){
-            result=AllFeedBack.map((e)=>{
+    };
+    var displayFeedbach = () => {
+        var result = [];
+        if (AllFeedBack.length > 0) {
+            result = AllFeedBack.map((e) => {
                 const min = 1;
                 const max = 90;
                 const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-                return(
+                return (
                     <div>
-                         <div className="cor-p6-revi">
-                                            <div className="cor-p6-revi-left">
-                                                <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
-                                            </div>
-                                            <div className="cor-p6-revi-right">
-                                                <h4> {e.account.name} </h4>
-                                                <span>Date: {e.createDate} </span>
-                                                <p>
-                                                    {e.message}
-                                                </p>
-                                            </div>
-                                        </div>
+                        <div className="cor-p6-revi">
+                            <div className="cor-p6-revi-left">
+                                <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
+                            </div>
+                            <div className="cor-p6-revi-right">
+                                <h4> {e.account.name} </h4>
+                                <span>Date: {e.createDate} </span>
+                                <p>{e.message}</p>
+                            </div>
+                        </div>
                     </div>
-                )
-            })
+                );
+            });
         }
-        return result
-    }
+        return result;
+    };
     const registerCourse = (e) => {
         e.preventDefault();
         var acc = JSON.parse(localStorage.getItem('Account'));
+        if (acc == null) {
+            window.alert('You are not logged in.');
+            return;
+        }
         var send = {
             courseId: parseInt(id),
             scholarId: acc.id,
         };
         console.log(send);
+
         var myHeaders = new Headers();
         myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
         myHeaders.append('Content-Type', 'application/json');
@@ -237,7 +237,7 @@ const CourseDetails = () => {
             } else window.alert('Register failed');
         });
     };
-    
+
     // Render loading state or fetched user data
     if (!course) {
         return <div>Loading...</div>;
@@ -528,26 +528,37 @@ const CourseDetails = () => {
                                                 </p>
                                             </div>
                                         </div>
-                                     
                                     </div>
                                     <div className="cor-p6">
                                         <h3>Write Reviews</h3>
                                         <div className="cor-p7-revi">
-                                            <form className="col s12" onSubmit={e=>sendFeedback(e)}>
+                                            <form className="col s12" onSubmit={(e) => sendFeedback(e)}>
                                                 <div className="row">
                                                     <div className="input-field col s6">
-                                                        <input type="text" className="validate"  value={Account.Name} placeholder='Name'/>
-                                                  
+                                                        <input
+                                                            type="text"
+                                                            className="validate"
+                                                            value={Account.Name}
+                                                            placeholder="Name"
+                                                        />
                                                     </div>
                                                     <div className="input-field col s6">
-                                                        <input type="text" className="validate" value={Account.Email} placeholder='Email' />
-                                                      
+                                                        <input
+                                                            type="text"
+                                                            className="validate"
+                                                            value={Account.Email}
+                                                            placeholder="Email"
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className="row">
                                                     <div className="input-field col s12">
-                                                        <textarea className="materialize-textarea" value={feedback} onChange={(e)=>handleChangeFeedback(e)} placeholder='Message' />
-                                                      
+                                                        <textarea
+                                                            className="materialize-textarea"
+                                                            value={feedback}
+                                                            onChange={(e) => handleChangeFeedback(e)}
+                                                            placeholder="Message"
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className="row">
@@ -602,16 +613,22 @@ const CourseDetails = () => {
                                     <div className="ho-ev-latest ho-ev-latest-bg-2">
                                         <div className="ho-lat-ev">
                                             <Link to="../#">
-                                            <h4>Exciting Job Opportunities</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi a leo convallis semper.</p>
+                                                <h4>Exciting Job Opportunities</h4>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+                                                    nisi a leo convallis semper.
+                                                </p>
                                             </Link>
                                         </div>
                                     </div>
                                     <div className="ho-ev-latest in-ev-latest-bg-1">
                                         <div className="ho-lat-ev">
                                             <Link to="../#">
-                                            <h4>Join Our Team</h4>
-<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
+                                                <h4>Join Our Team</h4>
+                                                <p>
+                                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                                                    posuere cubilia curae;
+                                                </p>
                                             </Link>
                                         </div>
                                     </div>

@@ -16,7 +16,10 @@ export class Admin extends Component {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', { method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourse', {
+                method: 'get',
+                headers: myHeaders,
+            });
             var data = await res.json();
             this.setState({
                 AllCouses: data,
@@ -29,7 +32,10 @@ export class Admin extends Component {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminScholar/GetListScholar',{ method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminScholar/GetListScholar', {
+                method: 'get',
+                headers: myHeaders,
+            });
             var data = await res.json();
             this.setState({
                 AllScholar: data,
@@ -38,11 +44,14 @@ export class Admin extends Component {
             console.log(err);
         }
     }
-    async getRegisterPending(){
+    async getRegisterPending() {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourseRegister',{ method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminCourse/GetListCourseRegister', {
+                method: 'get',
+                headers: myHeaders,
+            });
             var data = await res.json();
             this.setState({
                 AllCourseRegister: data,
@@ -51,11 +60,14 @@ export class Admin extends Component {
             console.log(err);
         }
     }
-    async getFeedback(){
+    async getFeedback() {
         try {
             var myHeaders = new Headers();
             myHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('Token'));
-            var res = await fetch('https://localhost:7156/api/AdminFeedBack/GetList',{ method: 'get',headers:myHeaders });
+            var res = await fetch('https://localhost:7156/api/AdminFeedBack/GetList', {
+                method: 'get',
+                headers: myHeaders,
+            });
             var data = await res.json();
             this.setState({
                 AllFeedback: data,
@@ -64,18 +76,22 @@ export class Admin extends Component {
             console.log(err);
         }
     }
-    
+
     studentDashBoard() {
-        const result = this.state.AllScholar.map((e,index) => {
+        const result = this.state.AllScholar.map((e, index) => {
             const min = 1;
             const max = 90;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-            const status= e.status===1? (<span className="label label-success">Active</span> ) : (<span className="label label-danger">UnActive</span>);
+            const status =
+                e.status === 1 ? (
+                    <span className="label label-success">Active</span>
+                ) : (
+                    <span className="label label-danger">UnActive</span>
+                );
             return (
                 <tr key={index}>
                     <td>
                         <span className="list-img">
-                           
                             <img src={`https://randomuser.me/api/portraits/men/${randomNumber}.jpg`} alt="" />
                         </span>
                     </td>
@@ -90,9 +106,7 @@ export class Admin extends Component {
                     <td>Illinois</td>
                     <td>ST10231</td>
                     <td>16 Feb 1987</td>
-                    <td>
-                       {status}
-                    </td>
+                    <td>{status}</td>
                     <td>
                         <Link to="../admin-student-details" className="label label-info text-white">
                             View
@@ -104,7 +118,7 @@ export class Admin extends Component {
         return result;
     }
     CourseDashnoard() {
-        const resultCourse = this.state.AllCouses.map((e,index) => {
+        const resultCourse = this.state.AllCouses.map((e, index) => {
             const min = 1;
             const max = 90;
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -127,7 +141,6 @@ export class Admin extends Component {
                     <td>12 Aug 2023</td>
                     <td>{e.tuitionFees}</td>
                     <td>
-                      
                         <span className="label label-success">Active</span>
                     </td>
                     <td>
@@ -191,7 +204,7 @@ export class Admin extends Component {
                                         <li>
                                             <div className="dash-book dash-b-2">
                                                 <h5>Register</h5>
-                                                <h4>{this.state.AllCourseRegister.length}</h4>
+                                                <h4>{parseInt(this.state.AllCourseRegister.length)}</h4>
                                                 <Link to="../AdminCourseRegister">View more</Link>
                                             </div>
                                         </li>
@@ -240,9 +253,7 @@ export class Admin extends Component {
                                                                 <th>View</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            {this.studentDashBoard()}
-                                                            </tbody>
+                                                        <tbody>{this.studentDashBoard()}</tbody>
                                                     </table>
                                                 </div>
                                             </div>
@@ -278,9 +289,7 @@ export class Admin extends Component {
                                                                 <th>View</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                          {this.CourseDashnoard()}
-                                                          </tbody>
+                                                        <tbody>{this.CourseDashnoard()}</tbody>
                                                     </table>
                                                 </div>
                                             </div>
